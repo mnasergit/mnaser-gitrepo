@@ -2,3 +2,4 @@ file1-line1
 file1-line2-added-from-web
 file1-line4-added-from-web
 file1-line6-added-from-web
+file1-line7-added-from-VSCode
