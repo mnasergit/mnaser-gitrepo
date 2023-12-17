@@ -18,6 +18,5 @@ Link State Routing Process
 ● Builds LSA
 ● Floods LSA and stores incoming LSAs in LSDB
 ● Runs SPF to build loop-free SPT
-
-
+a
 
