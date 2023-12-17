@@ -3,10 +3,20 @@ OSPF Characteristics
 Link-state Routing Protocol
 > Link: Interface of the router
 > State: Description of the interface
-Can see full topology within area
+> Can see full topology within area
 Uses Dijktra’s Shortest Path First (SPF) algorithm
 Classless
-Supports VLSM
+> Supports VLSM
 Efficient / Scalable / Secure / Fast convergence
 Supports Multi Area
 IP Protocol number 89
+
+Link State Routing Process
+--------------------------
+Router learns own directly connected networks
+Discovers neighbor
+Builds LSA
+Floods LSA and stores incoming LSAs in LSDB
+Runs SPF to build loop-free SPT
+
+
