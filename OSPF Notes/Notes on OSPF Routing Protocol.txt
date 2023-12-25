@@ -1,3 +1,11 @@
+=================================================
+|       Notes on OSPF Routing Protocol          |
+| ++++++ Author : Md Abdullah Al Naser +++++++  |
+| Bug fixing is welcome at mnaser.net@gmail.com |
+|        Last Updated on : 2023-12-25           |
+=================================================
+
+
 OSPF Characteristics
 --------------------
 ● Link-state Routing Protocol
