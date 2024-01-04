@@ -1,3 +1,10 @@
+=================================================
+|              Python Practices                 |
+| ++++++ Author : Md Abdullah Al Naser +++++++  |
+| Bug fixing is welcome at mnaser.net@gmail.com |
+|        Last Updated on : 2024-01-04           |
+=================================================
+
 Variables
 ---------
 int
@@ -54,7 +61,7 @@ Out[8]: 140654657839936
 ● No spaces are allowed in variable
 ● Variables are case sensitive
 
-● Router and router are two separate variables
+● ROUTER and router are two separate variables
 
 In [9]: router="r1"
 In [10]: ROUTER="R1"
@@ -63,30 +70,30 @@ Out[11]: 'r1'
 In [12]: ROUTER
 Out[12]: 'R1'
 
-
 Python Data Types
 -----------------
 ● Python is a Dynamically Typed language
-● We don’t need to specify the type of data in variables in regular case
+● We don’t need to specify the "type of data" in variables in regular case
 
-Built-in data Types in Python
+Built-in Data Types in Python
 -----------------------------
 ● Text: str
 ● Numeric: int, float, complex
 ● Sequence: list, tupple, range
-● Mapping Type: dictionariesSet Type: set, frozenset
+● Mapping Type: dictionaries
+● Set Type: set, frozenset
 ● Boolean Type: bool
 ● Binary Type: bytes, bytearray, memoryview
 
-● List is ordered and mutable (can be changed)
-● Tuple is ordered but immutable 
-● Dictionary is a collection of unordered key:value pairs, it’s mutable
-● Set is a collection of unordered objects and mutable 
-● Frozenset is a collection of unordered objects and immutable 
+● List is ordered, and mutable (can be changed)
+● Tuple is ordered, but immutable (can't be changed)
+● Dictionary is a collection of unordered "key:value pairs", it’s mutable
+● Set is a collection of unordered objects, and mutable 
+● Frozenset is a collection of unordered objects, and immutable 
 ● Boolean are logical values; True or False
 
-Data Type Example
------------------
+Data Types Example
+------------------
 >>> a=10 
 >>> b='Ten'
 >>> c=2.5
@@ -104,9 +111,11 @@ Data Type Example
 >>> type(d)	  
 <class 'bool'>
 
-Working with mutable data Type
-------------------------------
+Working with Mutable Data Types
+-------------------------------
 ● List should be in [   ]
+● List is mutable
+● List allows duplicate values
 
 In [1]: my_routes = ["10.0.0.0/30", "192.168.10.0/30", "172.16.0.0/30"]
 
@@ -141,9 +150,28 @@ Out[11]: '150.10.20.0/30'
 In [12]: my_routes
 Out[12]: ['10.0.0.0/30', '192.168.10.0/30', '172.16.0.0/30', '150.10.20.0/30']
 
+● Set should be in {    }
+● Set is mutable
+● Set doesn’t allow duplicate values
+
+In [1]: set_of_vlans = {"vlan 5", "vlan 10", "vlan 15", "vlan 15", "vlan 5"}
+
+In [2]: set_of_vlans
+Out[2]: {'vlan 10', 'vlan 15', 'vlan 5'}
+
+In [3]: set_of_vlans.remove("vlan 5")
+
+In [4]: set_of_vlans
+Out[4]: {'vlan 10', 'vlan 15'}
+
+In [5]: set_of_vlans.add("vlan 25")
+
+In [6]: set_of_vlans
+Out[6]: {'vlan 10', 'vlan 15', 'vlan 25'}
 
 ● Dictionary should be in {    }
-● It contains key:value pairs
+● Dictionary is mutable
+● It contains "key:value" pairs
 
 In [1]: my_credentials = {"hostname": "192.168.1.1",
    ...: "port": "22",
@@ -173,27 +201,11 @@ Out[6]:
  'pssword': 'cisco',
  'platform': 'cisco_ios'}
 
-● Set should be in {    }
-● Set doesn’t allow duplicate value
 
-In [1]: set_of_vlans = {"vlan 5", "vlan 10", "vlan 15", "vlan 15", "vlan 5"}
-
-In [2]: set_of_vlans
-Out[2]: {'vlan 10', 'vlan 15', 'vlan 5'}
-
-In [3]: set_of_vlans.remove("vlan 5")
-
-In [4]: set_of_vlans
-Out[4]: {'vlan 10', 'vlan 15'}
-
-In [5]: set_of_vlans.add("vlan 25")
-
-In [6]: set_of_vlans
-Out[6]: {'vlan 10', 'vlan 15', 'vlan 25'}
-
-
-Working with immutable data types
+Working with Immutable Data Types
 ---------------------------------
+● We cannot update string, we can only delete or overwrite it
+
 In [1]: my_string = "CBT Nuggets"
 
 In [2]: my_string
@@ -210,10 +222,7 @@ Out[5]: 'CBT Nuggets.... it the best'
 In [6]: id(my_string)
 Out[6]: 140010593775248
 
-● We cannot update this string, we can only delete or overwrite the string.
-
 ● Tuple should be in (    )
-
 ● Tuple is immutable and cannot be updated, need to recreate from scratch
 
 In [1]: my_tuple=("R1", "R2", "R3", "SW1")
@@ -221,15 +230,15 @@ In [1]: my_tuple=("R1", "R2", "R3", "SW1")
 In [2]: my_tuple
 Out[2]: ('R1', 'R2', 'R3', 'SW1')
 
-Set		List		Tuple		Dictionary
+
+List		Set		Dictionary	Tuple
 ---------------------------------------------------------- 
-Unordered	Ordered		Ordered		Unordered
-Mutable		Mutable		Immutable	Mutable
-{    }		[    ]		(    )		{    }
+Ordered		Unordered	Unordered	Ordered
+Mutable		Mutable		Mutable		Immutable
+[    ]		{    }		{    }		(    )
+DUP		NO DUP		N/A		N/A
 
-● Cannot be duplicate			
 
- 
 Taking User Input in Terminal
 -----------------------------
 >>> a= input()
@@ -328,7 +337,6 @@ a=10
 >>> a  
 10
 
-
 *= ## left*right=left
 
 >>> a*=5		## 10*5=50
@@ -360,7 +368,7 @@ True
 True
 
 Membership Operators
--------------------
+--------------------
 >>> a='bangladesh'  
 >>> b='bangla'  
 >>> c='english'
@@ -399,7 +407,7 @@ True
 True
 
 Commenting in Python
----------------------
+--------------------
 inline comment (single line)
 # comment1
 
@@ -462,7 +470,6 @@ My given number is:  1
 
 >>> print('My given number is: %.2f' %b)	   
 My given number is: 2.57
-
 
 >>> x='bangla'	   
 >>> y='english'	   
@@ -794,6 +801,8 @@ dict_keys(['name', 'email', 'cell'])
 >>> a.values()     
 dict_values(['naser', 'naser@yahoo.com', '0170000000'])
 
+
+
 >>> a=5
 	     
 >>> if a>2:
@@ -832,8 +841,8 @@ elif a>=5:
 else:
     print(a, 'is less than 5')
 
-### In python all non-zero and all non-null values are TRUE
-### all zero and all null values are FALSE
+● In python all non-zero and all non-null values are TRUE
+● All zero and all null values are FALSE
 
 a=int(input())
 
@@ -1052,6 +1061,5 @@ if original>255:
     print('Your given number', original, 'is not valid')
 else:
     print('The binary value of', original, 'is', b)
-
 
 
