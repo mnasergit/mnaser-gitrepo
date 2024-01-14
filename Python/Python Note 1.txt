@@ -237,7 +237,8 @@ Ordered		Unordered	Unordered	Ordered
 Mutable		Mutable		Mutable		Immutable
 [    ]		{    }		{    }		(    )
 DUP		NO DUP		N/A		N/A
-
+				Key:Value
+				Key- NO DUP
 
 Taking User Input in Terminal
 -----------------------------
