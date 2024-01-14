@@ -89,6 +89,6 @@ try:
 # Handling Error            
 except ValueError:
     print ()
-    print((f"Invalid input deceted in file: *** {wb} *** --- "), ipaddress)
+    print((f"Invalid input detected in file: *** {wb} *** --- "), ipaddress)
     print ()
     wb.close()
