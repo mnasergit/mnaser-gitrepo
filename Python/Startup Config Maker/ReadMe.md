@@ -73,5 +73,5 @@ Closing Resources
 -----------------
 The script ensures proper closure of opened resources, including the workbook and file handles.
 
-++++++++++++++++++++++
+
 Feel free to customize this documentation based on additional details or specifics relevant to your project.
