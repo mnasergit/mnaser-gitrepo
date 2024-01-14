@@ -3,11 +3,7 @@ from openpyxl import Workbook
 from openpyxl.styles import PatternFill
 import ipaddress
 from ipaddress import IPv6Interface
-from ipaddress import IPv6Address
-from ipaddress import IPv6Network
 from ipaddress import IPv4Interface
-from ipaddress import IPv4Address
-from ipaddress import IPv4Network
 
 # Open Workbook and Sheet 
 wb = openpyxl.load_workbook("Device-Info.xlsx")

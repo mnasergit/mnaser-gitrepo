@@ -5,7 +5,7 @@ service password-encryption
 no ip domain lookup
 ip domain name apnic.net
 !
-username apnic privilege 15 secret 5 $1$YL51$bIK5oWPxJmrD7nhvzYVQG0
+username training privilege 15 secret 5 $1$YL41$bIK5oWPxJmrf7nhvzYVQG0
 !
 ip ssh version 2
 !
