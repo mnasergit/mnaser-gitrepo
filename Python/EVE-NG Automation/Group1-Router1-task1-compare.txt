@@ -1,0 +1,25 @@
+
+Group1-Router1#show ipv6 interface brief fastEthernet 0/0
+FastEthernet0/0        [up/up]
+    FE80::C801:13FF:FEA3:0
+    2001:DB8:ABC::1
+Group1-Router1#show ipv6 interface fastEthernet 0/0
+FastEthernet0/0 is up, line protocol is up
+  IPv6 is enabled, link-local address is FE80::C801:13FF:FEA3:0 
+  No Virtual link-local address(es):
+  Description: **Connected to Host1**
+  Global unicast address(es):
+    2001:DB8:ABC::1, subnet is 2001:DB8:ABC::/64 
+  Joined group address(es):
+    FF02::1
+    FF02::1:FF00:1
+    FF02::1:FFA3:0
+  MTU is 1500 bytes
+  ICMP error messages limited to one every 100 milliseconds
+  ICMP redirects are enabled
+  ICMP unreachables are sent
+  ND DAD is enabled, number of DAD attempts: 1
+  ND reachable time is 30000 milliseconds (using 30000)
+  ND NS retransmit interval is 1000 milliseconds
+Group1-Router1#exit
+

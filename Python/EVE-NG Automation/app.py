@@ -140,6 +140,22 @@ def run_code4():
         return "No input value found in the session"
     
 
+@app.route("/ipv6-basic-check", methods=["GET", "POST"])
+def config_check():
+    return render_template("ipv6-basic-check.html")
+
+@app.route("/ipv6-basic-check-task-1", methods=["GET", "POST"])
+def config_check_1():
+    try:
+        # Run your Python script and capture the output
+        result1 = subprocess.check_output(["python", "ipv6_basic_check_task_1.py"], text=True)
+        return result1
+        
+    except subprocess.CalledProcessError as e:
+        # Print the error details to help diagnose the issue
+        print(f"Error: {e}")
+        print(f"Output: {e.output}")
+        sys.exit(1)
 
 
 

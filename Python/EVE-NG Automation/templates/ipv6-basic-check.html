@@ -14,13 +14,13 @@
     </style>
 </head>
 <body>
-    <h2>IPv6 Basic Connectivity Lab - Start Node</h2>
+    <h2>IPv6 Basic Connectivity Lab - Check and Fix Configuration</h2>
             
     <!-- Container for the first section -->
-    <div action="/ipv6-basic-node-start" method="POST" id="startNode">
-        <h3>Task 3: Click to start nodes inside EVE-NG</h3>
-        <button type="button" onclick="startNode()">Start All Node</button>
-		</br></br>
+    <div action="/ipv6-basic-check-task-1" method="POST" id="checkTask1">
+        <h3>Click to collect and genarate report for Task 1 configuration</h3>
+        <button type="button" onclick="checkTask1()">Collect Config for Task 1</button>
+		</br>
     </div>
 
     <div id="myDiv1">
@@ -28,10 +28,10 @@
     </div>
 
     <!-- Container for the second section -->
-    <div action="/ipv6-basic-node-monitor" method="POST" id="monitorNode">
+    <div action="/ipv6-basic-check-task-2" method="POST" id="checkTask2">
         <p>-------------------------------------------------------------------------------------------------</p>
-        <h3>Task 4: Monitor lab node status</h3>
-        <button type="button" onclick="monitorNode()">Monitor Node</button>
+        <h3>Click to collect and genarate report for Task 2 configuration</h3>
+        <button type="button" onclick="checkTask2()">Collect Config for Task 2</button>
 		</br></br>
     </div>
 
@@ -40,11 +40,11 @@
     </div>
     </br>
 	
-	<div>
+	<!---<div>
         <p>-------------------------------------------------------------------------------------------------</p>
         <p><b>N.B. Go to the next page if lab nodes are runninig well.</b></p>
         <button type="button" onclick="checkLab()">Next > ></button>
-    </div>
+    </div>-->
 	
 	</br></br>
     
@@ -53,7 +53,7 @@
     <p><b>Important:</b> Do not reload this page or go back home page until you finish all the tasks.</p>
 
     <script>
-        function monitorNode() {
+        function checkTask1() {
             //const formData = new FormData(document.getElementById('configForm'));
 
             // Check if the new section already exists
@@ -61,7 +61,7 @@
             //newSection.style.display = newSection.style.display === "none" ? "block" : "none";
            
             // Toggle the visibility of the new section
-            var existingSection = document.getElementById("monitorNode");
+            var existingSection = document.getElementById("checkTask1");
             //existingSection.style.display = existingSection.style.display === "none" ? "block" : "none";
             existingSection.style.display = "block";
 
@@ -83,7 +83,7 @@
             // }
         }
 
-        function showNewSection2() {
+        function checkTask2() {
             //const formData = new FormData(document.getElementById('configForm'));
 
             // Check if the new section already exists
@@ -91,7 +91,7 @@
             //newSection.style.display = newSection.style.display === "none" ? "block" : "none";
            
             // Toggle the visibility of the new section
-            var existingSection = document.getElementById("newSectionContainer");
+            var existingSection = document.getElementById("checkTask2");
             //existingSection.style.display = existingSection.style.display === "none" ? "block" : "none";
             existingSection.style.display = "block";
 
@@ -116,9 +116,9 @@
 		
 
 
-        function startNode() {
+        function checkTask1() {
             // Make an AJAX request to the server
-            fetch("/ipv6-basic-node-start", {
+            fetch("/ipv6-basic-check-task-1", {
                 method: "POST",
             })
             //.then(response => response.json())
@@ -133,7 +133,7 @@
                 myDiv1.innerHTML = result2 + "</br>";
 
                 // Call the function to show the new section
-                monitorNode()
+                checktTask2()
 
 
             })
@@ -143,7 +143,7 @@
         }
 
         
-		function monitorNode() {
+		function checkTask2() {
             // Make an AJAX request to the server
             fetch("/ipv6-basic-node-monitor", {
                 method: "POST",
@@ -161,7 +161,7 @@
                 myDiv2.innerHTML = result3 + "</br>";
 
                 // Call the function to show the new section
-                showNewSection2();
+                checktTask3();
             })
             .catch(error => {
                 console.error("Error:", error);

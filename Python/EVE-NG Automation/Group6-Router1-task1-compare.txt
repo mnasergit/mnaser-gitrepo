@@ -1,0 +1,23 @@
+
+Group6-Router1#show ipv6 interface brief fastEthernet 0/0
+FastEthernet0/0        [administratively down/down]
+    FE80::C806:18FF:FE1C:0
+    2001:DB8:ABC::1
+Group6-Router1#show ipv6 interface fastEthernet 0/0
+FastEthernet0/0 is administratively down, line protocol is down
+  IPv6 is tentative, link-local address is FE80::C806:18FF:FE1C:0 [TEN]
+  No Virtual link-local address(es):
+  Description: **Connected to Host1**
+  Global unicast address(es):
+    2001:DB8:ABC::1, subnet is 2001:DB8:ABC::/64 [TEN]
+  Joined group address(es):
+    FF02::1
+  MTU is 1500 bytes
+  ICMP error messages limited to one every 100 milliseconds
+  ICMP redirects are enabled
+  ICMP unreachables are sent
+  ND DAD is enabled, number of DAD attempts: 1
+  ND reachable time is 30000 milliseconds (using 30000)
+  ND NS retransmit interval is 1000 milliseconds
+Group6-Router1#exit
+
