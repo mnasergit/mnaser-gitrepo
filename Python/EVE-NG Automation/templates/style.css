@@ -1,0 +1,4 @@
+/* Initially hide the new section */
+#newSectionContainer {
+    display: none;
+}

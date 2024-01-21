@@ -502,7 +502,7 @@ print (time_now)
 print (day)
 
 '''
-
+'''
 def ioxxe_interface_config(interface_name, vlan_id, ipv4_address, subnet_mask):
     line1 = f"interface {interface_name}\n"
     line2 = f" service instance {vlan_id} ethernet\n"
@@ -533,8 +533,37 @@ subnet_mask = "255.255.255.252"
 r1_iosxe_config = ioxxe_interface_config(interface_name, vlan_id, ipv4_address, subnet_mask)
 print (r1_iosxe_config)
 
+'''
 
 
+"""
+Copyright (c) 2019 Cisco and/or its affiliates.
+This software is licensed to you under the terms of the Cisco Sample
+Code License, Version 1.1 (the "License"). You may obtain a copy of the
+License at
+               https://developer.cisco.com/docs/licenses
+All use of the material herein must be in accordance with the terms of
+the License. All rights not expressly granted by the License are
+reserved. Unless required by applicable law or agreed to separately in
+writing, software distributed under the License is distributed on an "AS
+IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+or implied.
 
+Filename: config.py
+Version: Python 3.7.2
+Authors: Aaron Warner (aawarner@cisco.com)
+Description:    Simple IOS-XE configuration Generator. Run program and browse to 127.0.0.1:5000
+"""
+
+
+a = ["ABCD EFG", "OPQ XYZ"]
+
+b = "B"
+
+b = []
+
+b.append(a[1])
+
+print (b)
 
 

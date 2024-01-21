@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APNIC Lab Automation</title>
+    <!--<link href="style.css" rel="stylesheet" type="text/css"/>-->
+    <style>
+        /* Initially hide the new section */
+        #newSectionContainer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>IPv6 Basic Connectivity Lab - Provision</h2>
+    <form action="/ipv6-basic-generate-config" method="POST" id="configForm">
+        <h3>Task 1: Enter number of groups for this lab activity (1 to 20)</h3>
+        <input type="text" id="input_name" name="input_name" required>
+        <button type="submit">Generate Configuration</button>
+    </form>
+
+    <b><p id="result"></p></b>
+
+        
+    <!-- Container for the new section-->
+    <div action="/ipv6-basic-provision-lab" method="POST" id="newSectionContainer">
+
+        <p>-------------------------------------------------------------------------------------------</p>
+        <h3>Task 2: Click to provision lab inside EVE-NG</h3>
+        <p>This includes:</br>
+            1. Creating new lab (Lab name: IPv6-Basic-Connectivity-Lab)</br>
+            2. Adding nodes in topology</br>
+            3. Connecting nodes with each other</br>
+            4. Connecting nodes with MGMT network</br>
+            5. Push startup-config into nodes</p>
+        <p><b>Important:</b> Please make sure that no lab is created there named as IPv6-Basic-Connectivity-Lab. Lab provisioning will fail if any lab exists with same name.</p>
+        <button type="button" onclick="provisionLab()">Provision Lab</button>
+    </div>
+
+    <div id="myDiv">
+        <b id="result2"></b>
+    </div>
+
+    <div action="/ipv6-basic-node" method="POST">
+		<p>-------------------------------------------------------------------------------------------</p>
+		<p><b>N.B. Go to next page if lab nodes are already started.</b></p>
+		<button type="button" onclick="provisionLab2()">Start lab nodes in next page</button>
+	
+	</br></br></br>
+    
+    <a href="/"><b>Back to Home</b></a>
+    
+    <p><b>Important:</b> Do not reload this page or go back home page untill you fininsh all the tasks.</p>
+
+    <script>
+        document.getElementById('configForm').addEventListener('submit', function (event) {
+            event.preventDefault();  // Prevent default form submission
+            runPythonCode();
+        })
+
+        
+        function runPythonCode() {
+            const formData = new FormData(document.getElementById('configForm'));
+
+            fetch("/ipv6-basic-generate-config", {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                var resultElement = document.getElementById("result");
+                result = result.replace(/\n/g, "<br>");
+                resultElement.innerHTML = result;
+
+                // Call the function to show the new section
+                showNewSection();
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+
+        // function showNewButton() {
+        //     // Create a new button
+        //     var newButton = document.createElement("button");
+        //     newButton.textContent = "New Button";
+        //     newButton.id = "newBtn";
+
+        //     // Append the new button to the container
+        //     document.getElementById("newButtonContainer").appendChild(newButton);
+
+        //     // Set the flag in localStorage to indicate the button was created
+        //     //localStorage.setItem('newButtonCreated', 'true');
+        // };
+
+
+        function showNewSection() {
+            //const formData = new FormData(document.getElementById('configForm'));
+
+            // Check if the new section already exists
+            //var existingSection = document.getElementById("newSectionContainer");
+            //newSection.style.display = newSection.style.display === "none" ? "block" : "none";
+           
+            // Toggle the visibility of the new section
+            var existingSection = document.getElementById("newSectionContainer");
+            //existingSection.style.display = existingSection.style.display === "none" ? "block" : "none";
+            existingSection.style.display = "block";
+
+
+        }
+
+        function showNewSection2() {
+            //const formData = new FormData(document.getElementById('configForm'));
+
+            // Check if the new section already exists
+            //var existingSection = document.getElementById("newSectionContainer");
+            //newSection.style.display = newSection.style.display === "none" ? "block" : "none";
+           
+            // Toggle the visibility of the new section
+            var existingSection = document.getElementById("newSectionContainer");
+            //existingSection.style.display = existingSection.style.display === "none" ? "block" : "none";
+            existingSection.style.display = "block";
+
+
+        }
+
+        function provisionLab() {
+            // Make an AJAX request to the server
+            fetch("/ipv6-basic-provision-lab", {
+                method: "POST",
+            })
+            // //.then(response => response.json())
+            // .then(response => response.text())
+            // .then(result2 => {
+            //     // Log the result to the console
+            //     console.log("Result from server:", result2);
+
+            //     // Update the content of the div based on the server response
+            //     var myDiv = document.getElementById("result2");
+            //     result2 = result2.replace(/\n/g, "<br>");
+            //     myDiv.innerHTML = result2 + "</br>";
+
+                // // Call the function to show the new section
+                // showNewSection2();
+
+		
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+		}	
+			
+		function provisionLab2() {
+			// Make an AJAX request to the server
+            fetch("/ipv6-basic-node", {
+                method: "POST",
+            })
+			
+			 //.then(response => response.json())
+             .then(response => response.text())
+            .then(result3 => {
+                // Log the result to the console
+                console.log("Result from server:", result3);
+
+                // Update the content of the div based on the server response
+                var myDiv = document.getElementById("result2");
+                result3 = result3.replace(/\n/g, "<br>");
+                myDiv.innerHTML = result3 + "</br>";
+
+                // Call the function to show the new section
+                showNewSection2();
+		
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+		}	
+		
+		
+    </script>
+
+</body>
+</html>
+
