@@ -8,7 +8,7 @@
     <!--<link href="style.css" rel="stylesheet" type="text/css"/>-->
     <style>
         /* Initially hide the new section */
-        #newSectionContainer {
+        .newSectionContainer {
             display: none;
         }
     </style>
@@ -16,40 +16,66 @@
 <body>
     <h2>IPv6 Basic Connectivity Lab - Start Node</h2>
             
-    <!-- Container for the new section-->
+    <!-- Container for the first section -->
     <div action="/ipv6-basic-node-start" method="POST" id="startNode">
         <h3>Task 3: Click to start nodes inside EVE-NG</h3>
         <button type="button" onclick="startNode()">Start All Node</button>
 		</br></br>
     </div>
 
-	<div id="myDiv">
+    <div id="myDiv1">
         <b id="result2"></b>
     </div>
-	
-	
-	<!-- Container for the new section-->
-    <div action="/ipv6-basic-node-monitor" method="POST" id="newSectionContainer">
+
+    <!-- Container for the second section -->
+    <div action="/ipv6-basic-node-monitor" method="POST" id="monitorNode">
         <p>-------------------------------------------------------------------------------------------</p>
         <h3>Task 4: Monitor lab node status</h3>
         <button type="button" onclick="monitorNode()">Monitor Node</button>
 		</br></br>
     </div>
-	
-    
 
-    <div id="myDiv">
+    <div id="myDiv2">
         <b id="result3"></b>
     </div>
     </br></br></br>
     
     <a href="/"><b>Back to Home</b></a>
     
-    <p><b>Important:</b> Do not reload this page or go back home page untill you fininsh all the tasks.</p>
+    <p><b>Important:</b> Do not reload this page or go back home page until you finish all the tasks.</p>
 
     <script>
-        
-        function showNewSection() {
+        function monitorNode() {
+            //const formData = new FormData(document.getElementById('configForm'));
+
+            // Check if the new section already exists
+            //var existingSection = document.getElementById("newSectionContainer");
+            //newSection.style.display = newSection.style.display === "none" ? "block" : "none";
+           
+            // Toggle the visibility of the new section
+            var existingSection = document.getElementById("monitorNode");
+            //existingSection.style.display = existingSection.style.display === "none" ? "block" : "none";
+            existingSection.style.display = "block";
+
+            // if (!existingSection) {
+            //     // Create a new section
+            //     var newSection = document.createElement("div");
+            //     newSection.id = "newSectionContainer";
+
+            //     // Create a new button within the section
+            //     var newButton = document.createElement("button");
+            //     newButton.textContent = "New Button";
+            //     newButton.id = "newBtn";
+
+            //     // Append the new button to the new section
+            //     newSection.appendChild(newButton);
+
+            //     // Append the new section to the body
+            //     document.body.appendChild(newSection);
+            // }
+        }
+
+        function showNewSection2() {
             //const formData = new FormData(document.getElementById('configForm'));
 
             // Check if the new section already exists
@@ -78,6 +104,7 @@
             //     document.body.appendChild(newSection);
             // }
         }
+
 		
 
 
@@ -93,12 +120,12 @@
                 console.log("Result from server:", result2);
 
                 // Update the content of the div based on the server response
-                var myDiv = document.getElementById("result2");
+                var myDiv1 = document.getElementById("result2");
                 result2 = result2.replace(/\n/g, "<br>");
-                myDiv.innerHTML = result2 + "</br>";
+                myDiv1.innerHTML = result2 + "</br>";
 
                 // Call the function to show the new section
-                showNewSection();
+                monitorNode()
 
 
             })
@@ -121,26 +148,18 @@
                 console.log("Result from server:", result3);
 
                 // Update the content of the div based on the server response
-                var myDiv = document.getElementById("result3");
+                var myDiv2 = document.getElementById("result3");
                 result3 = result3.replace(/\n/g, "<br>");
-                myDiv.innerHTML = result3 + "</br>";
+                myDiv2.innerHTML = result3 + "</br>";
 
                 // Call the function to show the new section
                 showNewSection2();
-
-
             })
-			
             .catch(error => {
                 console.error("Error:", error);
             });
-			
         }
-
-
-
     </script>
 
 </body>
 </html>
-

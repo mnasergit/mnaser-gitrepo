@@ -5,8 +5,8 @@ import sys
 #import app
 import ipv6_basic_generate_config
 import ipv6_basic_provision_lab
-import ipv6_basic_node_start
-import ipv6_basic_node_monitor
+#import ipv6_basic_node_start
+#import ipv6_basic_node_monitor
 import re
 
 app = Flask(__name__)
@@ -107,23 +107,16 @@ def node_status():
 
 @app.route("/ipv6-basic-node-start", methods=["GET", "POST"])
 def run_code3():
-    # Retrieve the input_value from the session
-    input_value = session.get("input_value")
-
-    if input_value is not None:
-        try:
-            # Run your Python script and capture the output
-            result1 = subprocess.check_output(["python", "ipv6_basic_node_start.py", input_value], text=True)
-            return result1
+    try:
+        # Run your Python script and capture the output
+        result1 = subprocess.check_output(["python", "ipv6_basic_node_start.py"], text=True)
+        return result1
         
-        except subprocess.CalledProcessError as e:
-            # Print the error details to help diagnose the issue
-            print(f"Error: {e}")
-            print(f"Output: {e.output}")
-            sys.exit(1)
-    
-    else:
-        return "No input value found in the session"
+    except subprocess.CalledProcessError as e:
+        # Print the error details to help diagnose the issue
+        print(f"Error: {e}")
+        print(f"Output: {e.output}")
+        sys.exit(1)
     
 
 @app.route("/ipv6-basic-node-monitor", methods=["GET", "POST"])
