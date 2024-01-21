@@ -183,6 +183,7 @@ if __name__ == "__main__":
                 add_intf_url = f"http://192.168.20.12/api/labs/{lab_name_check}/nodes/{i}/interfaces"
                 int_map = {"0":f"{j}"} # "intf_id_of_node":"net_id"
                 int_map = json.dumps(int_map)
+                j = j + 1
                 
                 add_intf_api = requests.put(url=add_intf_url,data=int_map,cookies=cookies,headers=headers)
 
@@ -194,7 +195,7 @@ if __name__ == "__main__":
             #     else:
             #         print(f"SLAX node Group{j}-Host1 couldn't connected to Bridge network{j}")
                 
-            #     j = j + 1
+            #     
                 
             # print ("")  
 
