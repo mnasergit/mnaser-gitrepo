@@ -170,5 +170,19 @@ def restore_task_1():
         print(f"Output: {e.output}")
         sys.exit(1)
 
+@app.route("/ipv6-basic-check-task-2", methods=["GET", "POST"])
+def check_task_2():
+    try:
+        # Run your Python script and capture the output
+        result1 = subprocess.check_output(["python", "ipv6_basic_check_task_2.py"], text=True)
+        return result1
+        
+    except subprocess.CalledProcessError as e:
+        # Print the error details to help diagnose the issue
+        print(f"Error: {e}")
+        print(f"Output: {e.output}")
+        sys.exit(1)
+
+
 if __name__ == "__main__":
     app.run(debug=True)

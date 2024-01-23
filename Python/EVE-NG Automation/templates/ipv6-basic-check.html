@@ -57,8 +57,8 @@
         <br><br>
     </div>
 
-    <div id="myDiv2">
-        <b id="result3"></b>
+    <div id="myDiv22">
+        <b id="result22"></b>
     </div>
     <br>
 
@@ -133,26 +133,31 @@
 
         function checkTask2() {
             // Make an AJAX request to the server
-            fetch("/ipv6-basic-node-monitor", {
+            fetch("/ipv6-basic-check-task-2", {
                 method: "POST",
             })
             .then(response => response.text())
-            .then(result3 => {
+            .then(result22 => {
                 // Log the result to the console
-                console.log("Result from server:", result3);
+                console.log("Result from server:", result22);
 
                 // Update the content of the div based on the server response
-                var myDiv2 = document.getElementById("result3");
-                result3 = result3.replace(/\n/g, "<br>");
-                myDiv2.innerHTML = result3 + "<br>";
+                var myDiv22 = document.getElementById("result22");
+                result22 = result22.replace(/\n/g, "<br>");
+                myDiv22.innerHTML = result22 + "<br>";
 
                 // Call the function to show the new section
-                checkTask3();
+                showRestoreTask2();
             })
             .catch(error => {
                 console.error("Error:", error);
             });
         }
+
+
+
+
+
 
         // Assuming checktTask3() is defined elsewhere in your script
         function checkTask3() {
