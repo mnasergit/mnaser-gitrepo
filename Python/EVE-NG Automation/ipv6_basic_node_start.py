@@ -55,8 +55,8 @@ if node_status_api:
                 j = j + 1
                 time.sleep(5)
 
-                node_start_response = node_start_api.json()
-                print (node_start_response)
+                #node_start_response = node_start_api.json()
+                #print (node_start_response)
 
             else:
                 pass

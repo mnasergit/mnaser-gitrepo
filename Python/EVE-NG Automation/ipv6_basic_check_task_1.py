@@ -149,7 +149,7 @@ for HOST, IP in zip(HostnameList, IPList):
     except Exception as e:
         savereport.write("\n")
         savereport.write("Couldn't connect to " + HOST + ", check manually!")
-        savereport.write("\n")
+        
 
 savereport.close()
 

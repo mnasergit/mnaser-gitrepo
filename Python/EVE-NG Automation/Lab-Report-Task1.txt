@@ -1,29 +1,11 @@
 
-Group1-Router1 IPv6 address and prefix length are correct.
-Group1-Router1 interface Fa0/0 status is UP.
+
+Couldn't connect to Group1-Router1, check manually!
 
 Couldn't connect to Group2-Router1, check manually!
 
-Group3-Router1 IPv6 address is not correct.
-Group3-Router1 interface Fa0/0 status is UP.
+Couldn't connect to Group3-Router1, check manually!
 
 Couldn't connect to Group4-Router1, check manually!
 
 Couldn't connect to Group5-Router1, check manually!
-
-Group6-Router1 IPv6 address and prefix length are correct.
-Group6-Router1 interface Fa0/0 status is DOWN.
-
-Couldn't connect to Group7-Router1, check manually!
-
-Couldn't connect to Group8-Router1, check manually!
-
-Couldn't connect to Group9-Router1, check manually!
-
-Couldn't connect to Group10-Router1, check manually!
-
-Couldn't connect to Group11-Router1, check manually!
-
-Couldn't connect to Group12-Router1, check manually!
-
-Couldn't connect to Group13-Router1, check manually!

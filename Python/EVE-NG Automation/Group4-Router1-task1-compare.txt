@@ -1,0 +1,7 @@
+
+Group4-Router1#show ipv6 interface brief fastEthernet 0/0
+FastEthernet0/0        [administratively down/down]
+    unassigned
+Group4-Router1#show ipv6 interface fastEthernet 0/0
+Group4-Router1#exit
+
