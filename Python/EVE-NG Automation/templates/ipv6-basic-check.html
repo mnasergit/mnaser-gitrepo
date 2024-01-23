@@ -1,127 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APNIC Lab Automation</title>
-    <!--<link href="style.css" rel="stylesheet" type="text/css"/>-->
+    <!-- <link href="style.css" rel="stylesheet" type="text/css"/> -->
     <style>
         /* Initially hide the new section */
-        .newSectionContainer {
+        #showRestoreTask1 {
             display: none;
         }
     </style>
 </head>
+
 <body>
     <h2>IPv6 Basic Connectivity Lab - Check and Fix Configuration</h2>
-            
+
     <!-- Container for the first section -->
-    <div action="/ipv6-basic-check-task-1" method="POST" id="checkTask1">
-        <h3>Click to collect and genarate report for Task 1 configuration</h3>
-        <button type="button" onclick="checkTask1()">Collect Config for Task 1</button>
-		</br>
+    <div id="checkTask1">
+        <h3>Click to check configuration and generate report for Task 1</h3>
+        <button type="button" onclick="checkTask1()">Check Configuration for Task 1</button>
+        <br>
     </div>
 
     <div id="myDiv1">
         <b id="result2"></b>
     </div>
 
+    <!-- Container for the new section -->
+    <div id="showRestoreTask1">
+        <h3>&nbsp;</h3>
+        <h3>Click to quickly restore all configuration for Task 1</h3>
+        <p><b>Important:</b> Don't restore if you already restored once. Proceed for Task 2.</p>
+        <button type="button" onclick="restoreTask1()">Restore Configuration for Task 1</button>
+        <br><br>
+        <!-- Add an image element for the loading spinner -->
+        <!-- <img id="loadingImage" src="static/progressing.gif" alt="Progressing, Please wait..."> -->
+    </div>
+
+    <div id="restoreTask1">
+        <!-- Add any content related to restoring Task 1 configuration -->
+    </div>
+
+    <div id="myDivRestoreTask1">
+        <b id="resultRestoreTask1"></b>
+    </div>
+    <br>
+
     <!-- Container for the second section -->
-    <div action="/ipv6-basic-check-task-2" method="POST" id="checkTask2">
+    <div id="checkTask2">
         <p>-------------------------------------------------------------------------------------------------</p>
-        <h3>Click to collect and genarate report for Task 2 configuration</h3>
-        <button type="button" onclick="checkTask2()">Collect Config for Task 2</button>
-		</br></br>
+        <h3>Click to check configuration and generate report for Task 2</h3>
+        <button type="button" onclick="checkTask2()">Check Configuration for Task 2</button>
+        <br><br>
     </div>
 
     <div id="myDiv2">
         <b id="result3"></b>
     </div>
-    </br>
-	
-	<!---<div>
+    <br>
+
+    <!---<div>
         <p>-------------------------------------------------------------------------------------------------</p>
-        <p><b>N.B. Go to the next page if lab nodes are runninig well.</b></p>
+        <p><b>N.B. Go to the next page if lab nodes are running well.</b></p>
         <button type="button" onclick="checkLab()">Next > ></button>
     </div>-->
-	
-	</br></br>
-    
-    <a href="/"><b>Back to Home</b></a>
-    
+
+    <br><br>
+
     <p><b>Important:</b> Do not reload this page or go back home page until you finish all the tasks.</p>
+    <a href="/"><b>Back to Home</b></a>
 
     <script>
-        function checkTask1() {
-            //const formData = new FormData(document.getElementById('configForm'));
-
-            // Check if the new section already exists
-            //var existingSection = document.getElementById("newSectionContainer");
-            //newSection.style.display = newSection.style.display === "none" ? "block" : "none";
-           
-            // Toggle the visibility of the new section
-            var existingSection = document.getElementById("checkTask1");
-            //existingSection.style.display = existingSection.style.display === "none" ? "block" : "none";
-            existingSection.style.display = "block";
-
-            // if (!existingSection) {
-            //     // Create a new section
-            //     var newSection = document.createElement("div");
-            //     newSection.id = "newSectionContainer";
-
-            //     // Create a new button within the section
-            //     var newButton = document.createElement("button");
-            //     newButton.textContent = "New Button";
-            //     newButton.id = "newBtn";
-
-            //     // Append the new button to the new section
-            //     newSection.appendChild(newButton);
-
-            //     // Append the new section to the body
-            //     document.body.appendChild(newSection);
-            // }
-        }
-
-        function checkTask2() {
-            //const formData = new FormData(document.getElementById('configForm'));
-
-            // Check if the new section already exists
-            //var existingSection = document.getElementById("newSectionContainer");
-            //newSection.style.display = newSection.style.display === "none" ? "block" : "none";
-           
-            // Toggle the visibility of the new section
-            var existingSection = document.getElementById("checkTask2");
-            //existingSection.style.display = existingSection.style.display === "none" ? "block" : "none";
-            existingSection.style.display = "block";
-
-            // if (!existingSection) {
-            //     // Create a new section
-            //     var newSection = document.createElement("div");
-            //     newSection.id = "newSectionContainer";
-
-            //     // Create a new button within the section
-            //     var newButton = document.createElement("button");
-            //     newButton.textContent = "New Button";
-            //     newButton.id = "newBtn";
-
-            //     // Append the new button to the new section
-            //     newSection.appendChild(newButton);
-
-            //     // Append the new section to the body
-            //     document.body.appendChild(newSection);
-            // }
-        }
-
-		
-
-
         function checkTask1() {
             // Make an AJAX request to the server
             fetch("/ipv6-basic-check-task-1", {
                 method: "POST",
             })
-            //.then(response => response.json())
             .then(response => response.text())
             .then(result2 => {
                 // Log the result to the console
@@ -130,26 +87,55 @@
                 // Update the content of the div based on the server response
                 var myDiv1 = document.getElementById("result2");
                 result2 = result2.replace(/\n/g, "<br>");
-                myDiv1.innerHTML = result2 + "</br>";
+                myDiv1.innerHTML = result2 + "<br>";
 
                 // Call the function to show the new section
-                checktTask2()
-
-
+                showRestoreTask1();
             })
             .catch(error => {
                 console.error("Error:", error);
             });
         }
 
-        
-		function checkTask2() {
+        function showRestoreTask1() {
+            // Toggle the visibility of the restoreTask1 div
+            var showRestoreTask1Div = document.getElementById("showRestoreTask1");
+            showRestoreTask1Div.style.display = "block";
+
+
+        }
+
+        function restoreTask1() {
+            // Toggle the visibility of the restoreTask1 div
+            var restoreTask1Div = document.getElementById("restoreTask1");
+            restoreTask1Div.style.display = "block";
+            var formData = new FormData();
+
+            // Make an AJAX request to the server
+            fetch("/ipv6-basic-restore-task-1", {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(resultRestoreTask1 => {
+                // Log the result to the console
+                console.log("Result from server:", resultRestoreTask1);
+
+                // Update the content of the div based on the server response
+                var myDivRestoreTask1 = document.getElementById("resultRestoreTask1");
+                resultRestoreTask1 = resultRestoreTask1.replace(/\n/g, "<br>");
+                myDivRestoreTask1.innerHTML = resultRestoreTask1 + "<br>";
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+
+        function checkTask2() {
             // Make an AJAX request to the server
             fetch("/ipv6-basic-node-monitor", {
                 method: "POST",
             })
-
-            //.then(response => response.json())
             .then(response => response.text())
             .then(result3 => {
                 // Log the result to the console
@@ -158,21 +144,26 @@
                 // Update the content of the div based on the server response
                 var myDiv2 = document.getElementById("result3");
                 result3 = result3.replace(/\n/g, "<br>");
-                myDiv2.innerHTML = result3 + "</br>";
+                myDiv2.innerHTML = result3 + "<br>";
 
                 // Call the function to show the new section
-                checktTask3();
+                checkTask3();
             })
             .catch(error => {
                 console.error("Error:", error);
             });
         }
-		
-		function checkLab() {
+
+        // Assuming checktTask3() is defined elsewhere in your script
+        function checkTask3() {
+            // Your logic for Task 3
+        }
+
+        function checkLab() {
             window.open("/ipv6-basic-check", "_blank");
-        }	
-		
+        }
     </script>
 
 </body>
+
 </html>

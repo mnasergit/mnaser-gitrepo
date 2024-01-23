@@ -145,7 +145,7 @@ def config_check():
     return render_template("ipv6-basic-check.html")
 
 @app.route("/ipv6-basic-check-task-1", methods=["GET", "POST"])
-def config_check_1():
+def check_task_1():
     try:
         # Run your Python script and capture the output
         result1 = subprocess.check_output(["python", "ipv6_basic_check_task_1.py"], text=True)
@@ -157,7 +157,18 @@ def config_check_1():
         print(f"Output: {e.output}")
         sys.exit(1)
 
-
+@app.route("/ipv6-basic-restore-task-1", methods=["GET", "POST"])
+def restore_task_1():
+    try:
+        # Run your Python script and capture the output
+        result2 = subprocess.check_output(["python", "ipv6_basic_restore_task_1.py"], text=True)
+        return result2
+        
+    except subprocess.CalledProcessError as e:
+        # Print the error details to help diagnose the issue
+        print(f"Error: {e}")
+        print(f"Output: {e.output}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     app.run(debug=True)

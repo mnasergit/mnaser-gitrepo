@@ -1,11 +1,11 @@
 
 
-Couldn't connect to Group1-Router1, check manually!
+Group1-Router1 IPv6 address is not configured.
 
-Couldn't connect to Group2-Router1, check manually!
+Group2-Router1 IPv6 address is not configured.
 
-Couldn't connect to Group3-Router1, check manually!
+Group3-Router1 IPv6 address is not configured.
 
-Couldn't connect to Group4-Router1, check manually!
+Group4-Router1 IPv6 address is not configured.
 
-Couldn't connect to Group5-Router1, check manually!
+Group5-Router1 IPv6 address is not configured.

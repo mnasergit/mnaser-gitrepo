@@ -70,24 +70,25 @@ def device_access(IP, HOST):
 
     try:
         with ConnectHandler(**cisco_devices) as ssh:
-            print(f"Executing script on {HOST}...")
-            command1 = (f"configure replace tftp://192.168.20.1/dir/{HOST}-startup-config.txt")
+            #print(f"Executing script on {HOST}...")
+            command1 = (f"configure replace tftp://10.99.99.11/lab1/{HOST}-startup-config.txt")
             command2 = "Y"
             command3 = "write memory"
             #command = ["show ip int brief", "Y"]
+            print ("")
             output1 = ssh.send_command_timing(command1, strip_prompt=False, strip_command=False)
             time.sleep(2)
-            print (output1)
+            #print (output1)
             time.sleep(2)
             output2 = ssh.send_command_timing(command2, strip_prompt=False, strip_command=False)
             time.sleep(2)
-            print (output2)
+            #print (output2)
             time.sleep(10)
             output3 = ssh.send_command_timing(command3, strip_prompt=False, strip_command=False)
             time.sleep(2)
-            print (output3)
+            #print (output3)
             time.sleep(2)
-            #ssh.send_command = (f"configure replace tftp://10.99.99.11/{HOST}-startup-config.txt")
+            print (f"{HOST}: Task 1 configuration restored successfully")
             #ssh.send_command = ("show ip int brief")
             #ssh.send_command = ("Y")
             #time.sleep(15)
@@ -120,6 +121,6 @@ for i in range(2, int(num_nodes/2) + 2):
 for IP, HOST in zip(IPList, HostnameList):
     device_access(IP, HOST)
     #print(f"Executing script on {HOST} {IP}...")
-#    restore_config(IP)
+    #restore_config(IP)
     #ssh.send_config_set(command)
     #time.sleep(10)
