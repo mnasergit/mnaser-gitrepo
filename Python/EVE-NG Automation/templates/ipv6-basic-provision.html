@@ -5,26 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APNIC Lab Automation</title>
-    <!--<link href="style.css" rel="stylesheet" type="text/css"/>-->
-    <style>
-        /* Initially hide the new section */
-        #newSectionContainer {
-            display: none;
-        }
-    </style>
+    <link href="static/style.css" rel="stylesheet" type="text/css"/>
 </head>
+
 <body>
     <h2>IPv6 Basic Connectivity Lab - Provision</h2>
-    <form action="/ipv6-basic-generate-config" method="POST" id="configForm">
+    <form action="/ipv6-basic-generate-config" method="POST" id="SubmitGroupNumber">
         <h3>Task 1: Enter the number of groups for this lab activity (1 to 20)</h3>
         <input type="text" id="input_name" name="input_name" required>
         <button type="submit">Generate Configuration</button>
     </form>
 
-    <b><p id="result"></p></b>
+    <b><p id="OutputSubmitGroupNumber"></p></b>
 
     <!-- Container for the new section -->
-    <div id="newSectionContainer">
+    <div id="ShowProvisionLabSection">
         <p>-------------------------------------------------------------------------------------------------</p>
         <h3>Task 2: Click to provision the lab inside EVE-NG</h3>
         <p>This includes:</br>
@@ -34,102 +29,79 @@
             4. Connecting nodes with MGMT network</br>
             5. Pushing startup-config into nodes</p>
         <p><b>Important:</b> Please make sure that no lab is created there named as IPv6-Basic-Connectivity-Lab. Lab provisioning will fail if any lab exists with the same name.</p>
-        <button type="button" onclick="provisionLab()">Provision Lab</button>
+        <button type="button" onclick="SubmitProvisionLab()">Provision Lab</button>
     </div>
 
-    <div id="myDiv">
-        <b id="result2"></b>
+    <div id="DivSubmitProvisionLab">
+        <b id="ResultSubmitProvisionLab"></b>
     </div>
 
     <div>
         <p>-------------------------------------------------------------------------------------------------</p>
         <p><b>N.B. Go to the next page if lab is already provisioned.</b></p>
-        <button type="button" onclick="provisionLab2()">Next > ></button>
+        <button type="button" onclick="NextPage()">Next > ></button>
     </div>
-    
-    <!---<div id="myDiv">
-        <b id="result3"></b>
-    </div>--->
-
-    </br></br></br>
-    
-    <a href="/"><b>Back to Home</b></a>
-    
+    <p>-------------------------------------------------------------------------------------------------</p>
     <p><b>Important:</b> Do not reload this page or go back home page until you finish all the tasks.</p>
+    <a href="/"><b>Back to Home</b></a>
+
 
     <script>
-        document.getElementById('configForm').addEventListener('submit', function (event) {
+        document.getElementById('SubmitGroupNumber').addEventListener('submit', function (event) {
             event.preventDefault();  // Prevent default form submission
-            runPythonCode();
+            SubmitGroupNumberRunCode();
         })
 
-        function runPythonCode() {
-            const formData = new FormData(document.getElementById('configForm'));
+        function SubmitGroupNumberRunCode() {
+            const formData = new FormData(document.getElementById('SubmitGroupNumber'));
 
             fetch("/ipv6-basic-generate-config", {
                 method: 'POST',
                 body: formData
             })
             .then(response => response.text())
-            .then(result => {
-                var resultElement = document.getElementById("result");
-                result = result.replace(/\n/g, "<br>");
-                resultElement.innerHTML = result;
+            .then(OutputSubmitGroupNumber => {
+                var resultElement = document.getElementById("OutputSubmitGroupNumber");
+                OutputSubmitGroupNumber = OutputSubmitGroupNumber.replace(/\n/g, "<br>");
+                resultElement.innerHTML = OutputSubmitGroupNumber;
 
                 // Call the function to show the new section
-                showNewSection();
+                ShowProvisionLab();
             })
             .catch(error => {
                 console.error("Error:", error);
             });
         }
 
-        function showNewSection() {
-            var existingSection = document.getElementById("newSectionContainer");
+        function ShowProvisionLab() {
+            var existingSection = document.getElementById("ShowProvisionLabSection");
             existingSection.style.display = "block";
         }
 
-        function provisionLab() {
+        function SubmitProvisionLab() {
             // Make an AJAX request to the server
             fetch("/ipv6-basic-provision-lab", {
                 method: "POST",
             })
             .then(response => response.text())
-            .then(result2 => {
+            .then(ResultSubmitProvisionLab => {
                 // Log the result to the console
-                console.log("Result from server:", result2);
+                console.log("Result from server:", ResultSubmitProvisionLab);
 
                 // Update the content of the div based on the server response
-                var myDiv = document.getElementById("result2");
-                result2 = result2.replace(/\n/g, "<br>");
-                myDiv.innerHTML = result2 + "</br>";
+                var DivSubmitProvisionLab = document.getElementById("ResultSubmitProvisionLab");
+                ResultSubmitProvisionLab = ResultSubmitProvisionLab.replace(/\n/g, "<br>");
+                DivSubmitProvisionLab.innerHTML = ResultSubmitProvisionLab + "</br>";
             })
             .catch(error => {
                 console.error("Error:", error);
             });
         }
 
-        function provisionLab2() {
+        function NextPage() {
             window.location.href = "/ipv6-basic-node";
-        //     // Make an AJAX request to the server
-        //     fetch("/ipv6-basic-node", {
-        //         method: "POST",
-        //     })
-        //     .then(response => response.text())
-        //     .then(result3 => {
-        //         // Log the result to the console
-        //         console.log("Result from server:", result3);
-
-        //         // Update the content of the div based on the server response
-        //         var myDiv = document.getElementById("result3");
-        //         result3 = result3.replace(/\n/g, "<br>");
-        //         myDiv.innerHTML = result3 + "</br>";
-        //     })
-        //     .catch(error => {
-        //         console.error("Error:", error);
-        //     });
         }	
-    </script>
 
+    </script>
 </body>
 </html>
