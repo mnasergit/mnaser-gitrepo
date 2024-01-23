@@ -7,8 +7,6 @@ import app
 import re
 from datetime import datetime
 
-
-
 ### User Input ###
 
 #lab_name = str(input("Enter lab name : "))
@@ -40,14 +38,13 @@ num_nodes = len(node_status_dict)
 current_time = datetime.now()
 formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
 
-print(f"Node status last updated on: {formatted_time}")
+print(f"Node status: (last updated on {formatted_time})")
 print()
 
 if node_status_api:
     try:
         for i in range (1, int(num_nodes/2) + 1):
             device_status = node_status_dict[f"{i}"]["status"]
-            
             
             if device_status == 2:
                 print (f"Group{i}-Router1 is is running....")

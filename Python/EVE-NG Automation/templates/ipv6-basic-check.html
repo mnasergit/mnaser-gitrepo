@@ -1,172 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APNIC Lab Automation</title>
-    <!-- <link href="style.css" rel="stylesheet" type="text/css"/> -->
-    <style>
-        /* Initially hide the new section */
-        #showRestoreTask1 {
-            display: none;
-        }
-    </style>
+    <link href="static/style.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
     <h2>IPv6 Basic Connectivity Lab - Check and Fix Configuration</h2>
-
     <!-- Container for the first section -->
-    <div id="checkTask1">
+    <div id="ShowCheckTask1">
         <h3>Click to check configuration and generate report for Task 1</h3>
-        <button type="button" onclick="checkTask1()">Check Configuration for Task 1</button>
-        <br>
+        <button type="button" onclick="SubmitCheckTask1()">Check Configuration for Task 1</button>
     </div>
 
-    <div id="myDiv1">
-        <b id="result2"></b>
+    <div id="DivSubmitCheckTask1">
+        <b id="OutputSubmitCheckTask1"></b>
     </div>
 
     <!-- Container for the new section -->
-    <div id="showRestoreTask1">
-        <h3>&nbsp;</h3>
+    <div id="ShowRestoreTask1">
         <h3>Click to quickly restore all configuration for Task 1</h3>
         <p><b>Important:</b> Don't restore if you already restored once. Proceed for Task 2.</p>
-        <button type="button" onclick="restoreTask1()">Restore Configuration for Task 1</button>
-        <br><br>
-        <!-- Add an image element for the loading spinner -->
-        <!-- <img id="loadingImage" src="static/progressing.gif" alt="Progressing, Please wait..."> -->
+        <button type="button" onclick="SubmitRestoreTask1()">Restore Configuration for Task 1</button>
+        <br>
     </div>
 
-    <div id="restoreTask1">
-        <!-- Add any content related to restoring Task 1 configuration -->
-    </div>
-
-    <div id="myDivRestoreTask1">
-        <b id="resultRestoreTask1"></b>
+    <div id="DivSubmitRestoreTask1">
+        <b id="OutputSubmitRestoreTask1"></b>
     </div>
     <br>
 
     <!-- Container for the second section -->
-    <div id="checkTask2">
+    <div id="ShowCheckTask2">
         <p>-------------------------------------------------------------------------------------------------</p>
         <h3>Click to check configuration and generate report for Task 2</h3>
-        <button type="button" onclick="checkTask2()">Check Configuration for Task 2</button>
-        <br><br>
+        <button type="button" onclick="SubmitCheckTask2()">Check Configuration for Task 2</button>
     </div>
 
-    <div id="myDiv22">
-        <b id="result22"></b>
+    <div id="DivSubmitCheckTask2">
+        <b id="OutputSubmitCheckTask2"></b>
+    </div>
+
+    <!-- Container for the new section -->
+    <div id="ShowRestoreTask2">
+        <h3>Click to quickly restore all configuration for Task 2</h3>
+        <p><b>Important:</b> Don't restore if you already restored once. Proceed for Task 3.</p>
+        <button type="button" onclick="SubmitRestoreTask2()">Restore Configuration for Task 2</button>
+        <br>
+    </div>
+
+    <div id="DivSubmitRestoreTask2">
+        <b id="OutputSubmitRestoreTask2"></b>
     </div>
     <br>
 
-    <!---<div>
+    <!-- Container for the third section -->
+    <div id="ShowCheckTask3">
         <p>-------------------------------------------------------------------------------------------------</p>
-        <p><b>N.B. Go to the next page if lab nodes are running well.</b></p>
-        <button type="button" onclick="checkLab()">Next > ></button>
-    </div>-->
+        <h3>Click to check configuration and generate report for Task 3</h3>
+        <button type="button" onclick="SubmitCheckTask3()">Check Configuration for Task 3</button>
+    </div>
 
-    <br><br>
+    <div id="DivSubmitCheckTask3">
+        <b id="OutputSubmitCheckTask3"></b>
+    </div>
 
+    <!-- Container for the new section -->
+    <div id="ShowRestoreTask3">
+        <h3>Click to quickly restore all configuration for Task 3</h3>
+        <p><b>Important:</b> Don't restore if you already restored once. Proceed for ending lab activity.</p>
+        <button type="button" onclick="SubmitRestoreTask3()">Restore Configuration for Task 1</button>
+        <br>
+    </div>
+
+    <div id="DivSubmitRestoreTask3">
+        <b id="OutputSubmitRestoreTask3"></b>
+    </div>
+    <br>
+    <div>
+        <p>-------------------------------------------------------------------------------------------------</p>
+        <p><b>N.B. Go to the next page to turn off all the lab node.</b></p>
+        <button type="button" onclick="NextPage()">Next > ></button>
+    </div>
     <p><b>Important:</b> Do not reload this page or go back home page until you finish all the tasks.</p>
     <a href="/"><b>Back to Home</b></a>
 
+
+
+
     <script>
-        function checkTask1() {
+
+        ///////////////////////////////////////////////////////////////////////////////////
+        /// Check Task 1 ///
+        function SubmitCheckTask1() {
             // Make an AJAX request to the server
             fetch("/ipv6-basic-check-task-1", {
                 method: "POST",
             })
             .then(response => response.text())
-            .then(result2 => {
+            .then(OutputSubmitCheckTask1 => {
                 // Log the result to the console
-                console.log("Result from server:", result2);
+                console.log("Result from server:", OutputSubmitCheckTask1);
 
                 // Update the content of the div based on the server response
-                var myDiv1 = document.getElementById("result2");
-                result2 = result2.replace(/\n/g, "<br>");
-                myDiv1.innerHTML = result2 + "<br>";
+                var DivSubmitCheckTask1 = document.getElementById("OutputSubmitCheckTask1");
+                OutputSubmitCheckTask1 = OutputSubmitCheckTask1.replace(/\n/g, "<br>");
+                DivSubmitCheckTask1.innerHTML = OutputSubmitCheckTask1 + "<br>";
 
                 // Call the function to show the new section
-                showRestoreTask1();
+                ShowRestoreTask1();
             })
             .catch(error => {
                 console.error("Error:", error);
             });
         }
 
-        function showRestoreTask1() {
+        /// Show Task 1 Restore Section ///
+        function ShowRestoreTask1() {
             // Toggle the visibility of the restoreTask1 div
-            var showRestoreTask1Div = document.getElementById("showRestoreTask1");
-            showRestoreTask1Div.style.display = "block";
-
-
-        }
-
-        function restoreTask1() {
-            // Toggle the visibility of the restoreTask1 div
-            var restoreTask1Div = document.getElementById("restoreTask1");
+            var restoreTask1Div = document.getElementById("ShowRestoreTask1");
             restoreTask1Div.style.display = "block";
             var formData = new FormData();
+        }
 
+        /// Restore Task 1 ///
+        function SubmitRestoreTask1() {
+            // Make an AJAX request to the server
+            fetch("/ipv6-basic-restore-task-1", {
+                method: "POST",
+            })
+            .then(response => response.text())
+            .then(OutputSubmitRestoreTask1 => {
+                // Log the result to the console
+                console.log("Result from server:", OutputSubmitRestoreTask1);
+                // Update the content of the div based on the server response
+                var DivSubmitRestoreTask1 = document.getElementById("OutputSubmitRestoreTask1");
+                OutputSubmitRestoreTask1 = OutputSubmitRestoreTask1.replace(/\n/g, "<br>");
+                DivSubmitRestoreTask1.innerHTML = OutputSubmitRestoreTask1 + "<br>";
+
+                // Call the function to show the new section
+                ShowCheckTask2();
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+
+
+
+        ///////////////////////////////////////////////////////////////////////////////////
+        /// Check Task 1 ///
+        function ShowCheckTask2() {
+            // Toggle the visibility of the restoreTask1 div
+            var restoreTask1Div = document.getElementById("ShowCheckTask2");
+            restoreTask1Div.style.display = "block";
+            var formData = new FormData();
+        }
+
+        function SubmitCheckTask2() {
+            // Make an AJAX request to the server
+            fetch("/ipv6-basic-check-task-1", {
+                method: "POST",
+            })
+            .then(response => response.text())
+            .then(OutputSubmitCheckTask2 => {
+                // Log the result to the console
+                console.log("Result from server:", OutputSubmitCheckTask2);
+
+                // Update the content of the div based on the server response
+                var DivSubmitCheckTask2 = document.getElementById("OutputSubmitCheckTask2");
+                OutputSubmitCheckTask2 = OutputSubmitCheckTask2.replace(/\n/g, "<br>");
+                DivSubmitCheckTask2.innerHTML = OutputSubmitCheckTask2 + "<br>";
+
+                // Call the function to show the new section
+                ShowRestoreTask2();
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+
+        /// Show Task 2 Restore Section ///
+        function ShowRestoreTask2() {
+            // Toggle the visibility of the restoreTask1 div
+            var restoreTask1Div = document.getElementById("ShowRestoreTask2");
+            restoreTask1Div.style.display = "block";
+            var formData = new FormData();
+        }
+
+        /// Restore Task 2 ///
+        function SubmitRestoreTask2() {
+            // Make an AJAX request to the server
+            fetch("/ipv6-basic-restore-task-1", {
+                method: "POST",
+            })
+            .then(response => response.text())
+            .then(OutputSubmitRestoreTask2 => {
+                // Log the result to the console
+                console.log("Result from server:", OutputSubmitRestoreTask2);
+                // Update the content of the div based on the server response
+                var DivSubmitRestoreTask2 = document.getElementById("OutputSubmitRestoreTask2");
+                OutputSubmitRestoreTask2 = OutputSubmitRestoreTask2.replace(/\n/g, "<br>");
+                DivSubmitRestoreTask2.innerHTML = OutputSubmitRestoreTask2 + "<br>";
+
+                // Call the function to show the new section
+                ShowCheckTask3();
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////
+        /// Check Task 3 ///
+        function ShowCheckTask3() {
+            // Toggle the visibility of the restoreTask1 div
+            var restoreTask1Div = document.getElementById("ShowCheckTask3");
+            restoreTask1Div.style.display = "block";
+            var formData = new FormData();
+        }
+
+        function SubmitCheckTask3() {
+            // Make an AJAX request to the server
+            fetch("/ipv6-basic-check-task-1", {
+                method: "POST",
+            })
+            .then(response => response.text())
+            .then(OutputSubmitCheckTask3 => {
+                // Log the result to the console
+                console.log("Result from server:", OutputSubmitCheckTask3);
+
+                // Update the content of the div based on the server response
+                var DivSubmitCheckTask3 = document.getElementById("OutputSubmitCheckTask3");
+                OutputSubmitCheckTask3 = OutputSubmitCheckTask3.replace(/\n/g, "<br>");
+                DivSubmitCheckTask3.innerHTML = OutputSubmitCheckTask3 + "<br>";
+
+                // Call the function to show the new section
+                ShowRestoreTask3();
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+
+        /// Show Task 3 Restore Section ///
+        function ShowRestoreTask3() {
+            // Toggle the visibility of the restoreTask1 div
+            var restoreTask1Div = document.getElementById("ShowRestoreTask3");
+            restoreTask1Div.style.display = "block";
+            var formData = new FormData();
+        }
+
+        /// Restore Task 3 ///
+        function SubmitRestoreTask3() {
             // Make an AJAX request to the server
             fetch("/ipv6-basic-restore-task-1", {
                 method: "POST",
                 body: formData,
             })
             .then(response => response.text())
-            .then(resultRestoreTask1 => {
+            .then(OutputSubmitRestoreTask3 => {
                 // Log the result to the console
-                console.log("Result from server:", resultRestoreTask1);
-
+                console.log("Result from server:", OutputSubmitRestoreTask3);
                 // Update the content of the div based on the server response
-                var myDivRestoreTask1 = document.getElementById("resultRestoreTask1");
-                resultRestoreTask1 = resultRestoreTask1.replace(/\n/g, "<br>");
-                myDivRestoreTask1.innerHTML = resultRestoreTask1 + "<br>";
+                var DivSubmitRestoreTask3 = document.getElementById("OutputSubmitRestoreTask3");
+                OutputSubmitRestoreTask3 = OutputSubmitRestoreTask3.replace(/\n/g, "<br>");
+                DivSubmitRestoreTask3.innerHTML = OutputSubmitRestoreTask3 + "<br>";
             })
             .catch(error => {
                 console.error("Error:", error);
             });
         }
 
-        function checkTask2() {
-            // Make an AJAX request to the server
-            fetch("/ipv6-basic-check-task-2", {
-                method: "POST",
-            })
-            .then(response => response.text())
-            .then(result22 => {
-                // Log the result to the console
-                console.log("Result from server:", result22);
-
-                // Update the content of the div based on the server response
-                var myDiv22 = document.getElementById("result22");
-                result22 = result22.replace(/\n/g, "<br>");
-                myDiv22.innerHTML = result22 + "<br>";
-
-                // Call the function to show the new section
-                showRestoreTask2();
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
+        function NextPage() {
+            window.location.href = "/ipv6-basic-stop", "_blank";
         }
 
 
-
-
-
-
-        // Assuming checktTask3() is defined elsewhere in your script
-        function checkTask3() {
-            // Your logic for Task 3
-        }
-
-        function checkLab() {
-            window.open("/ipv6-basic-check", "_blank");
-        }
     </script>
 
 </body>
