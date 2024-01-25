@@ -31,6 +31,7 @@ if __name__ == "__main__":
 
         ### User Input ###
 
+        EVE_1 = "192.168.20.12"
         #lab_name = str(input("Enter lab name : "))
         lab_name = "IPv6-Basic-Connectivity-Lab"
         lab_name_check = f"/{lab_name}.unl"
@@ -40,7 +41,7 @@ if __name__ == "__main__":
 
         ### Login ###
 
-        login_url = "http://192.168.20.12/api/auth/login"
+        login_url = f"http://{EVE_1}/api/auth/login"
         cred = '{"username":"admin","password":"eve","html5":"-1"}'
         headers = {"Accept":"application/json"}
 
@@ -61,7 +62,7 @@ if __name__ == "__main__":
 
         ### Get folder list ###
 
-        get_folder_url = "http://192.168.20.12/api/folders/"
+        get_folder_url = f"http://{EVE_1}/api/folders/"
         get_folder_api = requests.get(url=get_folder_url,cookies=cookies,headers=headers)
 
         get_folder_response = get_folder_api.json()
@@ -80,7 +81,7 @@ if __name__ == "__main__":
                 lab_data = {"author":"","description":"","scripttimeout":300,"version":1,"name":f"{lab_name}","body":"","path":"/"}
                 lab_data = json.dumps(lab_data)
                 
-                create_lab_url = "http://192.168.20.12/api/labs"
+                create_lab_url = f"http://{EVE_1}/api/labs"
                 create_lab_api = requests.post(url=create_lab_url,data=lab_data,cookies=cookies,headers=headers)
 
                 #create_lab_response = create_lab_api.json()
@@ -96,12 +97,12 @@ if __name__ == "__main__":
             def create_node(ios_num, slax_num):
                 left_position = 100
                 for i in range(1, ios_num + 1):
-                    ios_data = {"template":"c7200","type":"dynamips","count":"1","image":"c7200-adventerprisek9-mz.152-4.S6.image","name":f"Group{i}-Host1","icon":"Router.png","idlepc":"0x62f21000","nvram":"128","ram":"256","slot1":"PA-FE-TX","slot2":"PA-FE-TX","slot3":"PA-FE-TX","slot4":"PA-FE-TX","slot5":"PA-FE-TX","slot6":"PA-FE-TX","config":"0","delay":"0","left":f"{left_position}","top":"150","postfix":0}
+                    ios_data = {"template":"c7200","type":"dynamips","count":"1","image":"c7200-adventerprisek9-mz.152-4.S6.image","name":f"Group{i}-Router1","icon":"Router.png","idlepc":"0x62f21000","nvram":"128","ram":"256","slot1":"PA-FE-TX","slot2":"PA-FE-TX","slot3":"PA-FE-TX","slot4":"PA-FE-TX","slot5":"PA-FE-TX","slot6":"PA-FE-TX","config":"0","delay":"0","left":f"{left_position}","top":"150","postfix":0}
 
                     left_position = left_position + 120
                     ios_data = json.dumps(ios_data)
 
-                    create_node_url = f"http://192.168.20.12/api/labs/{lab_name_check}/nodes"
+                    create_node_url = f"http://{EVE_1}/api/labs/{lab_name_check}/nodes"
                     create_node_api = requests.post(url=create_node_url,data=ios_data,cookies=cookies,headers=headers)
 
                 #     if create_node_api:
@@ -118,7 +119,7 @@ if __name__ == "__main__":
                     left_position = left_position + 120
                     slax_data = json.dumps(slax_data)
 
-                    create_node_url = f"http://192.168.20.12/api/labs/{lab_name_check}/nodes"
+                    create_node_url = f"http://{EVE_1}/api/labs/{lab_name_check}/nodes"
                     create_node_api = requests.post(url=create_node_url,data=slax_data,cookies=cookies,headers=headers)
 
                 #     if create_node_api:
@@ -139,12 +140,12 @@ if __name__ == "__main__":
             ### Create BRIDGE Network ###
                 
             left_position = 100
-            for i in range(1, num_slax + 1):
+            for i in range(1, num_ios + 1):
                 bridge_data = {"type":"bridge","visibility":1,"left":f"{left_position}","top":"250","postfix":0}
                 bridge_data = json.dumps(bridge_data)
                 left_position = left_position + 120
 
-                create_bridge_url = f"http://192.168.20.12/api/labs/{lab_name_check}/networks"
+                create_bridge_url = f"http://{EVE_1}/api/labs/{lab_name_check}/networks"
                 create_bridge_api = requests.post(url=create_bridge_url,data=bridge_data,cookies=cookies)
 
                 #create_bridge_url_response = create_bridge_api.json()
@@ -160,7 +161,7 @@ if __name__ == "__main__":
             ### Connect IOS Interfaces to Bridges ###
 
             for i in range (1, num_ios + 1):
-                add_intf_url = f"http://192.168.20.12/api/labs/{lab_name_check}/nodes/{i}/interfaces"
+                add_intf_url = f"http://{EVE_1}/api/labs/{lab_name_check}/nodes/{i}/interfaces"
                 int_map = {"0":f"{i}"} # "intf_id_of_node":"net_id"
                 int_map = json.dumps(int_map)
                 
@@ -180,7 +181,7 @@ if __name__ == "__main__":
 
             j = 1    
             for i in range (num_ios + 1, num_ios + num_slax + 1):
-                add_intf_url = f"http://192.168.20.12/api/labs/{lab_name_check}/nodes/{i}/interfaces"
+                add_intf_url = f"http://{EVE_1}/api/labs/{lab_name_check}/nodes/{i}/interfaces"
                 int_map = {"0":f"{j}"} # "intf_id_of_node":"net_id"
                 int_map = json.dumps(int_map)
                 j = j + 1
@@ -195,16 +196,21 @@ if __name__ == "__main__":
             #     else:
             #         print(f"SLAX node Group{j}-Host1 couldn't connected to Bridge network{j}")
                 
-            #     
+            ### Make Bridge Network Invisible ###    
                 
-            # print ("")  
+            for i in range(1, num_ios + 1):
+                bridge_visibility_data = {"visibility":0}
+                bridge_visibility_data = json.dumps(bridge_visibility_data)
+
+                bridge_visibility_url = f"http://{EVE_1}/api/labs/{lab_name_check}/networks"
+                bridge_visibility_api = requests.post(url=bridge_visibility_url,data=bridge_visibility_data,cookies=cookies) 
 
             ### Create PNET1 Network ###
 
             pnet_data = {"count":"1","visibility":"1","name":"Net","type":"pnet1","left":"600","top":"50","postfix":0}
             pnet_data = json.dumps(pnet_data)
 
-            create_pnet_url = f"http://192.168.20.12/api/labs/{lab_name_check}/networks"
+            create_pnet_url = f"http://{EVE_1}/api/labs/{lab_name_check}/networks"
             create_pnet_api = requests.post(url=create_pnet_url,data=pnet_data,cookies=cookies)
 
             #create_pnet_url_response = create_pnet_api.json()
@@ -220,7 +226,7 @@ if __name__ == "__main__":
             ### Connect MGMT Interface to PNET1 network ###
 
             for i in range (1, num_ios + 1):
-                add_mgmt_url = f"http://192.168.20.12/api/labs/{lab_name_check}/nodes/{i}/interfaces"
+                add_mgmt_url = f"http://{EVE_1}/api/labs/{lab_name_check}/nodes/{i}/interfaces"
                 mgmt_map = {"96":f"{num_group+1}"} # "intf_id_of_node":"net_id"
                 mgmt_map = json.dumps(mgmt_map)
                 add_mgmt_api = requests.put(url=add_mgmt_url,data=mgmt_map,cookies=cookies,headers=headers)
@@ -265,7 +271,7 @@ if __name__ == "__main__":
                     #print ("Lab data: " + lab_data)
                     #lab_data = json.dumps(lab_data)
                             
-                    push_config_url = f"http://192.168.20.12/api/labs/{lab_name_check}/configs/{i}"
+                    push_config_url = f"http://{EVE_1}/api/labs/{lab_name_check}/configs/{i}"
                     push_config_api = requests.put(url=push_config_url,data=push_config_data,cookies=cookies,headers=headers)
 
                     #create_lab_response = create_lab_api.json()
@@ -279,7 +285,7 @@ if __name__ == "__main__":
                     config_bit_data = {"id":1,"count":1,"postfix":0,"config":1}
                     config_bit_data = json.dumps(config_bit_data)
                             
-                    config_bit_url = f"http://192.168.20.12/api/labs/{lab_name_check}/nodes/{i}"
+                    config_bit_url = f"http://{EVE_1}/api/labs/{lab_name_check}/nodes/{i}"
                     config_bit_api = requests.put(url=config_bit_url,data=config_bit_data,cookies=cookies,headers=headers)
 
                     #create_lab_response = create_lab_api.json()

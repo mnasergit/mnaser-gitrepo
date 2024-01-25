@@ -1,9 +1,0 @@
-
-
-Group1-Router1 IPv6 address is not configured.
-
-Group2-Router1 IPv6 address is not configured.
-
-Group3-Router1 IPv6 address is not configured.
-
-Group4-Router1 IPv6 address is not configured.

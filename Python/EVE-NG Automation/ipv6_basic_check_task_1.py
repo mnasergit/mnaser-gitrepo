@@ -24,6 +24,7 @@ from datetime import datetime
 
 #USER = input("Enter your username: ")
 #PASSWORD = getpass.getpass()
+EVE_1 = "192.168.20.12"
 USER = "apnic"
 PASSWORD = "training"
 TIMEOUT = 6
@@ -38,7 +39,7 @@ lab_name_check = f"/{lab_name}.unl"
 
 ### Login ###
 
-login_url = "http://192.168.20.12/api/auth/login"
+login_url = f"http://{EVE_1}/api/auth/login"
 cred = '{"username":"admin","password":"eve","html5":"-1"}'
 headers = {"Accept":"application/json"}
 
@@ -47,7 +48,7 @@ cookies = login_api.cookies
 
 # Check Status of Node #
 
-node_status_url = f"http://192.168.20.12/api/labs/IPv6-Basic-Connectivity-Lab.unl/nodes"
+node_status_url = f"http://{EVE_1}/api/labs/IPv6-Basic-Connectivity-Lab.unl/nodes"
 node_status_api = requests.get(url=node_status_url,cookies=cookies,headers=headers)
 
 node_status_api_response = node_status_api.json()

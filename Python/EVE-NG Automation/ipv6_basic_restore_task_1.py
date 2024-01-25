@@ -26,6 +26,8 @@ from datetime import datetime
 
 #USER = input("Enter your username: ")
 #PASSWORD = getpass.getpass()
+
+EVE_1 = "192.168.20.12"
 USER = "apnic"
 PASSWORD = "training"
 TIMEOUT = 3
@@ -40,7 +42,7 @@ lab_name_check = f"/{lab_name}.unl"
 
 ### Login ###
 
-login_url = "http://192.168.20.12/api/auth/login"
+login_url = f"http://{EVE_1}/api/auth/login"
 cred = '{"username":"admin","password":"eve","html5":"-1"}'
 headers = {"Accept":"application/json"}
 
@@ -49,7 +51,7 @@ cookies = login_api.cookies
 
 # Check Status of Node #
 
-node_status_url = f"http://192.168.20.12/api/labs/IPv6-Basic-Connectivity-Lab.unl/nodes"
+node_status_url = f"http://{EVE_1}/api/labs/IPv6-Basic-Connectivity-Lab.unl/nodes"
 node_status_api = requests.get(url=node_status_url,cookies=cookies,headers=headers)
 
 node_status_api_response = node_status_api.json()
@@ -71,27 +73,21 @@ def device_access(IP, HOST):
     try:
         with ConnectHandler(**cisco_devices) as ssh:
             #print(f"Executing script on {HOST}...")
-            command1 = (f"configure replace tftp://10.99.99.11/lab1/{HOST}-startup-config.txt")
+            command1 = (f"configure replace tftp://10.99.99.11/lab1/{HOST}-task1-config.txt")
             command2 = "Y"
             command3 = "write memory"
             #command = ["show ip int brief", "Y"]
             print ("")
             output1 = ssh.send_command_timing(command1, strip_prompt=False, strip_command=False)
-            time.sleep(2)
+            time.sleep(3)
             #print (output1)
-            time.sleep(2)
             output2 = ssh.send_command_timing(command2, strip_prompt=False, strip_command=False)
-            time.sleep(2)
-            #print (output2)
             time.sleep(10)
+            #print (output2)
             output3 = ssh.send_command_timing(command3, strip_prompt=False, strip_command=False)
             time.sleep(2)
             #print (output3)
-            time.sleep(2)
             print (f"{HOST}: Task 1 configuration restored successfully")
-            #ssh.send_command = ("show ip int brief")
-            #ssh.send_command = ("Y")
-            #time.sleep(15)
 
     except Exception as e:
         print (f"Couldn't connect to {HOST}, check manually!")

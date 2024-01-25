@@ -3,7 +3,7 @@ version 15.2
 service timestamps debug datetime msec
 service timestamps log datetime msec
 !
-hostname Group2-Router1
+hostname Group1-Router1
 !
 boot-start-marker
 boot-end-marker
@@ -43,9 +43,10 @@ multilink bundle-name authenticated
 !
 !
 !         
-interface FastEthernet0/0
- no ip address
- shutdown
+interface FastEthernet 0/0
+ ipv6 address 2001:db8:abc::1/64
+ description **Connected to Host1**
+ no shutdown
  duplex full
 !
 interface FastEthernet1/0
@@ -74,10 +75,11 @@ interface FastEthernet5/0
  duplex full
 !
 interface FastEthernet6/0
+ ipv6 address 2406:6400:99::1:1/64
+ ip address 10.99.1.1 255.255.0.0
  description **MGMT - Do Not Delete**
- ipv6 address 2406:6400:99::2:1/64
- ip address 10.99.2.1 255.255.0.0
  no shutdown
+ duplex full
 !
 ip forward-protocol nd
 !

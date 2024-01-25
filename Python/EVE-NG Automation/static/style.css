@@ -1,18 +1,43 @@
+body {background:#2d5bb9;
+		background-image: url('apnic.png');
+		background-size: 60px;
+		}
+
+.stracture{width:800px; height: 720px;
+			margin:20px auto;
+			padding:30px 60px;
+			background:#cce0ff;
+			border-radius:20px 20px 0 0;
+			float: middle;
+			overflow-x:scroll;
+			resize: both;
+			overflow: scroll;
+			}
+.fix {overflow:hidden;}
+
+
+/*	
+h2{font-style:bold;
+	font-size:36px;
+	line-height:60px;}
+
+h3{font-style:bold;
+	font-size:24px;
+	line-height:40px;}
+
+p{font-style:bold;
+	font-size:18px;
+	line-height:30px;}*/
+	
 /* Initially hide the new section */
-#newSectionContainer {
-    display: none;
-}
 
 #ShowRestoreTask1 {
     display: none;
 }
 
-
 #ShowRestoreTask2 {
     display: none;
 }
-
-
 
 #ShowRestoreTask3 {
     display: none;

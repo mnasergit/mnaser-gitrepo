@@ -4,43 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APNIC Lab Automation</title>
+    <title>APNIC Academy Lab Automation</title>
     <link href="static/style.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
-    <h2>IPv6 Basic Connectivity Lab - Start Node</h2>  
-    <!-- Container for the first section -->
-    <div id="ShowStartNode">
-        <h3>Task 3: Click to start nodes inside EVE-NG</h3>
-        <button type="button" onclick="SubmitStartNode()">Start All Node</button>
-		</br></br>
-    </div>
+    <div class="stracture fix">
+        <h2>IPv6 Basic Connectivity Lab - Start Node</h2>  
+        <!-- Container for the first section -->
+        <div id="ShowStartNode">
+            <h3>Task 3: Click to start nodes inside EVE-NG</h3>
+            <button type="button" onclick="SubmitStartNode()">Start All Node</button>
+            </br></br>
+        </div>
 
-    <div id="DivSubmitStartNode">
-        <b id="OutputSubmitStartNode"></b>
-    </div>
+        <div id="DivSubmitStartNode">
+            <b id="OutputSubmitStartNode"></b>
+        </div>
 
-    <!-- Container for the second section -->
-    <div id="ShowMonitorNode">
-        <p>-------------------------------------------------------------------------------------------------</p>
-        <h3>Task 4: Monitor lab node status</h3>
-        <button type="button" onclick="SubmitMonitorNode()">Monitor Node</button>
-		</br></br>
-    </div>
+        <!-- Container for the second section -->
+        <div id="ShowMonitorNode">
+            <p>-------------------------------------------------------------------------------------------------------------------</p>
+            <h3>Task 4: Monitor lab node status</h3>
+            <button type="button" onclick="SubmitMonitorNode()">Monitor Node</button>
+            </br></br>
+        </div>
 
-    <div id="DivSubmitMonitorNode">
-        <b id="OutputSubmitMonitorNode"></b>
-    </div>
-	<div>
-        <p>-------------------------------------------------------------------------------------------------</p>
-        <p><b>N.B. Go to the next page if lab nodes are runninig well.</b></p>
-        <button type="button" onclick="NextPage()">Next > ></button>
-    </div>
-    <p>-------------------------------------------------------------------------------------------------</p>
-    <p><b>Important:</b> Do not reload this page or go back home page until you finish all the tasks.</p>
-    <a href="/"><b>Back to Home</b></a>
+        <div id="DivSubmitMonitorNode">
+            <b id="OutputSubmitMonitorNode"></b>
+        </div>
+        <div>
+            <p>-------------------------------------------------------------------------------------------------------------------</p>
+            <p><b>N.B. Go to the next page if lab nodes are runninig well.</b></p>
+            <button type="button" onclick="NextPage()">Next > ></button>
+        </div>
+        <p>-------------------------------------------------------------------------------------------------------------------</p>
+        <p><b>Important:</b> Do not reload this page or go back home page until you finish all the tasks.</p>
+        <a href="/"><b>Back to Home</b></a>
     
+    </div>
    
 
     <script>

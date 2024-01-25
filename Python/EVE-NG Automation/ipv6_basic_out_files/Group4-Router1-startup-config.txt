@@ -74,10 +74,11 @@ interface FastEthernet5/0
  duplex full
 !
 interface FastEthernet6/0
- description **MGMT - Do Not Delete**
  ipv6 address 2406:6400:99::4:1/64
  ip address 10.99.4.1 255.255.0.0
+ description **MGMT - Do Not Delete**
  no shutdown
+ duplex full
 !
 ip forward-protocol nd
 !

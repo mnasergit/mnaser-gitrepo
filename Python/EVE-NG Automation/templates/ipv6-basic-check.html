@@ -4,90 +4,98 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APNIC Lab Automation</title>
+    <title>APNIC Academy Lab Automation</title>
     <link href="static/style.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
-    <h2>IPv6 Basic Connectivity Lab - Check and Fix Configuration</h2>
-    <!-- Container for the first section -->
-    <div id="ShowCheckTask1">
-        <h3>Click to check configuration and generate report for Task 1</h3>
-        <button type="button" onclick="SubmitCheckTask1()">Check Configuration for Task 1</button>
-    </div>
+    <div class="stracture fix">
+        <h2>IPv6 Basic Connectivity Lab - Check and Fix Configuration</h2>
+        <!-- Container for the first section -->
+        <div id="ShowCheckTask1">
+            <h3>Click to check all routers configuration and generate report for Task 1</h3>
+            <button type="button" onclick="SubmitCheckTask1()">Check Configuration for Task 1</button>
+        </div>
 
-    <div id="DivSubmitCheckTask1">
-        <b id="OutputSubmitCheckTask1"></b>
-    </div>
+        <div id="DivSubmitCheckTask1">
+            <b id="OutputSubmitCheckTask1"></b>
+        </div>
 
-    <!-- Container for the new section -->
-    <div id="ShowRestoreTask1">
-        <h3>Click to quickly restore all configuration for Task 1</h3>
-        <p><b>Important:</b> Don't restore if you already restored once. Proceed for Task 2.</p>
-        <button type="button" onclick="SubmitRestoreTask1()">Restore Configuration for Task 1</button>
+        <!-- Container for the new section -->
+        <div id="ShowRestoreTask1">
+            <h3>Click to quickly restore all routers configuration for Task 1</h3>
+            <p><b>Important:</b> Don't restore if you already restored once. Proceed for Task 2.</p>
+            <button type="button" onclick="SubmitRestoreTask1()">Restore Configuration for Task 1</button>
+            <br>
+        </div>
+
+        <div id="DivSubmitRestoreTask1">
+            <b id="OutputSubmitRestoreTask1"></b>
+        </div>
         <br>
-    </div>
 
-    <div id="DivSubmitRestoreTask1">
-        <b id="OutputSubmitRestoreTask1"></b>
-    </div>
-    <br>
+        <!-- Container for the second section -->
+        <div id="ShowCheckTask2">
+            <p>-------------------------------------------------------------------------------------------------------------------</p>
+            <h3>Click to check configuration and generate report for Task 2</h3>
+            <p><b>Note:</b> There is no configuration on routers for Task 2.</p>
+            <p>Click to quickly check all routers configuration for Task 1 again, if anything breaks on the fly.</p>
+            <button type="button" onclick="SubmitCheckTask2()">Check Configuration for Task 2</button>
+        </div>
 
-    <!-- Container for the second section -->
-    <div id="ShowCheckTask2">
-        <p>-------------------------------------------------------------------------------------------------</p>
-        <h3>Click to check configuration and generate report for Task 2</h3>
-        <button type="button" onclick="SubmitCheckTask2()">Check Configuration for Task 2</button>
-    </div>
+        <div id="DivSubmitCheckTask2">
+            <b id="OutputSubmitCheckTask2"></b>
+        </div>
 
-    <div id="DivSubmitCheckTask2">
-        <b id="OutputSubmitCheckTask2"></b>
-    </div>
+        <!-- Container for the new section -->
+        <div id="ShowRestoreTask2">
+            <h3>Click to quickly restore all configuration for Task 2</h3>
+            <p><b>Note:</b> There is no configuration on routers for Task 2.</p>
+            <p>Click to quickly restore all configuration for Task 1 again, if anything breaks on the fly.</p>
+            <p><b>Important:</b> Don't restore if you already restored once. Proceed for Task 3.</p>
+            <button type="button" onclick="SubmitRestoreTask2()">Restore Configuration for Task 2</button>
+            <br>
+        </div>
 
-    <!-- Container for the new section -->
-    <div id="ShowRestoreTask2">
-        <h3>Click to quickly restore all configuration for Task 2</h3>
-        <p><b>Important:</b> Don't restore if you already restored once. Proceed for Task 3.</p>
-        <button type="button" onclick="SubmitRestoreTask2()">Restore Configuration for Task 2</button>
+        <div id="DivSubmitRestoreTask2">
+            <b id="OutputSubmitRestoreTask2"></b>
+        </div>
         <br>
-    </div>
 
-    <div id="DivSubmitRestoreTask2">
-        <b id="OutputSubmitRestoreTask2"></b>
-    </div>
-    <br>
+        <!-- Container for the third section -->
+        <div id="ShowCheckTask3">
+            <p>-------------------------------------------------------------------------------------------------------------------</p>
+            <h3>Click to verify connectivity between Router1 and Host1 and generate report for Task 3</h3>
+            <button type="button" onclick="SubmitCheckTask3()">Check Configuration for Task 3</button>
+        </div>
 
-    <!-- Container for the third section -->
-    <div id="ShowCheckTask3">
-        <p>-------------------------------------------------------------------------------------------------</p>
-        <h3>Click to check configuration and generate report for Task 3</h3>
-        <button type="button" onclick="SubmitCheckTask3()">Check Configuration for Task 3</button>
-    </div>
+        <div id="DivSubmitCheckTask3">
+            <b id="OutputSubmitCheckTask3"></b>
+        </div>
 
-    <div id="DivSubmitCheckTask3">
-        <b id="OutputSubmitCheckTask3"></b>
-    </div>
+        <!-- Container for the new section -->
+        <div id="ShowRestoreTask3">
+            <h3>Click to quickly restore all configuration for Task 3</h3>
+            <p><b>Note:</b> There is no configuration on routers for Task 3.</p>
+            <p>Click to quickly restore all configuration for Task 1 again, if anything breaks on the fly.</p>
+            <p><b>Important:</b> Don't restore if you already restored once. Proceed for ending lab activity.</p>
+            <button type="button" onclick="SubmitRestoreTask3()">Restore Configuration for Task 1</button>
+            <br>
+        </div>
 
-    <!-- Container for the new section -->
-    <div id="ShowRestoreTask3">
-        <h3>Click to quickly restore all configuration for Task 3</h3>
-        <p><b>Important:</b> Don't restore if you already restored once. Proceed for ending lab activity.</p>
-        <button type="button" onclick="SubmitRestoreTask3()">Restore Configuration for Task 1</button>
+        <div id="DivSubmitRestoreTask3">
+            <b id="OutputSubmitRestoreTask3"></b>
+        </div>
         <br>
+        <div>
+            <p>-------------------------------------------------------------------------------------------------------------------</p>
+            <p><b>N.B. Go to the next page to turn off all the lab node.</b></p>
+            <button type="button" onclick="NextPage()">Next > ></button>
+        </div>
+        <p><b>Important:</b> Do not reload this page or go back home page until you finish all the tasks.</p>
+        <a href="/"><b>Back to Home</b></a>
+    
     </div>
-
-    <div id="DivSubmitRestoreTask3">
-        <b id="OutputSubmitRestoreTask3"></b>
-    </div>
-    <br>
-    <div>
-        <p>-------------------------------------------------------------------------------------------------</p>
-        <p><b>N.B. Go to the next page to turn off all the lab node.</b></p>
-        <button type="button" onclick="NextPage()">Next > ></button>
-    </div>
-    <p><b>Important:</b> Do not reload this page or go back home page until you finish all the tasks.</p>
-    <a href="/"><b>Back to Home</b></a>
-
 
 
 
@@ -225,7 +233,7 @@
 
         function SubmitCheckTask3() {
             // Make an AJAX request to the server
-            fetch("/ipv6-basic-check-task-1", {
+            fetch("/ipv6-basic-check-task-3", {
                 method: "POST",
             })
             .then(response => response.text())

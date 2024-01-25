@@ -71,10 +71,11 @@ if __name__ == "__main__":
                         elif line.strip().startswith("interface FastEthernet6/0"):
                             replace_flag = True
                             new_config += "interface FastEthernet6/0\n"
-                            new_config += " description **MGMT - Do Not Delete**\n"
                             new_config += " ipv6 address " + str(IPv6_FA60_IP.ip) + "/" + str(IPv6_FA60_IP._prefixlen) + "\n"
                             new_config += " ip address " + str(IPv4_FA60_IP.ip) + " " + str(IPv4_FA60_IP.netmask) + "\n"
+                            new_config += " description **MGMT - Do Not Delete**\n"
                             new_config += " no shutdown\n"
+                            new_config += " duplex full\n"
                             new_config += "!\n"
                         elif line.strip().startswith("line con 0"):
                             replace_flag = True
@@ -97,8 +98,30 @@ if __name__ == "__main__":
                             replace_flag = False
                         elif not replace_flag:
                             new_config += line + "\n"
-                    
                     return new_config
+                    
+                
+                # Create task-1 config xlsx file
+                def update_task1_config(config_task1_text):
+                    new_task1_config = ""
+                    lines = config_task1_text.split('\n')
+                    replace_flag = False
+
+                    for line in lines:
+                        if line.strip().startswith("interface FastEthernet0/0"):
+                            replace_flag = True
+                            new_task1_config += "interface FastEthernet 0/0\n"
+                            new_task1_config += " ipv6 address 2001:db8:abc::1/64\n"
+                            new_task1_config += " description **Connected to Host1**\n"
+                            new_task1_config += " no shutdown\n"
+                            new_task1_config += " duplex full\n"
+                            new_task1_config += "!\n"
+                        elif replace_flag and line.strip().startswith("!"):
+                            replace_flag = False
+                        elif not replace_flag:
+                            new_task1_config += line + "\n"
+                    return new_task1_config    
+                    
 
                 # Interate and create config from default config and common config file
                 try:
@@ -132,42 +155,58 @@ if __name__ == "__main__":
                             write_cfg.write(common_config)
                             #print(f"{hostname} : Startup-config file (plain) created.")
 
-                        # Converting startup-config from plain-text to hash
-                        with open(f"ipv6_basic_out_files/{hostname}-startup-config.txt", "rb") as text_file:
-                            #print (f"Reading {hostname}-startup-config.txt")
-                            text_content = text_file.read()
+                        # # Converting startup-config from plain-text to hash
+                        # with open(f"ipv6_basic_out_files/{hostname}-startup-config.txt", "rb") as text_file:
+                        #     #print (f"Reading {hostname}-startup-config.txt")
+                        #     text_content = text_file.read()
                             
-                            # Encode contents using base64
-                            encoded_contents = base64.b64encode(text_content)
+                        #     # Encode contents using base64
+                        #     encoded_contents = base64.b64encode(text_content)
 
-                        # Write encoded contents to a new file
-                        with open(f"ipv6_basic_out_files/{hostname}-startup-config-hashed.txt", 'wb') as hash_file:
-                            #print (f"Writing hash for {hostname}-startup-config.txt")
-                            hash_file.write(encoded_contents)
-                            #print(f"{hostname} : Startup-config file (hash) created.")
+                        # # Write encoded contents to a new file
+                        # with open(f"ipv6_basic_out_files/{hostname}-startup-config-hashed.txt", 'wb') as hash_file:
+                        #     #print (f"Writing hash for {hostname}-startup-config.txt")
+                        #     hash_file.write(encoded_contents)
+                        #     #print(f"{hostname} : Startup-config file (hash) created.")
                             
-                        text_file.close()
-                        hash_file.close()
+                        # text_file.close()
+                        # hash_file.close()
 
-                        # Converting startup-config from plain-text to json
-                        with open(f"ipv6_basic_out_files/{hostname}-startup-config.txt", "r") as text_file:
-                            json_data["data"] = text_file.read()
+                        # # Converting startup-config from plain-text to json
+                        # with open(f"ipv6_basic_out_files/{hostname}-startup-config.txt", "r") as text_file:
+                        #     json_data["data"] = text_file.read()
                         
-                            # Convert the Python dictionary to a JSON string
-                            json_string = json.dumps(json_data, indent=2)
+                        #     # Convert the Python dictionary to a JSON string
+                        #     json_string = json.dumps(json_data, indent=2)
 
-                        with open(f"ipv6_basic_out_files/{hostname}-startup-config-json.txt", 'w') as json_file:
-                            json_file.write(json_string)
-                            #print(f"{hostname} : Startup-config file (json) created.")
-                            #print("")
+                        # with open(f"ipv6_basic_out_files/{hostname}-startup-config-json.txt", 'w') as json_file:
+                        #     json_file.write(json_string)
+                        #     #print(f"{hostname} : Startup-config file (json) created.")
+                        #     #print("")
                         
-                        text_file.close()
-                        json_file.close()
+                        # text_file.close()
+                        # json_file.close()
 
                         default_cfg.close()
                         common_cfg.close()
                         write_cfg.close()
+                        
+                        ### Create Task-1 Config for all router ###
+                        with open(f"ipv6_basic_out_files/{hostname}-startup-config.txt", 'r') as start_cfg:
+                            router_config = start_cfg.read()
+                            # Update the router configuration
+                            updated_config = update_task1_config(router_config)
 
+                        # Write task1-config in plain-text for individual router 
+                        with open(f"ipv6_basic_out_files/{hostname}-tast1-config.txt", 'w') as write_cfg:
+                            write_cfg.seek(0)
+                            write_cfg.write(updated_config)
+                            #print(f"{hostname} : Startup-config file (plain) created.")
+
+                        start_cfg.close()
+                        write_cfg.close()
+                    
+                    
                 # Handling Error            
                 except ValueError:
                     print(f"Invalid input detected in XLSX file: < {wb} >")
