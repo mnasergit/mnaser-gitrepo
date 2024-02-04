@@ -2,6 +2,7 @@
 # Your Python script starts here
 
 #import getpass
+import telnetlib
 import openpyxl
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill
@@ -20,18 +21,12 @@ import sys
 import app
 import re
 from datetime import datetime
-import threading
-from netmiko import ConnectHandler
-
-
 
 #USER = input("Enter your username: ")
 #PASSWORD = getpass.getpass()
 EVE_1 = "192.168.20.12"
-EVE_USER = "apnic"
-EVE_PASSWORD = "training"
-ROUTER_USER = "apnic"
-ROUTER_PASSWORD = "training"
+USER = "apnic"
+PASSWORD = "training"
 TIMEOUT = 6
 
 ### User Input ###
@@ -72,6 +67,9 @@ max_column = sheet.max_column
 HostnameList = []
 IPList = []
 
+savereport = open("Lab-Report-Task1.txt", "w")
+
+
 for i in range(2, int(num_nodes/2)+2):
     hostname = sheet.cell(row=i, column=1).value
     IPv4_FA60_Temp = sheet.cell(row=i,column=3).value
@@ -80,37 +78,31 @@ for i in range(2, int(num_nodes/2)+2):
     HostnameList.append(hostname)
     IPList.append(IPv4_FA60_IP)
 
-savereport = open("Lab-Report-Task1.txt", "w")
-
 for HOST, IP in zip(HostnameList, IPList):
+
     try:
-        global ssh
-        cisco_devices = {
-            'device_type': 'cisco_ios',
-            'host': IP,
-            'username': ROUTER_USER,
-            'password': ROUTER_PASSWORD
-        }
+        #print (f"Collecting router configuration for {HOST}...")
+        tn = telnetlib.Telnet(IP, timeout=TIMEOUT)
 
-        with ConnectHandler(**cisco_devices) as ssh:
-            command1 = (f"show ipv6 interface brief fastEthernet0/0")
-            output1 = ssh.send_command_timing(command1, strip_prompt=False, strip_command=False)
-            time.sleep(1)
-            command2 = (f"show ipv6 interface fastEthernet0/0")
-            output2 = ssh.send_command_timing(command2, strip_prompt=False, strip_command=False)
-            time.sleep(1)
+        tn.read_until(b"Username: ")
+        tn.write(USER.encode('ascii') + b"\n")
+        if PASSWORD:
+            tn.read_until(b"Password: ")
+            tn.write(PASSWORD.encode('ascii') + b"\n")
 
-            # Open the file in write mode and write the output to it
-            with open(HOST + "-task1-compare.txt", "w") as saveoutput:
-                #saveoutput.write(output1.decode("ascii"))
-                saveoutput.write(output1)
-                saveoutput.write("\n")
-                saveoutput.write(output2)
-                saveoutput.write("\n")
-                #saveoutput.close()
+        tn.write(b"show ipv6 interface brief fastEthernet 0/0\n")
+        tn.write(b"show ipv6 interface fastEthernet 0/0\n")
+        tn.write(b"exit\n")
+        ###print (tn.read_all().decode('ascii'))
 
-            with open(HOST + "-task1-compare.txt", "r") as readoutput:
-                text = readoutput.read()
+        if tn.write:
+            readoutput = tn.read_all()
+
+            saveoutput = open(HOST + "-task1-compare.txt", "w")
+            saveoutput.write(readoutput.decode("ascii"))
+            saveoutput.write("\n")
+
+            text = str(readoutput)
 
             IntStatusStart = "["
             IntStatusEnd = "]"
@@ -159,8 +151,12 @@ for HOST, IP in zip(HostnameList, IPList):
 
             else:
                 savereport.write("\n")
-                savereport.write(HOST + " IPv6 address is not configured.")
                 savereport.write("\n")
+                savereport.write(HOST + " IPv6 address is not configured.")
+
+        else:
+            savereport.write("\n")
+            savereport.write("Couldn't connect to " + HOST + ", check manually...!")
 
     except:
         savereport.write("\n")
@@ -174,5 +170,5 @@ showreport = showreport.read()
     
 print (showreport)
     
-#savereport.close()
-#saveoutput.close()
+savereport.close()
+saveoutput.close()

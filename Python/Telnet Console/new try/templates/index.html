@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Router Console</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://unpkg.com/xterm@4.11.0/lib/xterm.js"></script>
+    <script src="https://unpkg.com/xterm-addon-fit@0.7.2/dist/xterm-addon-fit.umd.min.js"></script>
+    <style>
+        #terminal {
+            height: 500px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="connectToConsole()">Connect to Router Console</button>
+    <div id="terminal"></div>
+    <script>
+        const socket = io.connect('http://127.0.0.1:5000');
+        const terminalContainer = document.getElementById('terminal');
+        const term = new Terminal();
+        const fitAddon = new FitAddon.FitAddon();
+
+        term.open(terminalContainer);
+        term.loadAddon(fitAddon);
+
+        // Attach the fitAddon to the terminal
+        fitAddon.fit();
+
+        socket.on('connect', function() {
+            console.log('WebSocket connected');
+        });
+
+        socket.on('output', function (data) {
+            term.write(data);
+
+            // After writing data, fitAddon will ensure the terminal is scrolled to the bottom
+            fitAddon.fit();
+        });
+
+        function connectToConsole() {
+            const command = 'telnet 10.99.1.1 23';
+            socket.emit('command', command);
+        }
+
+        term.onData(e => {
+            socket.emit('command', e);
+        });
+    </script>
+</body>
+</html>
