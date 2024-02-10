@@ -1,3 +1,6 @@
+#!C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\python.exe
+# Your Python script starts here
+
 import sys
 
 # Add Function #
