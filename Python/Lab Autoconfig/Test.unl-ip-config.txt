@@ -1,0 +1,94 @@
+R1-IOS
+======
+
+!
+conf t
+ interface fa0/0
+  ip address 10.0.12.1 255.255.255.252
+  description ** Connected to R2-IOS **
+  no shutdown
+!
+ interface fa1/0
+  ip address 10.0.13.1 255.255.255.252
+  description ** Connected to R3-IOS **
+  no shutdown
+!
+ interface fa6/0
+  ip address 10.99.99.1 255.255.0.0
+  description ** Connected to MGMT **
+  no shutdown
+!
+
+R2-IOS
+======
+
+!
+conf t
+ interface fa0/0
+  ip address 10.0.12.2 255.255.255.252
+  description ** Connected to R1-IOS **
+  no shutdown
+!
+ interface fa1/0
+  ip address 10.0.23.1 255.255.255.252
+  description ** Connected to R3-IOS **
+  no shutdown
+!
+ interface fa2/0
+  ip address 10.0.24.1 255.255.255.252
+  description ** Connected to R4-IOS **
+  no shutdown
+!
+ interface fa6/0
+  ip address 10.99.99.2 255.255.0.0
+  description ** Connected to MGMT **
+  no shutdown
+!
+
+R3-IOS
+======
+
+!
+conf t
+ interface fa0/0
+  ip address 10.0.13.2 255.255.255.252
+  description ** Connected to R1-IOS **
+  no shutdown
+!
+ interface fa1/0
+  ip address 10.0.23.2 255.255.255.252
+  description ** Connected to R2-IOS **
+  no shutdown
+!
+ interface fa2/0
+  ip address 10.0.34.1 255.255.255.252
+  description ** Connected to R4-IOS **
+  no shutdown
+!
+ interface fa6/0
+  ip address 10.99.99.3 255.255.0.0
+  description ** Connected to MGMT **
+  no shutdown
+!
+
+R4-IOS
+======
+
+!
+conf t
+ interface fa0/0
+  ip address 10.0.24.2 255.255.255.252
+  description ** Connected to R2-IOS **
+  no shutdown
+!
+ interface fa1/0
+  ip address 10.0.34.2 255.255.255.252
+  description ** Connected to R3-IOS **
+  no shutdown
+!
+ interface fa6/0
+  ip address 10.99.99.4 255.255.0.0
+  description ** Connected to MGMT **
+  no shutdown
+!
+
