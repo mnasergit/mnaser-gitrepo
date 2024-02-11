@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="Test2" id="5d59e57f-cf6c-4d5c-908b-2649997d45d7" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="R1-IOS" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.152-4.S7.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router.png" config="0" left="192" top="402">
+        <slot id="1" module="PA-FE-TX"/>
+        <slot id="2" module="PA-FE-TX"/>
+        <slot id="3" module="PA-FE-TX"/>
+        <slot id="4" module="PA-FE-TX"/>
+        <slot id="5" module="PA-FE-TX"/>
+        <slot id="6" module="PA-FE-TX"/>
+        <interface id="0" name="fa0/0" type="ethernet" network_id="1"/>
+        <interface id="16" name="fa1/0" type="ethernet" network_id="3"/>
+        <interface id="32" name="fa2/0" type="ethernet" network_id="9"/>
+        <interface id="48" name="fa3/0" type="ethernet" network_id="19"/>
+        <interface id="96" name="fa6/0" type="ethernet" network_id="17"/>
+      </node>
+      <node id="2" name="R2-IOS" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.152-4.S7.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router.png" config="0" left="741" top="402">
+        <slot id="1" module="PA-FE-TX"/>
+        <slot id="2" module="PA-FE-TX"/>
+        <slot id="3" module="PA-FE-TX"/>
+        <slot id="4" module="PA-FE-TX"/>
+        <slot id="5" module="PA-FE-TX"/>
+        <slot id="6" module="PA-FE-TX"/>
+        <interface id="0" name="fa0/0" type="ethernet" network_id="1"/>
+        <interface id="16" name="fa1/0" type="ethernet" network_id="2"/>
+        <interface id="32" name="fa2/0" type="ethernet" network_id="13"/>
+        <interface id="48" name="fa3/0" type="ethernet" network_id="14"/>
+        <interface id="96" name="fa6/0" type="ethernet" network_id="17"/>
+      </node>
+      <node id="3" name="R3-IOS" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.152-4.S7.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router.png" config="0" left="1293" top="402">
+        <slot id="1" module="PA-FE-TX"/>
+        <slot id="2" module="PA-FE-TX"/>
+        <slot id="3" module="PA-FE-TX"/>
+        <slot id="4" module="PA-FE-TX"/>
+        <slot id="5" module="PA-FE-TX"/>
+        <slot id="6" module="PA-FE-TX"/>
+        <interface id="0" name="fa0/0" type="ethernet" network_id="2"/>
+        <interface id="16" name="fa1/0" type="ethernet" network_id="4"/>
+        <interface id="32" name="fa2/0" type="ethernet" network_id="10"/>
+        <interface id="48" name="fa3/0" type="ethernet" network_id="23"/>
+        <interface id="96" name="fa6/0" type="ethernet" network_id="18"/>
+      </node>
+      <node id="4" name="R4-MKT" type="qemu" template="mikrotik" image="mikrotik-7.11.2" console="telnet" cpu="1" cpulimit="0" ram="256" ethernet="6" uuid="aa793100-7775-4e3b-9689-e38c38639d81" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -display none -vga std -rtc base=utc" qemu_version="2.12.0" qemu_arch="x86_64" delay="0" icon="Router.png" config="0" left="531" top="216">
+        <interface id="0" name="eth1" type="ethernet" network_id="3"/>
+        <interface id="1" name="eth2" type="ethernet" network_id="5"/>
+        <interface id="2" name="eth3" type="ethernet" network_id="6"/>
+        <interface id="3" name="eth4" type="ethernet" network_id="11"/>
+        <interface id="5" name="eth6" type="ethernet" network_id="17"/>
+      </node>
+      <node id="5" name="R5-MKT" type="qemu" template="mikrotik" image="mikrotik-7.11.2" console="telnet" cpu="1" cpulimit="0" ram="256" ethernet="6" uuid="b99822f0-dd0c-4649-ad0e-b69575788b01" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -display none -vga std -rtc base=utc" qemu_version="2.12.0" qemu_arch="x86_64" delay="0" icon="Router.png" config="0" left="927" top="216">
+        <interface id="0" name="eth1" type="ethernet" network_id="4"/>
+        <interface id="1" name="eth2" type="ethernet" network_id="5"/>
+        <interface id="2" name="eth3" type="ethernet" network_id="7"/>
+        <interface id="3" name="eth4" type="ethernet" network_id="12"/>
+        <interface id="4" name="eth5" type="ethernet" network_id="24"/>
+        <interface id="5" name="eth6" type="ethernet" network_id="18"/>
+      </node>
+      <node id="6" name="R6-MKT" type="qemu" template="mikrotik" image="mikrotik-7.11.2" console="telnet" cpu="1" cpulimit="0" ram="256" ethernet="6" uuid="7e995b14-68fe-47f0-98d0-bcf3d1797a21" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -display none -vga std -rtc base=utc" qemu_version="2.12.0" qemu_arch="x86_64" delay="0" icon="Router.png" config="0" left="519" top="543">
+        <interface id="0" name="eth1" type="ethernet" network_id="6"/>
+        <interface id="1" name="eth2" type="ethernet" network_id="8"/>
+        <interface id="2" name="eth3" type="ethernet" network_id="9"/>
+        <interface id="3" name="eth4" type="ethernet" network_id="15"/>
+        <interface id="4" name="eth5" type="ethernet" network_id="20"/>
+        <interface id="5" name="eth6" type="ethernet" network_id="17"/>
+      </node>
+      <node id="7" name="R7-MKT" type="qemu" template="mikrotik" image="mikrotik-7.11.2" console="telnet" cpu="1" cpulimit="0" ram="256" ethernet="6" uuid="80de7cb8-2e2b-4e99-973b-d8b1e8d5e73c" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -display none -vga std -rtc base=utc" qemu_version="2.12.0" qemu_arch="x86_64" delay="0" icon="Router.png" config="0" left="918" top="540">
+        <interface id="0" name="eth1" type="ethernet" network_id="7"/>
+        <interface id="1" name="eth2" type="ethernet" network_id="8"/>
+        <interface id="2" name="eth3" type="ethernet" network_id="10"/>
+        <interface id="3" name="eth4" type="ethernet" network_id="16"/>
+        <interface id="5" name="eth6" type="ethernet" network_id="18"/>
+      </node>
+      <node id="8" name="R8-IOS" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.152-4.S7.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router.png" config="0" left="741" top="87">
+        <slot id="1" module="PA-FE-TX"/>
+        <slot id="2" module="PA-FE-TX"/>
+        <slot id="3" module="PA-FE-TX"/>
+        <slot id="4" module="PA-FE-TX"/>
+        <slot id="5" module="PA-FE-TX"/>
+        <slot id="6" module="PA-FE-TX"/>
+        <interface id="0" name="fa0/0" type="ethernet" network_id="11"/>
+        <interface id="16" name="fa1/0" type="ethernet" network_id="12"/>
+        <interface id="32" name="fa2/0" type="ethernet" network_id="13"/>
+        <interface id="48" name="fa3/0" type="ethernet" network_id="22"/>
+        <interface id="96" name="fa6/0" type="ethernet" network_id="17"/>
+      </node>
+      <node id="9" name="R9-IOS" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.152-4.S7.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router.png" config="0" left="750" top="684">
+        <slot id="1" module="PA-FE-TX"/>
+        <slot id="2" module="PA-FE-TX"/>
+        <slot id="3" module="PA-FE-TX"/>
+        <slot id="4" module="PA-FE-TX"/>
+        <slot id="5" module="PA-FE-TX"/>
+        <slot id="6" module="PA-FE-TX"/>
+        <interface id="0" name="fa0/0" type="ethernet" network_id="14"/>
+        <interface id="16" name="fa1/0" type="ethernet" network_id="15"/>
+        <interface id="32" name="fa2/0" type="ethernet" network_id="16"/>
+        <interface id="48" name="fa3/0" type="ethernet" network_id="21"/>
+        <interface id="96" name="fa6/0" type="ethernet" network_id="18"/>
+      </node>
+      <node id="10" name="R10-MKT" type="qemu" template="mikrotik" image="mikrotik-7.11.2" console="telnet" cpu="1" cpulimit="0" ram="256" ethernet="6" uuid="d8339f92-35b1-4ea0-abe3-13da8ccf03e9" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -display none -vga std -rtc base=utc" qemu_version="2.12.0" qemu_arch="x86_64" delay="0" icon="Router.png" config="0" left="339" top="645">
+        <interface id="0" name="eth1" type="ethernet" network_id="19"/>
+        <interface id="1" name="eth2" type="ethernet" network_id="20"/>
+        <interface id="2" name="eth3" type="ethernet" network_id="21"/>
+        <interface id="3" name="eth4" type="ethernet" network_id="17"/>
+      </node>
+      <node id="11" name="R11-MKT" type="qemu" template="mikrotik" image="mikrotik-7.11.2" console="telnet" cpu="1" cpulimit="0" ram="256" ethernet="6" uuid="3a5ce4cf-2650-41d1-b0ec-25821f506728" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -display none -vga std -rtc base=utc" qemu_version="2.12.0" qemu_arch="x86_64" delay="0" icon="Router.png" config="0" left="1149" top="159">
+        <interface id="0" name="eth1" type="ethernet" network_id="22"/>
+        <interface id="1" name="eth2" type="ethernet" network_id="23"/>
+        <interface id="2" name="eth3" type="ethernet" network_id="24"/>
+        <interface id="5" name="eth6" type="ethernet" network_id="18"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-R2-IOS2iface_0" left="633" top="187" visibility="0"/>
+      <network id="2" type="bridge" name="Net-R2-IOS2iface_16" left="660" top="136" visibility="0"/>
+      <network id="3" type="bridge" name="Net-R4-MKTiface_0" left="609" top="406" visibility="0"/>
+      <network id="4" type="bridge" name="Net-R5-MKTiface_0" left="862" top="429" visibility="0"/>
+      <network id="5" type="bridge" name="Net-R5-MKTiface_1" left="862" top="429" visibility="0"/>
+      <network id="6" type="bridge" name="Net-R6-MKTiface_0" left="621" top="553" visibility="0"/>
+      <network id="7" type="bridge" name="Net-R7-MKTiface_0" left="966" top="580" visibility="0"/>
+      <network id="8" type="bridge" name="Net-R7-MKTiface_1" left="966" top="580" visibility="0"/>
+      <network id="9" type="bridge" name="Net-R1-IOS1iface_32" left="378" top="412" visibility="0"/>
+      <network id="10" type="bridge" name="Net-R7-MKTiface_2" left="966" top="580" visibility="0"/>
+      <network id="11" type="bridge" name="Net-R-IOSiface_0" left="783" top="151" visibility="0"/>
+      <network id="12" type="bridge" name="Net-R-IOSiface_16" left="783" top="151" visibility="0"/>
+      <network id="13" type="bridge" name="Net-R8-IOSiface_32" left="783" top="151" visibility="0"/>
+      <network id="14" type="bridge" name="Net-R9-IOSiface_0" left="792" top="703" visibility="0"/>
+      <network id="15" type="bridge" name="Net-R6-MKTiface_3" left="603" top="580" visibility="0"/>
+      <network id="16" type="bridge" name="Net-R7-MKTiface_3" left="966" top="580" visibility="0"/>
+      <network id="17" type="pnet1" name="Net" left="264" top="159" visibility="1"/>
+      <network id="18" type="pnet1" name="Net" left="1116" top="654" visibility="1"/>
+      <network id="19" type="bridge" name="Net-R10-MKTiface_0" left="462" top="682" visibility="0"/>
+      <network id="20" type="bridge" name="Net-R10-MKTiface_1" left="462" top="682" visibility="0"/>
+      <network id="21" type="bridge" name="Net-R10-MKTiface_2" left="462" top="682" visibility="0"/>
+      <network id="22" type="bridge" name="Net-R8-IOSiface_48" left="801" top="142" visibility="0"/>
+      <network id="23" type="bridge" name="Net-R11-MKTiface_1" left="1161" top="163" visibility="0"/>
+      <network id="24" type="bridge" name="Net-R11-MKTiface_2" left="1161" top="163" visibility="0"/>
+    </networks>
+  </topology>
+</lab>
