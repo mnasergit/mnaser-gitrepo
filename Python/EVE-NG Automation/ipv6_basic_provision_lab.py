@@ -71,7 +71,7 @@ if __name__ == "__main__":
         #pprint (get_folder_response_dict)
 
         existing_labs = [lab['path'] for lab in get_folder_response_dict['labs']]
-
+        print(existing_labs)
        
         ### Create New Lab ###
         ### This verson can't check labs under folders ###
