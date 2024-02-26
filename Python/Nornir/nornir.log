@@ -1,1833 +1,521 @@
-2024-02-13 17:33:39,316 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:34:30,216 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:35:50,416 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:36:50,035 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:37:20,332 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:40:48,605 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:41:30,331 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:42:01,490 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:43:10,369 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:43:51,436 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:44:40,513 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:45:07,790 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:47:49,397 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:48:49,498 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:49:59,180 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:51:12,528 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:51:31,965 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:51:53,531 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:52:38,827 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:53:15,855 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:53:34,850 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:55:06,577 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:55:30,398 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:56:30,060 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:57:08,313 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:57:42,436 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 17:57:54,580 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
-    result[g] = method(**options)
-                ^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 2369, in get_environment
-    output = self._send_command(mem_cmd)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 208, in _send_command
-    output = self.device.send_command(command)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1824, in send_command
-    raise ReadTimeout(msg)
-netmiko.exceptions.ReadTimeout: 
-Pattern not detected: 'R1\\#' in output.
-
-Things you might try to fix this:
-1. Explicitly set your pattern using the expect_string argument.
-2. Increase the read_timeout to a larger value.
-
-You can also look at the Netmiko session_log or debug log for more information.
-
-
-
-2024-02-13 17:57:55,088 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
-    result[g] = method(**options)
-                ^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 2369, in get_environment
-    output = self._send_command(mem_cmd)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 208, in _send_command
-    output = self.device.send_command(command)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1824, in send_command
-    raise ReadTimeout(msg)
-netmiko.exceptions.ReadTimeout: 
-Pattern not detected: 'R2\\#' in output.
-
-Things you might try to fix this:
-1. Explicitly set your pattern using the expect_string argument.
-2. Increase the read_timeout to a larger value.
-
-You can also look at the Netmiko session_log or debug log for more information.
-
-
-
-2024-02-13 18:01:24,085 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:01:36,326 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
-    result[g] = method(**options)
-                ^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 2369, in get_environment
-    output = self._send_command(mem_cmd)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 208, in _send_command
-    output = self.device.send_command(command)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1824, in send_command
-    raise ReadTimeout(msg)
-netmiko.exceptions.ReadTimeout: 
-Pattern not detected: 'R2\\#' in output.
-
-Things you might try to fix this:
-1. Explicitly set your pattern using the expect_string argument.
-2. Increase the read_timeout to a larger value.
-
-You can also look at the Netmiko session_log or debug log for more information.
-
-
-
-2024-02-13 18:04:01,839 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:04:13,985 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
-    result[g] = method(**options)
-                ^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 2369, in get_environment
-    output = self._send_command(mem_cmd)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 208, in _send_command
-    output = self.device.send_command(command)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1824, in send_command
-    raise ReadTimeout(msg)
-netmiko.exceptions.ReadTimeout: 
-Pattern not detected: 'R1\\#' in output.
-
-Things you might try to fix this:
-1. Explicitly set your pattern using the expect_string argument.
-2. Increase the read_timeout to a larger value.
-
-You can also look at the Netmiko session_log or debug log for more information.
-
-
-
-2024-02-13 18:04:14,011 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
-    result[g] = method(**options)
-                ^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 2369, in get_environment
-    output = self._send_command(mem_cmd)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 208, in _send_command
-    output = self.device.send_command(command)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1824, in send_command
-    raise ReadTimeout(msg)
-netmiko.exceptions.ReadTimeout: 
-Pattern not detected: 'R2\\#' in output.
-
-Things you might try to fix this:
-1. Explicitly set your pattern using the expect_string argument.
-2. Increase the read_timeout to a larger value.
-
-You can also look at the Netmiko session_log or debug log for more information.
-
-
-
-2024-02-13 18:05:02,804 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:05:15,123 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
-    result[g] = method(**options)
-                ^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 2369, in get_environment
-    output = self._send_command(mem_cmd)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 208, in _send_command
-    output = self.device.send_command(command)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1824, in send_command
-    raise ReadTimeout(msg)
-netmiko.exceptions.ReadTimeout: 
-Pattern not detected: 'R2\\#' in output.
-
-Things you might try to fix this:
-1. Explicitly set your pattern using the expect_string argument.
-2. Increase the read_timeout to a larger value.
-
-You can also look at the Netmiko session_log or debug log for more information.
-
-
-
-2024-02-13 18:05:15,123 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
-    result[g] = method(**options)
-                ^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 2369, in get_environment
-    output = self._send_command(mem_cmd)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 208, in _send_command
-    output = self.device.send_command(command)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1824, in send_command
-    raise ReadTimeout(msg)
-netmiko.exceptions.ReadTimeout: 
-Pattern not detected: 'R1\\#' in output.
-
-Things you might try to fix this:
-1. Explicitly set your pattern using the expect_string argument.
-2. Increase the read_timeout to a larger value.
-
-You can also look at the Netmiko session_log or debug log for more information.
-
-
-
-2024-02-13 18:11:51,166 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:14:51,406 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:15:41,021 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:15:53,328 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
-    result[g] = method(**options)
-                ^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 2369, in get_environment
-    output = self._send_command(mem_cmd)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 208, in _send_command
-    output = self.device.send_command(command)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1824, in send_command
-    raise ReadTimeout(msg)
-netmiko.exceptions.ReadTimeout: 
-Pattern not detected: 'R1\\#' in output.
-
-Things you might try to fix this:
-1. Explicitly set your pattern using the expect_string argument.
-2. Increase the read_timeout to a larger value.
-
-You can also look at the Netmiko session_log or debug log for more information.
-
-
-
-2024-02-13 18:15:53,328 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
-    result[g] = method(**options)
-                ^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 2369, in get_environment
-    output = self._send_command(mem_cmd)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 208, in _send_command
-    output = self.device.send_command(command)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1824, in send_command
-    raise ReadTimeout(msg)
-netmiko.exceptions.ReadTimeout: 
-Pattern not detected: 'R2\\#' in output.
-
-Things you might try to fix this:
-1. Explicitly set your pattern using the expect_string argument.
-2. Increase the read_timeout to a larger value.
-
-You can also look at the Netmiko session_log or debug log for more information.
-
-
-
-2024-02-13 18:16:01,823 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:17:00,385 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['environment', 'facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:17:12,270 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
-    result[g] = method(**options)
-                ^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 2369, in get_environment
-    output = self._send_command(mem_cmd)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 208, in _send_command
-    output = self.device.send_command(command)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1824, in send_command
-    raise ReadTimeout(msg)
-netmiko.exceptions.ReadTimeout: 
-Pattern not detected: 'R1\\#' in output.
-
-Things you might try to fix this:
-1. Explicitly set your pattern using the expect_string argument.
-2. Increase the read_timeout to a larger value.
-
-You can also look at the Netmiko session_log or debug log for more information.
-
-
-
-2024-02-13 18:17:12,347 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
-    result[g] = method(**options)
-                ^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 2369, in get_environment
-    output = self._send_command(mem_cmd)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 208, in _send_command
-    output = self.device.send_command(command)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1824, in send_command
-    raise ReadTimeout(msg)
-netmiko.exceptions.ReadTimeout: 
-Pattern not detected: 'R2\\#' in output.
-
-Things you might try to fix this:
-1. Explicitly set your pattern using the expect_string argument.
-2. Increase the read_timeout to a larger value.
-
-You can also look at the Netmiko session_log or debug log for more information.
-
-
-
-2024-02-13 18:17:19,905 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['environment', 'facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:18:11,021 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:18:23,229 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
-    result[g] = method(**options)
-                ^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 2369, in get_environment
-    output = self._send_command(mem_cmd)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 208, in _send_command
-    output = self.device.send_command(command)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1824, in send_command
-    raise ReadTimeout(msg)
-netmiko.exceptions.ReadTimeout: 
-Pattern not detected: 'R1\\#' in output.
-
-Things you might try to fix this:
-1. Explicitly set your pattern using the expect_string argument.
-2. Increase the read_timeout to a larger value.
-
-You can also look at the Netmiko session_log or debug log for more information.
-
-
-
-2024-02-13 18:18:23,234 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 44, in napalm_get
-    result[g] = method(**options)
-                ^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 2369, in get_environment
-    output = self._send_command(mem_cmd)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 208, in _send_command
-    output = self.device.send_command(command)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1824, in send_command
-    raise ReadTimeout(msg)
-netmiko.exceptions.ReadTimeout: 
-Pattern not detected: 'R2\\#' in output.
-
-Things you might try to fix this:
-1. Explicitly set your pattern using the expect_string argument.
-2. Increase the read_timeout to a larger value.
-
-You can also look at the Netmiko session_log or debug log for more information.
-
-
-
-2024-02-13 18:18:35,757 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'environment', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:19:17,604 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:20:05,957 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:21:22,488 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:21:40,788 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:22:40,582 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:23:45,713 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:24:17,238 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:25:29,580 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:25:29,584 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
-    raise ModuleImportError(
-napalm.base.exceptions.ModuleImportError: Cannot import "ios1". Is the library installed?
-
-2024-02-13 18:25:29,585 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
-    raise ModuleImportError(
-napalm.base.exceptions.ModuleImportError: Cannot import "ios1". Is the library installed?
-
-2024-02-13 18:25:37,261 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:25:37,265 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
-    raise ModuleImportError(
-napalm.base.exceptions.ModuleImportError: Cannot import "ios1". Is the library installed?
-
-2024-02-13 18:25:37,266 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
-    raise ModuleImportError(
-napalm.base.exceptions.ModuleImportError: Cannot import "ios1". Is the library installed?
-
-2024-02-13 18:25:38,930 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:25:38,930 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
-    raise ModuleImportError(
-napalm.base.exceptions.ModuleImportError: Cannot import "ios1". Is the library installed?
-
-2024-02-13 18:25:38,930 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
-    raise ModuleImportError(
-napalm.base.exceptions.ModuleImportError: Cannot import "ios1". Is the library installed?
-
-2024-02-13 18:25:40,218 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:25:40,218 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
-    raise ModuleImportError(
-napalm.base.exceptions.ModuleImportError: Cannot import "ios1". Is the library installed?
-
-2024-02-13 18:25:40,218 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
-    raise ModuleImportError(
-napalm.base.exceptions.ModuleImportError: Cannot import "ios1". Is the library installed?
-
-2024-02-13 18:25:41,557 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:25:41,563 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
-    raise ModuleImportError(
-napalm.base.exceptions.ModuleImportError: Cannot import "ios1". Is the library installed?
-
-2024-02-13 18:25:41,563 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 99, in get_network_driver
-    raise ModuleImportError(
-napalm.base.exceptions.ModuleImportError: Cannot import "ios1". Is the library installed?
-
-2024-02-13 18:25:50,775 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:26:20,960 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:26:54,463 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:31:37,377 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:33:12,652 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:33:29,953 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:35:54,434 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:38:12,193 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:40:28,249 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:42:17,399 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:42:41,513 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:42:57,864 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:43:51,700 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:44:10,348 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:45:56,715 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:47:06,288 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:49:02,672 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:49:24,579 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:51:50,997 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:52:08,447 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 18:56:32,212 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 3 hosts
-2024-02-13 18:56:32,212 - nornir.core.task -    ERROR -      start() - Host 'defaults': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 70, in get_network_driver
-    raise ModuleImportError("Please provide a valid driver name.")
-napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
-
-2024-02-13 18:56:32,828 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
+2024-02-21 17:12:39,277 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 1 hosts
+2024-02-21 17:12:39,290 - nornir.core.task -    ERROR -      start() - Host 'Group1-Router1': task 'napalm_get' failed with traceback:
 Traceback (most recent call last):
   File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
     self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.2
-
-2024-02-13 18:56:32,907 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.1
-
-2024-02-13 18:56:46,532 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 3 hosts
-2024-02-13 18:56:46,537 - nornir.core.task -    ERROR -      start() - Host 'defaults': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 70, in get_network_driver
-    raise ModuleImportError("Please provide a valid driver name.")
-napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
-
-2024-02-13 18:56:46,921 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.2
-
-2024-02-13 18:56:47,162 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.1
-
-2024-02-13 18:57:42,811 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 3 hosts
-2024-02-13 18:57:42,811 - nornir.core.task -    ERROR -      start() - Host 'defaults': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 70, in get_network_driver
-    raise ModuleImportError("Please provide a valid driver name.")
-napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
-
-2024-02-13 18:57:43,486 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.2
-
-2024-02-13 18:57:43,486 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.1
-
-2024-02-13 18:59:04,920 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 3 hosts
-2024-02-13 18:59:04,924 - nornir.core.task -    ERROR -      start() - Host 'defaults': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 70, in get_network_driver
-    raise ModuleImportError("Please provide a valid driver name.")
-napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
-
-2024-02-13 18:59:05,531 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.1
-
-2024-02-13 18:59:05,705 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.2
-
-2024-02-13 19:00:36,520 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 3 hosts
-2024-02-13 19:00:36,520 - nornir.core.task -    ERROR -      start() - Host 'defaults': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 70, in get_network_driver
-    raise ModuleImportError("Please provide a valid driver name.")
-napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
-
-2024-02-13 19:00:37,181 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.1
-
-2024-02-13 19:00:37,181 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.2
-
-2024-02-13 19:02:04,326 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 3 hosts
-2024-02-13 19:02:04,328 - nornir.core.task -    ERROR -      start() - Host 'defaults': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 70, in get_network_driver
-    raise ModuleImportError("Please provide a valid driver name.")
-napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
-
-2024-02-13 19:02:04,893 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.1
-
-2024-02-13 19:02:05,076 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.2
-
-2024-02-13 19:03:26,139 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 3 hosts
-2024-02-13 19:03:26,147 - nornir.core.task -    ERROR -      start() - Host 'defaults': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 70, in get_network_driver
-    raise ModuleImportError("Please provide a valid driver name.")
-napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
-
-2024-02-13 19:03:26,749 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.2
-
-2024-02-13 19:03:26,941 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.1
-
-2024-02-13 19:04:25,517 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 3 hosts
-2024-02-13 19:04:25,521 - nornir.core.task -    ERROR -      start() - Host 'defaults': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 55, in open
-    network_driver = get_network_driver(platform)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\__init__.py", line 70, in get_network_driver
-    raise ModuleImportError("Please provide a valid driver name.")
-napalm.base.exceptions.ModuleImportError: Please provide a valid driver name.
-
-2024-02-13 19:04:26,144 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.2
-
-2024-02-13 19:04:26,144 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
-    self.remote_conn_pre.connect(**ssh_connect_params)
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 485, in connect
-    self._auth(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 819, in _auth
-    raise SSHException("No authentication methods available")
-paramiko.ssh_exception.SSHException: No authentication methods available
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
-    self._netmiko_device = ConnectHandler(
-                           ^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
-    return ConnectionClass(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
-    self._open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
-    self.establish_connection()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1190, in establish_connection
-    raise NetmikoTimeoutException(msg)
-netmiko.exceptions.NetmikoTimeoutException: 
-A paramiko SSHException occurred during connection creation:
-
-No authentication methods available
-
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
-    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
-    self.open_connection(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
-    conn_obj.open(
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
-    connection.open()
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
-    self.device = self._netmiko_open(
-                  ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
-    raise ConnectionException("Cannot connect to {}".format(self.hostname))
-napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.1
-
-2024-02-13 19:05:11,140 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 19:05:28,176 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 19:08:16,265 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 19:11:05,641 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 19:11:17,992 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 19:11:31,439 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 19:11:43,185 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 19:12:31,407 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 19:18:23,912 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 19:20:32,349 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 19:20:54,169 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 19:22:03,950 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['all']} on 2 hosts
-2024-02-13 19:22:05,618 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 43, in napalm_get
-    method = getattr(device, getter)
-             ^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'IOSDriver' object has no attribute 'get_all'
-
-2024-02-13 19:22:05,658 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'napalm_get' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 43, in napalm_get
-    method = getattr(device, getter)
-             ^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'IOSDriver' object has no attribute 'get_all'
-
-2024-02-13 19:22:15,044 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 19:25:24,114 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['config']} on 2 hosts
-2024-02-13 19:25:55,308 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['config']} on 2 hosts
-2024-02-13 19:53:26,387 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 19:54:58,339 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 19:55:45,702 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['config']} on 2 hosts
-2024-02-13 19:55:49,605 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 19:56:28,122 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 19:56:30,938 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 20:01:39,250 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 20:01:41,483 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': ['show ip interface brief', 'show users']} on 2 hosts
-2024-02-13 20:01:43,129 - nornir.core.task -    ERROR -      start() - Host 'rtr1': task 'netmiko_send_command' failed with traceback:
-Traceback (most recent call last):
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
-    r = self.task(self, **self.params)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
-    result = net_connect.send_command(command_string, **kwargs)
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 377, in connect
+    to_try = list(self._families_and_addresses(hostname, port))
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1765, in send_command
-    command_string = self.normalize_cmd(command_string)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1982, in normalize_cmd
-    command = command.rstrip()
-              ^^^^^^^^^^^^^^
-AttributeError: 'list' object has no attribute 'rstrip'
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 202, in _families_and_addresses
+    addrinfos = socket.getaddrinfo(
+                ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
 
-2024-02-13 20:01:43,183 - nornir.core.task -    ERROR -      start() - Host 'rtr2': task 'netmiko_send_command' failed with traceback:
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
+    self._open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1159, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.1.1/16:22
+
+
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
     r = self.task(self, **self.params)
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
-    result = net_connect.send_command(command_string, **kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 110, in wrapper_decorator
-    return_val = func(self, *args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\utilities.py", line 595, in wrapper_decorator
-    return func(self, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1765, in send_command
-    command_string = self.normalize_cmd(command_string)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1982, in normalize_cmd
-    command = command.rstrip()
-              ^^^^^^^^^^^^^^
-AttributeError: 'list' object has no attribute 'rstrip'
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.1/16
 
-2024-02-13 20:02:35,008 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 20:02:37,359 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 20:02:39,281 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show users'} on 2 hosts
-2024-02-13 20:02:57,644 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 20:02:59,927 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 20:03:01,704 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show users'} on 2 hosts
-2024-02-13 20:05:25,285 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 20:05:27,609 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 20:05:29,227 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show users'} on 2 hosts
-2024-02-13 20:06:46,110 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 20:06:48,478 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 20:06:50,165 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show users'} on 2 hosts
-2024-02-13 20:07:03,021 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 20:07:05,141 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 20:07:07,004 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show users'} on 2 hosts
-2024-02-13 20:08:56,753 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 20:08:59,045 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 20:09:00,740 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show users'} on 2 hosts
-2024-02-13 20:11:21,633 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 20:11:23,890 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 20:11:25,638 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show users'} on 2 hosts
-2024-02-13 20:18:22,209 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 20:21:04,147 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 20:21:06,366 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 20:21:08,009 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 20:21:08,105 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show users'} on 2 hosts
-2024-02-13 20:21:08,200 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show users'} on 2 hosts
-2024-02-13 20:21:54,531 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 20:21:56,751 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 20:22:26,830 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
-2024-02-13 20:22:29,058 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 20:22:30,974 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip interface brief'} on 2 hosts
-2024-02-13 20:22:31,079 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show users'} on 2 hosts
-2024-02-13 20:22:31,174 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show users'} on 2 hosts
+2024-02-21 17:14:07,893 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 1 hosts
+2024-02-21 17:14:17,906 - nornir.core.task -    ERROR -      start() - Host 'Group1-Router1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 386, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
+    self._open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1159, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.1.1:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.1.1
+
+2024-02-21 17:14:44,661 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
+2024-02-21 17:14:54,681 - nornir.core.task -    ERROR -      start() - Host 'Group2-Router1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 386, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
+    self._open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1159, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.2.1:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.2.1
+
+2024-02-21 17:16:27,530 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
+2024-02-21 17:16:31,764 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
+2024-02-21 17:16:56,873 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
+2024-02-21 17:18:22,336 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts
+2024-02-21 17:23:05,179 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 5 hosts
+2024-02-21 17:23:15,201 - nornir.core.task -    ERROR -      start() - Host 'Group4-Router1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 386, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
+    self._open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1159, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.4.1:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.4.1
+
+2024-02-21 17:23:15,203 - nornir.core.task -    ERROR -      start() - Host 'Group5-Router1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 386, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
+    self._open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1159, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.5.1:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.5.1
+
+2024-02-21 17:23:15,204 - nornir.core.task -    ERROR -      start() - Host 'Group3-Router1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 386, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
+    self._open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1159, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.3.1:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.3.1
+
+2024-02-21 17:24:24,489 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 5 hosts
+2024-02-21 17:24:34,512 - nornir.core.task -    ERROR -      start() - Host 'Group5-Router1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 386, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
+    self._open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1159, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.5.1:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.5.1
+
+2024-02-21 17:24:34,513 - nornir.core.task -    ERROR -      start() - Host 'Group4-Router1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 386, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
+    self._open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1159, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.4.1:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.4.1
+
+2024-02-21 17:24:34,514 - nornir.core.task -    ERROR -      start() - Host 'Group3-Router1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1137, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\paramiko\client.py", line 386, in connect
+    sock.connect(addr)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 488, in __init__
+    self._open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\netmiko\base_connection.py", line 1159, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.3.1:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\ios\ios.py", line 172, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdullah.naser\AppData\Local\Programs\Python\Python312\Lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.99.3.1
+
+2024-02-21 17:27:01,570 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts', 'interfaces', 'interfaces_ip']} on 2 hosts

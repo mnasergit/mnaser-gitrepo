@@ -116,7 +116,43 @@ if __name__ == "__main__":
                         elif not replace_flag:
                             new_task1_config += line + "\n"
                     return new_task1_config    
-                    
+
+                # Create ipv6-basic.html file
+                def create_index_html(create_index):
+                    new_index = ""
+                    lines = create_index.split('\n')
+                    replace_flag = False
+                    vnc_port = 32769 + int(num_group)
+                    for line in lines:
+                        if line.strip().startswith("Router_Login"):
+                            replace_flag = True
+                            for i in range(1, num_group + 1):
+                                new_index += f"      <tr valign='top'>\n"
+                                new_index += f"        <td align='middle'>Group{i}-Router1</td>\n"
+                                new_index += f"        <td align='middle'>Jump Host</td>\n"
+                                new_index += f"        <td align='middle'>SSH</td>\n"
+                                new_index += f"        <td align='middle'>2406:6400:99::<b>{i}</b>:1</td>\n"
+                                new_index += f"        <td align='middle'>10.99.<b>{i}</b>.1</td>\n"
+                                new_index += f"      </tr>\n"
+                            new_index += f"    </table>\n"
+                        if line.strip().startswith("Host_Login"):
+                            replace_flag = True
+                            for i in range(1, num_group + 1):
+                                new_index += f"      <tr valign='top'>\n"
+                                new_index += f"        <td align='middle'>Group{i}-Host1</td>\n"
+                                new_index += f"        <td align='middle'>PC</td>\n"
+                                new_index += f"        <td align='middle'>VNC</td>\n"
+                                new_index += f"        <td align='middle'>2406:6400:99::99:12:<mark>{vnc_port}</mark></td>\n"
+                                new_index += f"        <td align='middle'>10.99.99.12:<mark>{vnc_port}</mark></td>\n"
+                                new_index += f"      </tr>\n"
+                                vnc_port = vnc_port + 1
+                            new_index += f"    </table>\n"
+                        elif replace_flag and line.strip().startswith("</table>"):
+                            replace_flag = False
+                        elif not replace_flag:
+                            new_index += line + "\n"
+                    return new_index 
+
                 # Interate and create config from default config and common config file
                 try:
                     max_row = num_group
@@ -199,7 +235,22 @@ if __name__ == "__main__":
 
                         start_cfg.close()
                         write_cfg.close()
-                    
+
+                         # Read ipv6-basic template file
+                        with open("templates/ipv6-basic.template", 'r') as read_index:
+                            create_index = read_index.read()
+                            # Update the router configuration
+                            for j in range (1, num_group + 1):
+                                updated_index = create_index_html(create_index)
+                        
+                    # Write to main ipv6-basic.html file 
+                    with open(f"/var/www/html/ipv6-basic.html", 'w') as write_index:
+                        write_index.seek(0)
+                        write_index.write(updated_index)
+
+                    read_index.close()
+                    write_index.close()
+
                 # Handling Error            
                 except ValueError:
                     print(f"Invalid input detected in XLSX file: < {wb} >")

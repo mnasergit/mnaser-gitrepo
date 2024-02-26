@@ -1,18 +1,12 @@
----
-# defaults:
-#   username: apnic
-#   password: &password training  # Define the password here using an anchor
-  
-rtr1:
+Group1-Router1:
     hostname: 10.99.1.1
-    platform: "ios"
+    platform: 'ios'
     username: apnic
     password: training
 
-rtr2:
-    hostname: 10.99.1.2
-    platform: "ios"
+Group2-Router1:
+    hostname: 10.99.2.1
+    platform: 'ios'
     username: apnic
     password: training
-
 

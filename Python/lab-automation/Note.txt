@@ -52,8 +52,6 @@ Keep the terminal open while Gunicorn is running, and you can stop the server by
 waitress
 ========
 
-It looks like you are encountering a ModuleNotFoundError for the fcntl module. This issue typically occurs on Windows systems because fcntl is a Unix-specific module and is not available on Windows.
-
 Gunicorn is more commonly used on Unix-based systems, and it may not be the ideal choice for running on Windows in a production environment. However, you can use other production-ready servers like Waitress or WSGI servers that are compatible with Windows.
 
 To use Waitress, for example, you can install it using:

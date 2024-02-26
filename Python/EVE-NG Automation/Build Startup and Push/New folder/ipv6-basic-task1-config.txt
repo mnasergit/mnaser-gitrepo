@@ -1,0 +1,7 @@
+!         
+interface FastEthernet 0/0
+ ipv6 address 2001:db8:abc::1/64
+ description **Connected to Host1**
+ no shutdown
+ duplex full
+!
