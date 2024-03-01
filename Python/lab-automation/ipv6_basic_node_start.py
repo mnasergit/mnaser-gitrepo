@@ -1,19 +1,10 @@
 import requests
-import json
 from pprint import pprint
 import time
-import sys
-import app
-import re
 from lab_variable import EVE_1, EVE_USER, EVE_PASSWORD
 
-### User Input ###
-
-#EVE_1= "192.168.30.12"
-#lab_name = str(input("Enter lab name : "))
 lab_name = "IPv6-Basic-Connectivity-Lab"
 lab_name_check = f"/{lab_name}.unl"
-#num_group = int(input("Enter number Group for Basic IPv6 Connectivity Lab: "))
 
 ### Login ###
 
@@ -40,7 +31,7 @@ print()
 
 if node_status_api:
     try:
-        # 1. Start nodes that are not running
+        # Start nodes that are not running
         j = 0
         for i in range (1, int(num_nodes + 1)):
             device_status = node_status_dict[f"{i}"]["status"]
@@ -54,7 +45,7 @@ if node_status_api:
                 node_start_url = f"http://{EVE_1}/api/labs/IPv6-Basic-Connectivity-Lab.unl/nodes/{i}/start"
                 node_start_api = requests.get(url=node_start_url,cookies=cookies,headers=headers)
                 j = j + 1
-                time.sleep(5)
+                time.sleep(3)
 
                 #node_start_response = node_start_api.json()
                 #print (node_start_response)
@@ -63,13 +54,13 @@ if node_status_api:
                 pass
 
         if j == int(num_nodes):
-            print (f"Nodes are already running. Click on 'Monitor Node' button to check latest status of all node.")    
+            print (f"Nodes are already running.")
+            print (f"")
+            print (f"Click on 'Monitor Node' button to check latest status of all node.")   
         elif j == 0:
             print (f"No node found to be started.")
-            print()
         elif j != int(num_nodes) and j >= 1:
             print(f"Nodes are started. Click on Monitor Node to check latest status of all node..")
-            print()
         else:
             pass
 

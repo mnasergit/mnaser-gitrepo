@@ -17,7 +17,26 @@ body {background:#2d5bb9;
 		display: inline-block; /* Ensure that the background covers the entire content */
 		float: middle;
 		}
-		
+
+h1{font-style:bold;
+	font-size:24px;
+	line-height:30px;
+	}
+
+h2{font-style:bold;
+	font-size:20px;
+	line-height:20px;
+	}
+
+h3{font-style:bold;
+	font-size:16px;
+	line-height:10px;
+	}
+
+p{font-size:16px;
+	line-height:20px;
+	}
+
 hr {
   display: block;
   border-style: inset;

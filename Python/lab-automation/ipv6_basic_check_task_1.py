@@ -2,15 +2,14 @@ import openpyxl
 import ipaddress
 import requests
 import time
-import sys
 from concurrent.futures import ThreadPoolExecutor
 from netmiko import ConnectHandler
 from lab_variable import EVE_1, EVE_USER, EVE_PASSWORD, ROUTER_USER, ROUTER_PASSWORD
 
-# User Input
 lab_name = "IPv6-Basic-Connectivity-Lab"
 
 # Login
+
 login_url = f"http://{EVE_1}/api/auth/login"
 cred = '{{"username":"{}","password":"{}","html5":"-1"}}'.format(EVE_USER, EVE_PASSWORD)
 headers = {"Accept": "application/json"}
@@ -56,7 +55,7 @@ for i in range(2, int(num_nodes / 2) + 2):
     IPList.append(IP)
 
 # Create an empty report file
-with open("ipv6_basic_report/Lab-Report-Task1.txt", "w"):
+with open("ipv6_basic_report/Lab-Report-Task1-Check.txt", "w"):
     pass
 
 def task1_check(hostname, IP):
@@ -111,7 +110,7 @@ def task1_check(hostname, IP):
                 GUA = "2001:DB8:ABC::1"
                 GUACount = text.count("subnet is")
 
-                result = f"\n"
+                result += f"\n"
 
                 if f"{GUA}," in GUAAddress and GUACount == 1 and PrefixLenValue == 64:
                     result += f"{hostname} IPv6 address and prefix length are correct."
@@ -146,12 +145,12 @@ def main():
         results = list(executor.map(task1_check, HostnameList, IPList))
 
     # Write the results to the report file in the correct order
-    with open("ipv6_basic_report/Lab-Report-Task1.txt", "a") as savereport:
+    with open("ipv6_basic_report/Lab-Report-Task1-Check.txt", "a") as savereport:
         for result in results:
             savereport.write(result)
 
     # Show the report content
-    with open("ipv6_basic_report/Lab-Report-Task1.txt", "r") as showreport:
+    with open("ipv6_basic_report/Lab-Report-Task1-Check.txt", "r") as showreport:
         print(showreport.read())
 
 if __name__ == '__main__':

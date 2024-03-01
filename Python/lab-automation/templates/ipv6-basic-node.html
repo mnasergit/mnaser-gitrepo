@@ -10,41 +10,44 @@
 
 <body>
     <div class="stracture fix">
-        <h2>IPv6 Basic Connectivity Lab - Start Node</h2>
-        <hr style="border-style: inset; border-width: 2px"></br>
+        <h1>IPv6 Basic Connectivity Lab</h1>
+        <h2>Start Nodes</h2>
+
+        <hr style="border-style: inset; border-width: 2px">
 
         <!-- Container for the first section -->
         <div id="ShowStartNode">
-            <h3>Click on "Start All Node" button to start nodes inside EVE-NG</h3>
-            <button type="button" onclick="SubmitStartNode()">Start All Node</button>
+            <h3>Click on "Start Node" to start nodes inside EVE-NG</h3>
+            <button type="button" onclick="SubmitStartNode()">Start Node</button>
             </br>
         </div>
 
         <div id="DivSubmitStartNode">
             <b id="OutputSubmitStartNode"></b>
-        </div>
-        <hr></br>
+        </div></br>
+        <hr>
 
         <!-- Container for the second section -->
         <div id="ShowMonitorNode">
-            <h3>Task 4: Monitor lab node status</h3>
+            <h3>Click on "Monitor Node" to check the status of nodes</h3>
             <button type="button" onclick="SubmitMonitorNode()">Monitor Node</button>
         </div>
 
         <div id="DivSubmitMonitorNode">
             <b id="OutputSubmitMonitorNode"></b>
-        </div>
-        <hr></br>
+        </div></br>
+        <hr>
 
         <div>
             <p><b>N.B. Click on "Next" to go to the next page, if lab nodes are runninig well.</b></p>
-            <button type="button" onclick="NextPage()">Next > ></button>
-        </div>
-        <hr></br>
+            <button type="button" onclick="NextPage()">Next >></button>
+        </div></br>
+        <hr>
 
-        <p><b>Important:</b> Do not reload this page or go back home page until you finish all the tasks.</p>
-        <a href="/"><b>Back to Home</b></a>
-    
+        <div>
+            <p><b>Important:</b> Do not reload this page or go back home page until you finish all the tasks.</p>
+            <a href="/"><b>Back to Home</b></a>
+        </div>
     </div>
    
 
@@ -61,7 +64,7 @@
                 // Update the content of the div based on the server response
                 var DivSubmitStartNode = document.getElementById("OutputSubmitStartNode");
                 OutputSubmitStartNode = OutputSubmitStartNode.replace(/\n/g, "<br>");
-                DivSubmitStartNode.innerHTML = OutputSubmitStartNode + "</br>";
+                DivSubmitStartNode.innerHTML = OutputSubmitStartNode;
             })
             .catch(error => {
                 console.error("Error:", error);
@@ -80,8 +83,8 @@
                 console.log("Result from server:", OutputSubmitMonitorNode);
                 // Update the content of the div based on the server response
                 var DivSubmitMonitorNode = document.getElementById("OutputSubmitMonitorNode");
-                OutputSubmitMonitorNode = OutputSubmitMonitorNode.replace(/\n/g, "<br>");
-                DivSubmitMonitorNode.innerHTML = OutputSubmitMonitorNode + "</br>";
+                OutputSubmitMonitorNode = OutputSubmitMonitorNode.replace(/\n/g, "</br>");
+                DivSubmitMonitorNode.innerHTML = OutputSubmitMonitorNode;
 
                 // Call the function to show the new section
                 //showNewSection2();

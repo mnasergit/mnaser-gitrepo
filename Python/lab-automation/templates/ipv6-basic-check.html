@@ -10,40 +10,44 @@
 
 <body>
     <div class="stracture fix">
-        <h2>IPv6 Basic Connectivity Lab - Check and Fix Configuration</h2>
-        <hr style="border-style: inset; border-width: 2px"></br>
+        <h1>IPv6 Basic Connectivity Lab</h1>
+        <h2>Check and Fix Configuration</h2>
+
+        <hr style="border-style: inset; border-width: 2px">
 
         <!-- Container for the first section -->
         <div id="ShowCheckTask1">
-            <h3>Click to check all routers IPv6 configuration and a generate report</h3>
-            <button type="button" onclick="SubmitCheckTask1()">Check IPv6 Configuration on Router Interfaces</button>
+            <h3>Once IPv6 addresses on routers are configured...</h3>
+            <h3>Click on "Check Router Configuration" to see IPv6 address configuration of all router</h3>
+            <button type="button" onclick="SubmitCheckTask1()">Check Router Configuration</button>
         </div>
 
         <div id="DivSubmitCheckTask1">
-            <b id="OutputSubmitCheckTask1"></b>
+            <b id="OutputSubmitCheckTask1"></b><br>
         </div>
 
         <!-- Container for the new section -->
         <div id="ShowRestoreTask1">
-            <h3>Click to quickly fix all routers IPv6 configuration</h3>
+            <h3>Click on "Fix Router Configuration" to quickly fix all routers IPv6 configuration</h3>
             <p><b>Important:</b> Don't restore configuration if everything is fine. Proceed for next.</p>
-            <button type="button" onclick="SubmitRestoreTask1()">Fix IPv6 Configuration on Router Interfaces</button>
-            <br>
+            <button type="button" onclick="SubmitRestoreTask1()">Fix Router Configuration</button>
+            <br><br>
         </div>
 
         <div id="DivSubmitRestoreTask1">
             <b id="OutputSubmitRestoreTask1"></b>
         </div>
-        <hr></br>
+        <hr>
 
         <!-- Container for the third section -->
         <div id="ShowCheckTask3">
-            <h3>Once IPv6 addresses on hosts are configured, click to verify connectivity between Router1 and Host1</h3>
+            <h3>Once IPv6 addresses on hosts are configured...</h3>
+            <h3>Click on "Verify IPv6 Connectivity" to check connectivity between Router1 and Host1</h3>
             <button type="button" onclick="SubmitCheckTask3()">Verify IPv6 Connectivity</button>
         </div>
 
         <div id="DivSubmitCheckTask3">
-            <b id="OutputSubmitCheckTask3"></b>
+            <b id="OutputSubmitCheckTask3"></b><br>
         </div>
 
         <!-- Container for the new section -->
@@ -51,20 +55,15 @@
             <p><b>Note:</b> For this section there is no configuration on routers.</p>
             <p>Check IPv6 address configuration on hosts and fix accrodingly.</p>
             <p><b>Important:</b> Don't restore if you already restored once. Proceed for ending lab activity.</p>
-            <!-- <button type="button" onclick="SubmitRestoreTask3()">Restore Configuration for Task 3</button> -->
         </div>
-        <!-- 
-        <div id="DivSubmitRestoreTask3">
-            <b id="OutputSubmitRestoreTask3"></b>
-        </div>
-        -->
-        <hr></br>
+
+        <hr>
 
         <div>
             <p><b>N.B. Click on "Next" to go to the next page, to turn off all the lab nodes.</b></p>
             <button type="button" onclick="NextPage()">Next > ></button>
-        </div>
-        <hr></br>
+        </div></br>
+        <hr>
 
         <p><b>Important:</b> Do not reload this page or go back home page until you finish all the tasks.</p>
         <a href="/"><b>Back to Home</b></a>

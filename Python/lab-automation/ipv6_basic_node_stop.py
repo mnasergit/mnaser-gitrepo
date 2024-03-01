@@ -1,19 +1,10 @@
 import requests
-import json
 from pprint import pprint
 import time
-import sys
-import app
-import re
 from lab_variable import EVE_1, EVE_USER, EVE_PASSWORD
 
-### User Input ###
-
-#EVE_1= "192.168.30.12"
-#lab_name = str(input("Enter lab name : "))
 lab_name = "IPv6-Basic-Connectivity-Lab"
 lab_name_check = f"/{lab_name}.unl"
-#num_group = int(input("Enter number Group for Basic IPv6 Connectivity Lab: "))
 
 ### Login ###
 
@@ -63,7 +54,9 @@ if node_status_api:
                 pass
 
         if j == int(num_nodes):
-            print (f"All  nodes are stopped. Click on Monitor Node to check latest status of all node.")    
+            print (f"All  nodes are stopped.")
+            print (f"")
+            print (f"Click on 'Monitor Node' to check latest status of all nodes.")    
         elif j == 0:
             print (f"Nodes are still running.")
             print()

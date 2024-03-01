@@ -115,8 +115,6 @@ Status: Downloaded newer image for docker/whalesay:latest
           \____\______/
 
 
-
-
 sudo docker run nginx:latest
 
 sudo docker ps

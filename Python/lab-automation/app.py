@@ -1,11 +1,10 @@
 import sys
 import subprocess
-from flask import Flask, render_template, request, session
-#import app
+from flask import Flask, render_template, request
 import ipv6_basic_generate_config
-import ipv6_basic_provision_lab
 import re
 import os
+import sqlite3
 from lab_variable import APP_SECRET_KEY, PYTHON_PATH
 
 app = Flask(__name__)
@@ -14,21 +13,6 @@ app.secret_key = APP_SECRET_KEY
 @app.route("/", methods=["GET", "POST"])
 def home():
     return render_template("index.html")
-
-def process_variable(input_value):
-    try:
-        # Your processing logic here
-        # Use regular expression to extract the numeric part
-        match = re.search(r'\b\d+\b', input_value)
-        if match:
-            num_group = match.group()
-            return num_group
-        else:
-            return "0"  # Return a default value if no numeric part is found
-
-    except ValueError:
-        # If conversion fails, return an error message
-        return "Error: Please provide a valid integer value."
 
 @app.route("/ipv6-basic-provision", methods=["GET", "POST"])
 def lab_provision():
@@ -41,9 +25,6 @@ def run_code1():
     except KeyError:
         return "Error: Form input 'input_name' is missing"
 
-    # Store the input_value in the session
-    session["input_value"] = input_value
-
     # Check if input_value is not empty before proceeding
     if input_value.strip():
         try:
@@ -52,8 +33,30 @@ def run_code1():
 
             # Run your Python script and capture the output
             result = subprocess.check_output([PYTHON_PATH, "ipv6_basic_generate_config.py", input_value], text=True)
+
+            # Connect to SQLite database (or create if not exists)
+            conn = sqlite3.connect('lab_data.db')
+            cursor = conn.cursor()
+
+            # Create a table if not exists
+            cursor.execute('''CREATE TABLE IF NOT EXISTS table_basic_ipv6 (value TEXT PRIMARY KEY)''')
+
+            # Insert value into DB
+            try:
+                # Try to update the value if it already exists
+                cursor.execute("UPDATE table_basic_ipv6 SET value = ? WHERE rowid = 1", (input_value,))
+                if cursor.rowcount == 0:
+                    # If no rows were updated, insert the new value
+                    cursor.execute("INSERT INTO table_basic_ipv6 (value) VALUES (?)", (input_value,))
+            except sqlite3.OperationalError:
+                pass
+
+            conn.commit()
+
+            # Close the connection
+            conn.close()
+            
             return result
-            #socketio.emit('script_output', {'output': result})
 
         except subprocess.CalledProcessError as e:
             # Print the error details to help diagnose the issue
@@ -67,23 +70,16 @@ def run_code1():
 
 @app.route("/ipv6-basic-provision-lab", methods=["POST"])
 def run_code2():
-    # Retrieve the input_value from the session
-    input_value = session.get("input_value")
-
-    if input_value is not None:
-        try:
-            # Run your Python script and capture the output
-            result1 = subprocess.check_output([PYTHON_PATH, "ipv6_basic_provision_lab.py", input_value], text=True)
-            return result1
-        
-        except subprocess.CalledProcessError as e:
-            # Print the error details to help diagnose the issue
-            print(f"Error: {e}")
-            print(f"Output: {e.output}")
-            sys.exit(1)
+    try:
+        # Run your Python script and capture the output
+        result1 = subprocess.check_output([PYTHON_PATH, "ipv6_basic_provision_lab.py"], text=True)
+        return result1
     
-    else:
-        return "No input value found in the session"
+    except subprocess.CalledProcessError as e:
+        # Print the error details to help diagnose the issue
+        print(f"Error: {e}")
+        print(f"Output: {e.output}")
+        sys.exit(1)
 
 @app.route("/ipv6-basic-node", methods=["GET", "POST"])
 def node_status():
@@ -116,9 +112,6 @@ def run_code4():
         print(f"Error: {e}")
         print(f"Output: {e.output}")
         sys.exit(1)
-    
-    else:
-        return "No input value found in the session"
 
 @app.route("/ipv6-basic-check", methods=["GET", "POST"])
 def config_check():

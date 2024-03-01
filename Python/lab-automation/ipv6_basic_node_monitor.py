@@ -1,21 +1,10 @@
 import requests
-import json
 from pprint import pprint
-import time
-import sys
-import app
-import re
 from datetime import datetime
 from lab_variable import EVE_1, EVE_USER, EVE_PASSWORD
 
-### User Input ###
-
-#EVE_1 = "192.168.30.12"
-#lab_name = str(input("Enter lab name : "))
 lab_name = "IPv6-Basic-Connectivity-Lab"
 lab_name_check = f"/{lab_name}.unl"
-#num_group = int(input("Enter number Group for Basic IPv6 Connectivity Lab: "))
-
 
 ### Login ###
 
@@ -67,9 +56,8 @@ if node_status_api:
                 pass
 
     except:
-        #print("Error: Lab provisioning is not successful!")
         pass
 
 else:
-    print("Error: Lab provisioning is not successful!")
+    print("Error!")
     pass

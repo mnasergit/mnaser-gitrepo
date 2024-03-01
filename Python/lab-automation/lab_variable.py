@@ -4,6 +4,7 @@ EVE_PASSWORD = "eve"
 ROUTER_USER = "apnic"
 ROUTER_PASSWORD = "training"
 ROUTER_TIMEOUT = 6
+#PYTHON_PATH = "/home/academy/lab-automation/myenv/bin/python3" #For Ubuntu with VENV
 #PYTHON_PATH = "/usr/bin/python3" # For UbuntuLinux
 PYTHON_PATH = "python" # For Windows10
 APP_SECRET_KEY = "your_secret_key"

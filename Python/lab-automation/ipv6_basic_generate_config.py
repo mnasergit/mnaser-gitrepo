@@ -1,28 +1,12 @@
 import openpyxl
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill
-import ipaddress
 from ipaddress import IPv6Interface
-#from ipaddress import IPv6Address
-#from ipaddress import IPv6Network
 from ipaddress import IPv4Interface
-#from ipaddress import IPv4Address
-#from ipaddress import IPv4Network
-import base64
-import time
-import json
 import sys
-import app
 import re
 
 def process_variable(input_value):
-    #print(f"Processing input value: {input_value}")
-    # Your processing logic here
-    #num_group = f"Processed variable: {input_value}"
-    #num_group = int(input_value)
-    #print(f"Result: {num_group}")
-    #return num_group
-
     match = re.search(r'\b\d+\b', input_value)
     if match:
         num_group = match.group()
@@ -36,17 +20,6 @@ if __name__ == "__main__":
         input_value = sys.argv[1]
         num_group = process_variable(input_value)
         num_group = int(num_group)
-        # Rest of your existing code...
-
-        ### User input ###
-        #num_group = input("Enter nmber of groups for IPv6 Basic Lab (1-20): ")
-
-        # try:
-        #     num_group = int(num_group)
-        #     #num_group = int(process_variable(input_value))
-        # # Handling Error
-        # except:
-        #     print ("Invalid input detected for < Group Number >")
 
         try:
             if num_group > 0 and  num_group <= 20:
@@ -168,13 +141,13 @@ if __name__ == "__main__":
                         json_data = {"id": "1", "data": ""}
 
                         # Read default config file of router
-                        with open("default_config.txt", 'r') as default_cfg:
+                        with open("ipv6_basic_source/default_config.txt", 'r') as default_cfg:
                             router_config = default_cfg.read()
                             # Update the router configuration
                             updated_config = update_router_config(router_config)
                         
                         # Read common config file of router
-                        with open("common_config.txt", 'r') as common_cfg:
+                        with open("ipv6_basic_source/common_config.txt", 'r') as common_cfg:
                             # Update the common configuration
                             common_config = common_cfg.read()
 
@@ -244,12 +217,14 @@ if __name__ == "__main__":
                                 updated_index = create_index_html(create_index)
                         
                     # Write to main ipv6-basic.html file 
-                    with open(f"/var/www/html/ipv6-basic.html", 'w') as write_index:
-                        write_index.seek(0)
-                        write_index.write(updated_index)
+                    try:
+                        with open(f"/var/www/html/ipv6-basic.html", 'w') as write_index:
+                            write_index.seek(0)
+                            write_index.write(updated_index)
+                    except:
+                        pass
 
                     read_index.close()
-                    write_index.close()
 
                 # Handling Error            
                 except ValueError:
@@ -258,7 +233,6 @@ if __name__ == "__main__":
 
                 wb.close()
                 print(f"All config files have been genrated in directory: < /ipv6_basic_config_files >.")
-                print("")
                 
             else:
                 print("Invalid input detected for < Group Number >")
@@ -268,7 +242,5 @@ if __name__ == "__main__":
             print("Error: Invalid input. Please provide a valid integer value for the number of groups.")
             sys.exit(1)
 
-    #except IndexError:
-     #   print("Error: Please provide the input value.")
     except IndexError:
         print("Error: Please provide the input value.")

@@ -1,43 +1,22 @@
-import subprocess
 import requests
 import json
 from pprint import pprint
-import time
-import sys
-import app
-import re
+import sqlite3
 from lab_variable import EVE_1, EVE_USER, EVE_PASSWORD, EVE_1_IDLE_PC
 
-def process_variable(input_value):
-    #print(f"Processing input value: {input_value}")
-    # Your processing logic here
-    #num_group = f"Processed variable: {input_value}"
-    #num_group = int(input_value)
-    #print(f"Result: {num_group}")
-    #return num_group
+# Connect to the same SQLite database
+conn = sqlite3.connect('lab_data.db')
+cursor = conn.cursor()
 
-    match = re.search(r'\b\d+\b', input_value)
-    if match:
-        num_group = match.group()
-        return num_group
-    else:
-        return "0"  # Return a default value if no numeric part is found
+# Retrieve the value from the table
+cursor.execute("SELECT value FROM table_basic_ipv6")
+input_value = cursor.fetchone()[0]
 
 if __name__ == "__main__":
     try:
-        # Get the input value from the command line argument
-        input_value = sys.argv[1]
-        num_group = process_variable(input_value)
-        num_group = int(num_group)
-
-        ### User Input ###
-
-        #EVE_1  EVE_USER, EVE_PASSWORD, EVE_TIMEOUT, ROUTER_USER, ROUTER_PASSWORD
-        #EVE_1 = "192.168.30.12"
-        #lab_name = str(input("Enter lab name : "))
         lab_name = "IPv6-Basic-Connectivity-Lab"
         lab_name_check = f"/{lab_name}.unl"
-        #num_group = int(input("Enter number Group for Basic IPv6 Connectivity Lab: "))
+        num_group = int(input_value)
         num_ios = num_group
         num_slax = num_group
 
@@ -45,13 +24,11 @@ if __name__ == "__main__":
 
         login_url = f"http://{EVE_1}/api/auth/login"
         cred = '{{"username":"{}","password":"{}","html5":"-1"}}'.format(EVE_USER, EVE_PASSWORD)
-        #cred = '{"username":EVE_USER,"password":EVE_PASSWORD,"html5":"-1"}'
         headers = {"Accept":"application/json"}
 
         login_api = requests.post(url=login_url, data=cred)
         cookies = login_api.cookies
 
-        print ("")
         if login_api:
             print("Login into EVE-NG is successful.")
         else:
@@ -117,7 +94,7 @@ if __name__ == "__main__":
 
                 left_position = 100
                 for j in range(1, slax_num + 1):
-                    slax_data = {"template":"linux","type":"qemu","count":"1","image":"linux-slax-9.11.0","name":f"Group{j}-Host1","icon":"Server.png","uuid":"","cpulimit":"undefined","cpu":"1","ram":"512","ethernet":"1","firstmac":"","qemu_version":"","qemu_arch":"","qemu_nic":"","qemu_options":"-machine type: pc,accel=kvm -vga std -usbdevice tablet -boot order=cd -cpu host","qemu_options":"-machine type=pc,accel=kvm -vga std -usbdevice tablet -boot order=cd -cpu host","config":"0","delay":"0","console":"vnc","left":f"{left_position}","top":"350","postfix":0}
+                    slax_data = {"template":"linux","type":"qemu","count":"1","image":"linux-slax-9.11.1","name":f"Group{j}-Host1","icon":"Server.png","uuid":"","cpulimit":"undefined","cpu":"1","ram":"512","ethernet":"1","firstmac":"","qemu_version":"","qemu_arch":"","qemu_nic":"","qemu_options":"-machine type: pc,accel=kvm -vga std -usbdevice tablet -boot order=cd -cpu host","qemu_options":"-machine type=pc,accel=kvm -vga std -usbdevice tablet -boot order=cd -cpu host","config":"0","delay":"0","console":"vnc","left":f"{left_position}","top":"350","postfix":0}
 
                     left_position = left_position + 120
                     slax_data = json.dumps(slax_data)
@@ -305,6 +282,7 @@ if __name__ == "__main__":
             print("Existing labs:")
             print (existing_labs)
             print ("")
+            print ("Lab provision is not successful:")
             print ("Lab name confilcts with existing one. Delete that lab and try again.")
 
     except:
