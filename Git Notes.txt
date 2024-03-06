@@ -38,7 +38,22 @@ Changes to be committed:
 === To discard changes in working directory ===
 # git restore "Git Notes.txt"
 
+=== To see Short Status ===
+# git status -s
+ M "Git Notes.txt"
 
+=== To see what you’ve changed but not yet staged ===
+# git diff
+
+=== To see what you’ve staged that will go into your next commit ===
+=== --staged and --cached are synonyms ===
+# git diff --staged
+
+=== Committing Your Changes ===
+=== Doing so launches your editor of choice ===
+# git commit
+
+# git commit -m "Commit Message"
 
 # git init
 Reinitialized existing Git repository in C:/mnasergit-repo/mnasergit-repo/.git/
