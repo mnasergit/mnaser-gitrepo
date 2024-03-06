@@ -1,4 +1,3 @@
-
 cd c:\mnasergit-repo\mnasergit-repo>
 
 git status
@@ -10,6 +9,6 @@ git restore Python/lab-automation/app.py
 git add "Git Notes.txt"
 
 # to unstage
-git restore --staged Git Notes.txt
+git restore --staged "Git Notes.txt"
 
 
