@@ -60,7 +60,16 @@ Changes to be committed:
 === To publish your local commits ===
 # git push
 
-
+=== Reinitialized existing Git repository in C:/mnasergit-repo/mnasergit-repo/.git/ ===
 # git init
-Reinitialized existing Git repository in C:/mnasergit-repo/mnasergit-repo/.git/
+
+=== Viewing the Commit History ===
+git log
+
+=== Undoing Things ===
+=== You end up with a single commit — the second commit replaces the results of the first ===
+# git commit -m 'Initial commit'
+# git add forgotten_file
+# git commit --amend
+
 
