@@ -1,14 +1,43 @@
-cd c:\mnasergit-repo\mnasergit-repo>
+# cd c:\mnasergit-repo\mnasergit-repo>
 
-git status
+# git status
 
-#  to discard changes in working directory
-git restore Python/lab-automation/app.py
+On branch master
+Your branch is up to date with 'origin/master'.
 
-# to include in what will be committed
-git add "Git Notes.txt"
+nothing to commit, working tree clean
 
-# to unstage
-git restore --staged "Git Notes.txt"
+=== Once a file is modified ===
+# git status
+
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Git Notes.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+=== To include in what will be committed ===
+# git add "Git Notes.txt"
+
+# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Git Notes.txt
+
+=== To unstage ===
+# git restore --staged "Git Notes.txt"
+
+=== To discard changes in working directory ===
+# git restore "Git Notes.txt"
+
+
+
 
 
