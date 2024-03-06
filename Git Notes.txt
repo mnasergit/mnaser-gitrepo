@@ -57,6 +57,10 @@ Changes to be committed:
 # git rm --cached test.txt
 # git rm -f test.txt
 
+=== To publish your local commits ===
+# git push
+
+
 # git init
 Reinitialized existing Git repository in C:/mnasergit-repo/mnasergit-repo/.git/
 
