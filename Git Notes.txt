@@ -1,5 +1,6 @@
 # cd c:\mnasergit-repo\mnasergit-repo>
 
+=== Checking the Status of Your Files ===
 # git status
 
 On branch master
@@ -20,7 +21,7 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
-=== To include in what will be committed ===
+=== Tracking New Files / To include in what will be committed ===
 # git add "Git Notes.txt"
 
 # git status
@@ -40,4 +41,6 @@ Changes to be committed:
 
 
 
+# git init
+Reinitialized existing Git repository in C:/mnasergit-repo/mnasergit-repo/.git/
 
