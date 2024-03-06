@@ -1,0 +1,15 @@
+
+cd c:\mnasergit-repo\mnasergit-repo>
+
+git status
+
+#  to discard changes in working directory
+git restore Python/lab-automation/app.py
+
+# to include in what will be committed
+git add "Git Notes.txt"
+
+# to unstage
+git restore --staged Git Notes.txt
+
+
