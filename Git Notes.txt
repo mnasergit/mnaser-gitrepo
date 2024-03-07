@@ -1,3 +1,6 @@
+=== Reinitialized existing Git repository in current directory ===
+# git init .
+
 === Checking the Status of Your Files ===
 # git status
 
@@ -60,9 +63,6 @@ Changes to be committed:
 === To publish your local commits ===
 # git push
 
-=== Reinitialized existing Git repository in C:/mnasergit-repo/mnasergit-repo/.git/ ===
-# git init
-
 === Viewing the Commit History ===
 git log
 
@@ -72,4 +72,20 @@ git log
 # git add forgotten_file
 # git commit --amend
 
+
+=== Create bew branch ===
+=== Default branch name is MASTER ===
+# git branch test-branch
+# git checkout -b test-branch
+
+=== Switching between branches / To move HEAD ===
+# git checkout test-branch
+# git log test-branch
+# git diff test-branch
+
+
+# git checkout ddydfvscstcdcscsy
+
+=== Where you have been recently ===
+# git reflog
 
