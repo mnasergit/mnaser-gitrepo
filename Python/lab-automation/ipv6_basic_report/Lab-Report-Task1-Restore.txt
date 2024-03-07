@@ -1,6 +1,0 @@
-
-Group1-Router1: IPv6 address configuration is restored successfully.
-
-Group2-Router1: IPv6 address configuration is restored successfully.
-
-Group3-Router1: IPv6 address configuration is restored successfully.

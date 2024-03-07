@@ -1,9 +1,0 @@
-
-10.99.1.1 IPv6 address and prefix length are correct.
-10.99.1.1 interface Fa0/0 status is UP.
-
-10.99.2.1 has multiple IPv6 address configured.
-10.99.2.1 interface Fa0/0 status is DOWN.
-
-10.99.3.1 IPv6 address is not correct.
-10.99.3.1 interface Fa0/0 status is UP.

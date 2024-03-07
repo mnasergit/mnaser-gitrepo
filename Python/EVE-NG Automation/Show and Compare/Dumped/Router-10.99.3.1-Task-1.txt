@@ -1,7 +1,0 @@
-
-G3-R1#show ipv6 interface brief fastEthernet 0/0
-FastEthernet0/0        [up/up]
-    unassigned
-G3-R1#show ipv6 interface fastEthernet 0/0
-G3-R1#exit
-
