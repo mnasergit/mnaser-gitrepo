@@ -72,7 +72,6 @@ git log
 # git add forgotten_file
 # git commit --amend
 
-
 === Create bew branch ===
 === Default branch name is MASTER ===
 # git branch test-branch
@@ -82,7 +81,6 @@ git log
 # git checkout test-branch
 # git log test-branch
 # git diff test-branch
-
 
 # git checkout ddydfvscstcdcscsy
 

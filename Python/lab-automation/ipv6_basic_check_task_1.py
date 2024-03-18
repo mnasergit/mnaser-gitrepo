@@ -4,37 +4,27 @@ import requests
 import time
 from concurrent.futures import ThreadPoolExecutor
 from netmiko import ConnectHandler
-from lab_variable import EVE_1, EVE_USER, EVE_PASSWORD, ROUTER_USER, ROUTER_PASSWORD
+import sqlite3
+from lab_variable import EVE_1, EVE_2, EVE_USER, EVE_PASSWORD, ROUTER_USER, ROUTER_PASSWORD, num_group_eve_1
 
+# Connect to the same SQLite database
+conn = sqlite3.connect('lab_data.db')
+cursor = conn.cursor()
+
+# Retrieve the value from the table
+cursor.execute("SELECT value FROM table_basic_ipv6")
+input_value = cursor.fetchone()[0]
 lab_name = "IPv6-Basic-Connectivity-Lab"
+lab_name_check = f"/{lab_name}.unl"
+num_group = int(input_value)
+num_group_eve_2 = num_group - num_group_eve_1
+num_ios = num_group
+num_slax = num_group
+num_ios_eve_1 = num_group_eve_1
+num_slax_eve_1 = num_group_eve_1
+num_ios_eve_2 = num_group_eve_2
+num_slax_eve_2 = num_group_eve_2
 
-# Login
-
-login_url = f"http://{EVE_1}/api/auth/login"
-cred = '{{"username":"{}","password":"{}","html5":"-1"}}'.format(EVE_USER, EVE_PASSWORD)
-headers = {"Accept": "application/json"}
-
-login_api = requests.post(url=login_url, data=cred)
-cookies = login_api.cookies
-
-#if login_api:
-#    print("Login successful")
-#else:
-#    print("Login failed")
-#    sys.exit(1)
-
-# Check Status of Node
-node_status_url = f"http://{EVE_1}/api/labs/{lab_name}.unl/nodes"
-node_status_api = requests.get(url=node_status_url, cookies=cookies, headers=headers)
-
-#if node_status_api:
-#    print("Node status retrieved successfully")
-#else:
-#    print("Failed to retrieve node status")
-#    sys.exit(1)
-
-node_status_dict = node_status_api.json()['data']
-num_nodes = len(node_status_dict)
 
 # Open Workbook and Sheet
 wb = openpyxl.load_workbook("Device-Info.xlsx")
@@ -46,7 +36,7 @@ max_column = sheet.max_column
 HostnameList = []
 IPList = []
 
-for i in range(2, int(num_nodes / 2) + 2):
+for i in range(2, int(num_ios) + 2):
     hostname = sheet.cell(row=i, column=1).value
     IPv4_FA60_Temp = sheet.cell(row=i, column=3).value
     IPv4_FA60_IP = ipaddress.IPv4Interface(IPv4_FA60_Temp)

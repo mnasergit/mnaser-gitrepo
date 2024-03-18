@@ -1,0 +1,134 @@
+Python Automation with Nick Russo
+==================================
+
+Pre-requisite:
+Data types and operations
+Loops and conditionals
+Command line arguments
+Functions
+YAML and JSON
+File I/O
+Exception
+Regular Expression
+Unit Testing
+
+Network
+-------
+   R1------------R2------------R3
+CSR1000v      CSR1000v       XRv9000
+
+Paramiko
+--------
+A ssh library for Python
+Paramiko document link
+
+import paramiko
+conn_params = paramiko.SSHClient()
+conn_params.connect(
+    hostname=R1
+	username=user
+	password=pass
+conn = conn_params.invoke_shell()
+conn.send("show ip interface brief")
+# may need to wait
+output = conn.recv(65535)
+# may need to convert from bytes
+
+Data collection by Paramiko
+---------------------------
+import time
+impor paramiko
+
+def send_command(conn, command):
+    conn.send(command + "\n")
+    time.sleep(1.0)
+
+def get_output(conn):
+    return conn.recv(65535).decode("utf-8")
+	
+def main():
+    host_dict = {
+	    "R1": "show running-config | section vrf_definition",
+		"R2": "show running-config vrf",
+	}
+	
+	for hostname, vrf_cmd in host_dict.items();
+	    conn_params = paramiko.SSHClient()
+		
+		
+		conn_params.set_missing_host_key_policy(paramiko.AutoAddpolicy())
+		conn_params.connect(
+		    hostname=hostname,
+			port=22,
+			username="user"
+			password="pass"
+			look_for_keys="False" # disable check known host file
+			allow_agent=False # 
+		)
+
+		conn = conn_params.invoke_shell()
+		time.sleep(1.0)
+		print(f"Logged info {get_output(conn).strip() } successfully")
+		
+		commands= [
+		    "terminal length 0"
+			"show version | include Software,"
+			vrf_cmd,
+		]
+		
+		for command in commands
+		    send_cmd(conn, command)
+			print(get_output(conn)
+			
+		conn.close()
+		
+		
+if __name__ == "__main__"
+    main()
+
+
+
+Add persistent storage to the existing script
+---------------------------------------------
+concat_output = ""
+for command in commands:
+    send_cmd(conn, command)
+	concat_output += get_output(conn)
+	
+conn.close()
+
+print(f"Writing {hostname} facts to file")
+with open(f"{hostname}_fact.txt", 'w') as handle:
+    handle.write(concat_output)
+	
+if __name__ == __main__:
+    main()
+	
+
+Python Debugger (pdb)
+=====================
+# import pdb; pdb.set_trace()
+breakpoint()
+
+step or s to execute command
+next or n to step over
+continue or c
+ctrl + d to exit
+
+
+Netmiko
+=======
+Infra as a Code
+------------
+
+
+
+    
+	
+	
+	
+
+
+		
+		
+		

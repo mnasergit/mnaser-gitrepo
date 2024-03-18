@@ -1,6 +1,9 @@
-EVE_1 = "192.168.20.12"
+EVE_1 = "192.168.30.12"
+EVE_2 = "192.168.30.22"
 EVE_USER = "admin"
-EVE_PASSWORD = "eve"
+EVE_PASSWORD = "AD@eve24"
+EVE_1_IDLE_PC = "0x63188e04"
+EVE_2_IDLE_PC = "0x63188e04"
 ROUTER_USER = "apnic"
 ROUTER_PASSWORD = "training"
 ROUTER_TIMEOUT = 6
@@ -8,4 +11,4 @@ ROUTER_TIMEOUT = 6
 #PYTHON_PATH = "/usr/bin/python3" # For UbuntuLinux
 PYTHON_PATH = "python" # For Windows10
 APP_SECRET_KEY = "your_secret_key"
-EVE_1_IDLE_PC = "0x63188e04"
+num_group_eve_1 = 2

@@ -1,0 +1,152 @@
+Network Automation with Python (intermediate) Course Plan
+=========================================================
+
+Data types and operations
+Loops and conditionals
+Command line arguments
+Functions
+YAML and JSON
+Jinja2 Templating
+File I/O
+Exception
+Regular Expression
+Paramiko
+Netmiko
+Napalm, getters
+Nornir
+Netconf, YANG
+get-config RPC
+ncclient
+Restconf
+Version control with Git
+Pylint
+makefiles
+
+
+Title: Python Network Automation Training Material
+Introduction to Python Network Automation
+Overview
+
+What is network automation?
+---------------------------
+Streamlining Tasks: Network automation uses software to make network management tasks easier and faster.
+
+Efficiency Improvement: It helps networks run smoother by reducing mistakes and speeding up how quickly changes are made.
+
+Configuration Management: It sets up and updates network devices automatically, like routers and switches.
+
+Monitoring and Troubleshooting: It keeps an eye on how the network is doing and can fix problems without human intervention.
+
+Scalability and Consistency: It makes sure that the network can grow easily and stays the same across different parts.
+
+Adaptability to Changes: It helps networks quickly adjust to new needs or threats.
+
+Integration with DevOps: It makes it easier for network and development teams to work together and deploy changes faster.
+
+Enhanced Agility: It helps organizations react faster to changes and run their networks more effectively.
+
+Saves Time and Effort: Automation reduces manual work, making tasks faster and less prone to errors.
+
+Consistency and Dependability: Automated processes ensure that network setups are consistent and reliable across devices.
+
+Scales Easily: Automation can handle growing network needs without added complexity.
+
+Speeds Up Changes: It accelerates the deployment of new services and updates.
+
+Boosts Adaptability: Automation helps networks quickly adjust to changes and new requirements.
+
+Strengthens Security: It ensures consistent enforcement of security measures across the network.
+
+Optimizes Resources: Automation helps use network resources more efficiently, saving costs.
+
+Informs Decision-Making: It provides valuable insights for better decision-making and problem-solving.
+
+Fosters Innovation: Automation frees up time for strategic planning and innovation within organizations.
+
+
+
+Why Python for network automation?
+----------------------------------
+Easy to Learn: Python's simple syntax makes it accessible for network engineers to grasp quickly.
+
+Ready-made Tools: Python offers specialized libraries tailored for network tasks, simplifying automation development.
+
+Works Everywhere: Python runs on all major operating systems, ensuring compatibility across different network setups.
+
+Supportive Community: Python has a large and helpful community, offering abundant resources and guidance for automation projects.
+
+Flexible: Python can handle various automation needs beyond networking, providing additional opportunities for skill growth.
+
+Seamless Integration: Python effortlessly integrates with other tools and systems commonly used in networks.
+
+Fast Development: Python's straightforward syntax enables speedy script development and adjustments.
+
+Open Source: Python is free and supported by a vast community, ensuring ongoing improvement and innovation.
+
+Industry Standard: Python is widely adopted in the industry for network automation, with strong support from organizations and vendors.
+
+
+Python Basics
+
+Variables and data types
+Control flow (if statements, loops)
+Functions
+Error handling (try-except)
+Working with Networks in Python
+Introduction to Networking Concepts
+
+OSI model overview
+TCP/IP fundamentals
+IP addressing and subnetting
+Network Libraries in Python
+
+Introduction to libraries (e.g., socket, paramiko, netmiko, NAPALM)
+Installation and setup
+Interacting with Network Devices
+
+SSH and Telnet connections
+Sending commands and receiving output
+Handling responses and parsing data
+Automating Networking Tasks
+Configuration Management
+
+Reading device configurations
+Pushing configurations to devices
+Backup and restore configurations
+Monitoring and Troubleshooting
+
+Gathering device information (e.g., device status, interface status)
+Parsing logs and event notifications
+Performing network diagnostics
+Advanced Topics
+Network Device Provisioning
+
+Automating device provisioning
+Templating configurations with Jinja2
+Software Defined Networking (SDN)
+
+Overview of SDN concepts
+Using Python to interact with SDN controllers
+Automation Best Practices
+
+Error handling and logging
+Testing and validation
+Scalability and reliability considerations
+Hands-on Exercises and Projects
+Lab Exercises
+
+Simple automation scripts for common tasks
+Scripting exercises for complex scenarios
+Real-world Projects
+
+Building automation scripts for specific use cases (e.g., VLAN management, DHCP configuration)
+Integration with other systems (e.g., ticketing systems, monitoring tools)
+Conclusion
+Summary
+
+Recap of key concepts covered
+Next steps for further learning
+Additional Resources
+
+Books, websites, and online courses for further study
+Community forums and online communities for networking and Python

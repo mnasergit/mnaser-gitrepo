@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IXP Peering Configuration Generator</title>
+    <link href="static/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <div class="stracture fix">
+        <h1>IXP Peering</h1>
+        <h2>Configuration Generator</h2>
+        
+        <hr style="border-style: inset; border-width: 2px">
+
+        <form action="/ixp-peering-configuration-generator" method="POST" id="SubmitInput">
+            <h3>Enter below information correctly</h3>
+            <p>Your own ASN: <input type="text" id="own_asn" name="own_asn" required></p>
+            <p>IXP ASN: <input type="text" id="neighbor_asn" name="neighbor_asn" required></p>
+            <p>IXP Route Server IP Address: <input type="text" id="bgp_neighbor" name="bgp_neighbor" required></p>
+
+            <button type="submit">Generate Configuration</button>
+        </form>  
+        
+        <b><p id="ShowOutput"></p></b></br>
+        
+    </div>
+
+    <script>
+        document.getElementById('SubmitInput').addEventListener('submit', function (event) {
+            event.preventDefault();  // Prevent default form submission
+            SubmitInputRun();
+        });
+    
+        function SubmitInputRun() {
+            const formData = new FormData(document.getElementById('SubmitInput'));
+    
+            fetch("/ixp-peering-configuration-generator", {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(ShowOutput => {
+                var resultElement = document.getElementById("ShowOutput");
+                ShowOutput = ShowOutput.replace(/\n/g, "<br>");
+                resultElement.innerHTML = ShowOutput;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle errors here
+            });
+        }
+    </script>
+
+</body>
+</html>
