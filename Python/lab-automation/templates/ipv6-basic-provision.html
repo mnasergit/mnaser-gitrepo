@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APNIC Academy Lab Automation</title>
+    <link href="static/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <div class="stracture fix">
+        <h1>IPv6 Basic Connectivity Lab</h1>
+        <h2>Provisioning Lab</h2>
+        
+        <hr style="border-style: inset; border-width: 2px">
+
+        <form action="/ipv6-basic-generate-config" method="POST" id="SubmitGroupNumber">
+            <h3>Enter "number of groups" for this lab activity (Range: 1 to 20)</h3>
+            <h3>Then click on "Generate Configuration" to generate configuration files</h3>
+            <input type="text" id="input_name" name="input_name" required>
+            <button type="submit">Generate Configuration</button>
+        </form>
+
+        <b><p id="OutputSubmitGroupNumber"></p></b></br>
+        <hr>
+
+        <!-- Container for the new section -->
+        <div id="ShowProvisionLabSection">
+            <h3>Click on "Provision Lab" to provision lab inside EVE-NG VM</h3>
+            <p>This includes:</br>
+                1. Creating a new lab (Lab name: IPv6-Basic-Connectivity-Lab)</br>
+                2. Adding nodes to the topology</br>
+                3. Connecting nodes with each other</br>
+                4. Connecting nodes with MGMT network</br>
+                5. Pushing startup-config files into the nodes</p>
+            <p><b>Important:</b> Please make sure that, no lab is created there named "IPv6-Basic-Connectivity-Lab".</br>
+            Lab provisioning will fail if a lab exists with exact same name.</p>
+            <button type="button" onclick="SubmitProvisionLab()">Provision Lab</button>
+            </br></br>
+        </div>
+
+        <div id="DivSubmitProvisionLab">
+            <b id="ResultSubmitProvisionLab"></b>
+        </div>
+        <hr>
+        <div>
+            <p><b>N.B. Click on "Next" to go to the next page, if lab is already provisioned.</b></p>
+            <button type="button" onclick="NextPage()">Next >></button>
+        </div></br>
+        <hr>
+        
+        <div>
+            <p><b>Important:</b> Do not reload this page or go back home page until you finish all the tasks.</p>
+            <a href="/"><b>Back to Home</b></a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('SubmitGroupNumber').addEventListener('submit', function (event) {
+            event.preventDefault();  // Prevent default form submission
+            SubmitGroupNumberRunCode();
+        })
+
+        function SubmitGroupNumberRunCode() {
+            const formData = new FormData(document.getElementById('SubmitGroupNumber'));
+
+            fetch("/ipv6-basic-generate-config", {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(OutputSubmitGroupNumber => {
+                var resultElement = document.getElementById("OutputSubmitGroupNumber");
+                OutputSubmitGroupNumber = OutputSubmitGroupNumber.replace(/\n/g, "<br>");
+                resultElement.innerHTML = OutputSubmitGroupNumber;
+
+                // Call the function to show the new section
+                ShowProvisionLab();
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+
+        function ShowProvisionLab() {
+            var existingSection = document.getElementById("ShowProvisionLabSection");
+            existingSection.style.display = "block";
+        }
+
+        function SubmitProvisionLab() {
+            // Make an AJAX request to the server
+            fetch("/ipv6-basic-provision-lab", {
+                method: "POST",
+            })
+            .then(response => response.text())
+            .then(ResultSubmitProvisionLab => {
+                // Log the result to the console
+                console.log("Result from server:", ResultSubmitProvisionLab);
+
+                // Update the content of the div based on the server response
+                var DivSubmitProvisionLab = document.getElementById("ResultSubmitProvisionLab");
+                ResultSubmitProvisionLab = ResultSubmitProvisionLab.replace(/\n/g, "<br>");
+                DivSubmitProvisionLab.innerHTML = ResultSubmitProvisionLab + "</br>";
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+
+        function NextPage() {
+            window.location.href = "/ipv6-basic-node";
+        }	
+
+    </script>
+</body>
+</html>

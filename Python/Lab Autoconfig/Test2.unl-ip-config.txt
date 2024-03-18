@@ -1,0 +1,254 @@
+R1-IOS
+======
+
+!
+conf t
+ interface loopback0
+  ip address 10.1.1.1 255.255.255.255
+!
+ interface FastEthernet0/0
+  ip address 10.1.2.1 255.255.255.252
+  description **Connected-to-R2-IOS**
+  no shutdown
+!
+ interface FastEthernet1/0
+  ip address 10.1.4.1 255.255.255.252
+  description **Connected-to-R4-MKT**
+  no shutdown
+!
+ interface FastEthernet2/0
+  ip address 10.1.6.1 255.255.255.252
+  description **Connected-to-R6-MKT**
+  no shutdown
+!
+ interface FastEthernet3/0
+  ip address 10.1.10.1 255.255.255.252
+  description **Connected-to-R10-MKT**
+  no shutdown
+!
+ interface FastEthernet6/0
+  ip address 10.99.99.1 255.255.0.0
+  description **Connected-to-MGMT**
+  no shutdown
+!
+
+R2-IOS
+======
+
+!
+conf t
+ interface loopback0
+  ip address 10.1.1.2 255.255.255.255
+!
+ interface FastEthernet0/0
+  ip address 10.1.2.2 255.255.255.252
+  description **Connected-to-R1-IOS**
+  no shutdown
+!
+ interface FastEthernet1/0
+  ip address 10.2.3.1 255.255.255.252
+  description **Connected-to-R3-IOS**
+  no shutdown
+!
+ interface FastEthernet2/0
+  ip address 10.2.8.1 255.255.255.252
+  description **Connected-to-R8-IOS**
+  no shutdown
+!
+ interface FastEthernet3/0
+  ip address 10.2.9.1 255.255.255.252
+  description **Connected-to-R9-IOS**
+  no shutdown
+!
+ interface FastEthernet6/0
+  ip address 10.99.99.2 255.255.0.0
+  description **Connected-to-MGMT**
+  no shutdown
+!
+
+R3-IOS
+======
+
+!
+conf t
+ interface loopback0
+  ip address 10.1.1.3 255.255.255.255
+!
+ interface FastEthernet0/0
+  ip address 10.2.3.2 255.255.255.252
+  description **Connected-to-R2-IOS**
+  no shutdown
+!
+ interface FastEthernet1/0
+  ip address 10.3.5.1 255.255.255.252
+  description **Connected-to-R5-MKT**
+  no shutdown
+!
+ interface FastEthernet2/0
+  ip address 10.3.7.1 255.255.255.252
+  description **Connected-to-R7-MKT**
+  no shutdown
+!
+ interface FastEthernet3/0
+  ip address 10.3.11.1 255.255.255.252
+  description **Connected-to-R11-MKT**
+  no shutdown
+!
+ interface FastEthernet6/0
+  ip address 10.99.99.3 255.255.0.0
+  description **Connected-to-MGMT**
+  no shutdown
+!
+
+R4-MKT
+======
+
+/interface bridge add name=loopback0
+
+/ip address
+add address=10.1.1.4/32 interface=loopback0
+add address=10.1.4.2/30 interface=ether1 comment=**Connected-to-R1-IOS**
+add address=10.4.5.1/30 interface=ether2 comment=**Connected-to-R5-MKT**
+add address=10.4.6.1/30 interface=ether3 comment=**Connected-to-R6-MKT**
+add address=10.4.8.1/30 interface=ether4 comment=**Connected-to-R8-IOS**
+add address=10.99.99.4/16 interface=ether6 comment=**Connected-to-MGMT**
+
+
+R5-MKT
+======
+
+/interface bridge add name=loopback0
+
+/ip address
+add address=10.1.1.5/32 interface=loopback0
+add address=10.3.5.2/30 interface=ether1 comment=**Connected-to-R3-IOS**
+add address=10.4.5.2/30 interface=ether2 comment=**Connected-to-R4-MKT**
+add address=10.5.7.1/30 interface=ether3 comment=**Connected-to-R7-MKT**
+add address=10.5.8.1/30 interface=ether4 comment=**Connected-to-R8-IOS**
+add address=10.5.11.1/30 interface=ether5 comment=**Connected-to-R11-MKT**
+add address=10.99.99.5/16 interface=ether6 comment=**Connected-to-MGMT**
+
+
+R6-MKT
+======
+
+/interface bridge add name=loopback0
+
+/ip address
+add address=10.1.1.6/32 interface=loopback0
+add address=10.4.6.2/30 interface=ether1 comment=**Connected-to-R4-MKT**
+add address=10.6.7.1/30 interface=ether2 comment=**Connected-to-R7-MKT**
+add address=10.1.6.2/30 interface=ether3 comment=**Connected-to-R1-IOS**
+add address=10.6.9.1/30 interface=ether4 comment=**Connected-to-R9-IOS**
+add address=10.6.10.1/30 interface=ether5 comment=**Connected-to-R10-MKT**
+add address=10.99.99.6/16 interface=ether6 comment=**Connected-to-MGMT**
+
+
+R7-MKT
+======
+
+/interface bridge add name=loopback0
+
+/ip address
+add address=10.1.1.7/32 interface=loopback0
+add address=10.5.7.2/30 interface=ether1 comment=**Connected-to-R5-MKT**
+add address=10.6.7.2/30 interface=ether2 comment=**Connected-to-R6-MKT**
+add address=10.3.7.2/30 interface=ether3 comment=**Connected-to-R3-IOS**
+add address=10.7.9.1/30 interface=ether4 comment=**Connected-to-R9-IOS**
+add address=10.99.99.7/16 interface=ether6 comment=**Connected-to-MGMT**
+
+
+R8-IOS
+======
+
+!
+conf t
+ interface loopback0
+  ip address 10.1.1.8 255.255.255.255
+!
+ interface FastEthernet0/0
+  ip address 10.4.8.2 255.255.255.252
+  description **Connected-to-R4-MKT**
+  no shutdown
+!
+ interface FastEthernet1/0
+  ip address 10.5.8.2 255.255.255.252
+  description **Connected-to-R5-MKT**
+  no shutdown
+!
+ interface FastEthernet2/0
+  ip address 10.2.8.2 255.255.255.252
+  description **Connected-to-R2-IOS**
+  no shutdown
+!
+ interface FastEthernet3/0
+  ip address 10.8.11.1 255.255.255.252
+  description **Connected-to-R11-MKT**
+  no shutdown
+!
+ interface FastEthernet6/0
+  ip address 10.99.99.8 255.255.0.0
+  description **Connected-to-MGMT**
+  no shutdown
+!
+
+R9-IOS
+======
+
+!
+conf t
+ interface loopback0
+  ip address 10.1.1.9 255.255.255.255
+!
+ interface FastEthernet0/0
+  ip address 10.2.9.2 255.255.255.252
+  description **Connected-to-R2-IOS**
+  no shutdown
+!
+ interface FastEthernet1/0
+  ip address 10.6.9.2 255.255.255.252
+  description **Connected-to-R6-MKT**
+  no shutdown
+!
+ interface FastEthernet2/0
+  ip address 10.7.9.2 255.255.255.252
+  description **Connected-to-R7-MKT**
+  no shutdown
+!
+ interface FastEthernet3/0
+  ip address 10.9.10.1 255.255.255.252
+  description **Connected-to-R10-MKT**
+  no shutdown
+!
+ interface FastEthernet6/0
+  ip address 10.99.99.9 255.255.0.0
+  description **Connected-to-MGMT**
+  no shutdown
+!
+
+R10-MKT
+=======
+
+/interface bridge add name=loopback0
+
+/ip address
+add address=10.1.1.10/32 interface=loopback0
+add address=10.1.10.2/30 interface=ether1 comment=**Connected-to-R1-IOS**
+add address=10.6.10.2/30 interface=ether2 comment=**Connected-to-R6-MKT**
+add address=10.9.10.2/30 interface=ether3 comment=**Connected-to-R9-IOS**
+add address=10.99.99.10/16 interface=ether4 comment=**Connected-to-MGMT**
+
+
+R11-MKT
+=======
+
+/interface bridge add name=loopback0
+
+/ip address
+add address=10.1.1.11/32 interface=loopback0
+add address=10.8.11.2/30 interface=ether1 comment=**Connected-to-R8-IOS**
+add address=10.3.11.2/30 interface=ether2 comment=**Connected-to-R3-IOS**
+add address=10.5.11.2/30 interface=ether3 comment=**Connected-to-R5-MKT**
+add address=10.99.99.11/16 interface=ether6 comment=**Connected-to-MGMT**
+
+

@@ -1,0 +1,14 @@
+
+Group1-Router1 IPv6 address is not configured.
+
+Group2-Router1 IPv6 address and prefix length are correct.
+Group2-Router1 interface Fa0/0 status is UP.
+
+Group3-Router1 IPv6 address and prefix length are correct.
+Group3-Router1 interface Fa0/0 status is UP.
+
+Group4-Router1 IPv6 address is not correct.
+Group4-Router1 interface Fa0/0 status is UP.
+
+Group5-Router1 has multiple IPv6 configured.
+Group5-Router1 interface Fa0/0 status is DOWN.

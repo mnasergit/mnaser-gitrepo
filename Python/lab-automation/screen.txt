@@ -1,0 +1,41 @@
+### To run a Flask app in the background, you typically use a method like running it as a daemon or utilizing a background process manager like supervisor, systemd, or screen. Here's a simple guide to using screen:
+
+
+Install Screen
+--------------
+If you haven't already installed screen, you can install it using your package manager. For example, on Ubuntu, you can install it with:
+
+# sudo apt-get install screen
+
+Start a Screen Session
+----------------------
+Run screen to start a new screen session.
+
+# screen
+
+Run Your Flask App
+------------------
+Navigate to the directory where your Flask app is located and then run it using the python command. For example:
+
+# cd /home/academy/lab-automation
+# source myenv/bin/activate
+# python3 app.py
+
+Detach from Screen Session
+--------------------------
+To detach from the screen session and leave the Flask app running in the background, press Ctrl + A followed by Ctrl + D.
+
+Reattach to Screen Session (Optional)
+-------------------------------------
+If you need to reattach to the screen session later to check on your Flask app, you can do so by running:
+
+# screen -r
+
+There are several suitable screens on:
+        1854.pts-0.ubuntu-nms   (02/29/2024 08:30:24 AM)        (Detached)
+
+# screen -r 1854.pts-0.ubuntu-nms
+
+
+
+### Using screen is a simple way to run your Flask app in the background, but there are other methods like using process managers such as systemd or supervisor which provide more robust management features. Choose the method that best fits your requirements and infrastructure setup.

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSH Terminal</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.1/socket.io.js" integrity="sha512-Xy9s5HANzJ34njXBRxThz0OzIcyjxNnAmIOnwCElZ64VxmKaf4vQhLmiC/7nQV1qzRQuWklG/J5pB/6Y9e5O8w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-5JvV9I4mFz3ozRNhqZsMorn+3RNf1FsJCfOAY+gSlxs=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>SSH Terminal</h1>
+    <div id="terminal">
+        <textarea id="output" readonly></textarea>
+        <input type="text" id="input" placeholder="Enter command...">
+    </div>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        $('#input').keypress(function(e) {
+            if (e.which == 13) {
+                var text = $('#input').val();
+                $('#output').val($('#output').val() + '\n' + '> ' + text);
+                socket.emit('input', {text: text});
+                $('#input').val('');
+            }
+        });
+
+        socket.on('output', function(data) {
+            $('#output').val($('#output').val() + '\n' + data.text);
+        });
+    </script>
+</body>
+</html>

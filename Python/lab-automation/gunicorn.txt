@@ -1,0 +1,69 @@
+=====
+Issue
+=====
+
+The warning you see:
+
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+
+is a cautionary message from Flask, the web framework for Python, and it's informing you that the built-in development server that comes with Flask is not suitable for production use. Instead, it recommends using a production-ready WSGI (Web Server Gateway Interface) server for deploying your Flask application in a production environment.
+
+The Flask development server is a lightweight server designed for development and debugging purposes. It may lack certain features and optimizations that are necessary for handling production-level traffic, security, and reliability. In a production environment, you should use a more robust WSGI server like Gunicorn, uWSGI, or mod_wsgi when deploying your Flask application.
+
+To address this warning, you can install a production-ready server using a tool like gunicorn. For example, you can install gunicorn using:
+
+# pip install gunicorn
+
+And then run your Flask app with:
+
+# gunicorn -w 4 -b 0.0.0.0:5005 app:app
+
+This command runs Gunicorn with 4 worker processes (-w 4) and binds it to the specified IP address and port (-b 0.0.0.0:5005). Replace app:app with the correct module and application instance if your setup is different.
+
+Using a production-ready server like Gunicorn is crucial for ensuring the stability and security of your Flask application when deployed in a production environment.
+
+========
+gunicorn
+========
+
+The command gunicorn -w 4 -b 0.0.0.0:5005 app:app is typically executed in the terminal or command prompt where you want to start the Gunicorn server. You would typically run this command in the directory where your Flask application (app.py or the main module containing your Flask app) is located.
+
+Here are the steps to run the command:
+
+Open a terminal or command prompt.
+
+Navigate to the directory where your Flask application code is located using the cd command:
+
+# cd path/to/your/flask/app
+
+Replace path/to/your/flask/app with the actual path to your Flask application.
+
+Once you are in the correct directory, run the Gunicorn command:
+
+# gunicorn -w 4 -b 0.0.0.0:5005 app:app
+
+This assumes that your Flask application instance is named app and is in a file named app.py. Adjust the command accordingly if your setup is different.
+
+Gunicorn will start and listen on 0.0.0.0:5005, and you should be able to access your Flask application through this address.
+
+Keep the terminal open while Gunicorn is running, and you can stop the server by pressing Ctrl + C in the terminal when you want to stop the server. In a production environment, you might use process managers like systemd or tools like supervisord to manage and monitor the Gunicorn process.
+
+========
+waitress
+========
+
+Gunicorn is more commonly used on Unix-based systems, and it may not be the ideal choice for running on Windows in a production environment. However, you can use other production-ready servers like Waitress or WSGI servers that are compatible with Windows.
+
+To use Waitress, for example, you can install it using:
+
+# pip install waitress
+
+Then, you can run your Flask app with Waitress using the following command:
+
+# waitress-serve --port=5005 app:app
+
+This command assumes that your Flask application instance is named app and is in a file named app.py. Adjust the command accordingly if your setup is different.
+
+Remember that when deploying on Windows, the options for production-ready WSGI servers may be more limited compared to Unix-based systems. If you're developing on Windows and planning to deploy on a Unix-based server, you can use Gunicorn in a Unix environment without encountering the fcntl issue.
+
+

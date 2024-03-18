@@ -1,0 +1,37 @@
+## Base Config G1-R1 ##
+
+configure terminal
+ hostname G1-R1
+ line console 0
+  logging synchronous
+  no exec-timeout
+  exit
+ !
+ interface fastEthernet 6/0
+  ip address 10.99.1.1 255.255.0.0
+  ipv6 address 2406:6400:99::1:1/64
+  description **MGMT - Do Not Delete**
+  no shutdown
+  exit
+ !
+ no ip domain-lookup
+ service password-encryption
+ enable secret training
+ username apnic privilege 15 secret training
+ ip domain-name apnic.net
+ ip ssh version 2
+ !
+ line vty 0 4
+  login local
+  transport input all
+  no exec-timeout
+  exit
+ !
+ crypto key generate rsa
+ yes
+ 1024
+ exit
+!
+write
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APNIC Academy Lab Automation</title>
+    <link href="static/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <div class="stracture fix">
+        <h2>IPv6 Basic Connectivity Lab - Start Node</h2>  
+        <!-- Container for the first section -->
+        <div id="ShowStartNode">
+            <h3>Task 3: Click to start nodes inside EVE-NG</h3>
+            <button type="button" onclick="SubmitStartNode()">Start All Node</button>
+            </br></br>
+        </div>
+
+        <div id="DivSubmitStartNode">
+            <b id="OutputSubmitStartNode"></b>
+        </div>
+
+        <!-- Container for the second section -->
+        <div id="ShowMonitorNode">
+            <p>-------------------------------------------------------------------------------------------------------------------</p>
+            <h3>Task 4: Monitor lab node status</h3>
+            <button type="button" onclick="SubmitMonitorNode()">Monitor Node</button>
+            </br></br>
+        </div>
+
+        <div id="DivSubmitMonitorNode">
+            <b id="OutputSubmitMonitorNode"></b>
+        </div>
+        <div>
+            <p>-------------------------------------------------------------------------------------------------------------------</p>
+            <p><b>N.B. Go to the next page if lab nodes are runninig well.</b></p>
+            <button type="button" onclick="NextPage()">Next > ></button>
+        </div>
+        <p>-------------------------------------------------------------------------------------------------------------------</p>
+        <p><b>Important:</b> Do not reload this page or go back home page until you finish all the tasks.</p>
+        <a href="/"><b>Back to Home</b></a>
+    
+    </div>
+   
+
+    <script>
+        function SubmitStartNode() {
+            // Make an AJAX request to the server
+            fetch("/ipv6-basic-node-start", {
+                method: "POST",
+            })
+            .then(response => response.text())
+            .then(OutputSubmitStartNode => {
+                // Log the result to the console
+                console.log("Result from server:", OutputSubmitStartNode);
+                // Update the content of the div based on the server response
+                var DivSubmitStartNode = document.getElementById("OutputSubmitStartNode");
+                OutputSubmitStartNode = OutputSubmitStartNode.replace(/\n/g, "<br>");
+                DivSubmitStartNode.innerHTML = OutputSubmitStartNode + "</br>";
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+
+		function SubmitMonitorNode() {
+            // Make an AJAX request to the server
+            fetch("/ipv6-basic-node-monitor", {
+                method: "POST",
+            })
+
+            .then(response => response.text())
+            .then(OutputSubmitMonitorNode => {
+                // Log the result to the console
+                console.log("Result from server:", OutputSubmitMonitorNode);
+                // Update the content of the div based on the server response
+                var DivSubmitMonitorNode = document.getElementById("OutputSubmitMonitorNode");
+                OutputSubmitMonitorNode = OutputSubmitMonitorNode.replace(/\n/g, "<br>");
+                DivSubmitMonitorNode.innerHTML = OutputSubmitMonitorNode + "</br>";
+
+                // Call the function to show the new section
+                //showNewSection2();
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+		
+		function NextPage() {
+            window.open("/ipv6-basic-check", "_blank");
+        }	
+		
+    </script>
+
+</body>
+</html>
