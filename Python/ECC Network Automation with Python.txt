@@ -1,0 +1,98 @@
+A virtual environment is an instance of Python with a particular set of modules installed in addition to all the built-in modules which come with python.
+
+Container for the specific modules your repository requires
+
+Virtual envionments are created with the Python venv module.
+
+python -m venv sample_venv
+
+source sample_venv/bin/activate
+
+pip freeze # to check what modules installed in venv
+
+pip freeze > requirements.txt
+
+requirements.txt is a file to mention the packages to be installed for running code
+pip install -r requirements.txt
+
+
+Object Oriented Language
+------------------------
+An object is a specific instance of a class (blueprint of an object)
+  Data or attributes (values)
+  Functions or methods
+Everything in pythn is an object
+
+Namespace and Scope
+-------------------
+Mapping of names to objects.
+Program namespace or execution namespace establishes the scope of a variable of object.
+A name space provides a container for your variables and objects and establishes boundaries.
+Widest Scope: Python built-in namespace i.e. print(), len(), dict()
+Module Scope: Your script or module.
+Function Scope: A function within your script or module.
+
+Every object belongs to a class
+type(a)
+<class 'int'>
+a is an object, and int is the class
+
+dir(a)
+a.bit_length()
+
+locals()
+To see local namespace
+
+globals()
+To see global namespace
+
+help(a)
+
+
+Modules
+=======
+
+from abc import *
+from abc import xyz
+
+Jupyter Notebook
+================
+pip install jupyter
+
+
+Variable Naming
+---------------
+camelCase
+snkae_case
+
+
+
+Script Template
+===============
+
+Header Info
+Docstring
+Comments
+Arguments
+  Sys
+  argparse
+
+import sys
+
+def my_function():
+    pass
+
+def main():
+    """
+    This script...
+    """
+
+if __name__ == '__main__'
+    print(f"List of command.\n{sys.argv}\nThe first elemnt")
+    main()
+
+
+
+
+ 
+

@@ -1,0 +1,21 @@
+Linux Building Bolcks
+---------------------
+Namespaces
+    Cgroup
+    IPC
+    Network
+    Mount
+    PID
+    TIME
+    User
+    UTS
+
+Control Group
+A linux kernel feature which allow processes to be organized into hierarchycal groups whose usages of various types of resources can then be limited and monitored.
+
+-i interactive
+-t tty
+--rm remove existing container
+
+Github Repo: sidpalas
+

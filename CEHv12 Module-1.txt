@@ -1,0 +1,20 @@
+Elements of Information Security
+--------------------------------
+Confidentiality
+Integrity
+Availability
+Authenticty
+Non-Repudiation
+
+Attacks = Motive (Goal) + Method + Vulnerability
+
+Classification of Attacks
+-------------------------
+Passive Attacks
+Active Attackes
+Colse-in-Attacks
+Insider Attacks
+Distribution Attacks
+
+
+

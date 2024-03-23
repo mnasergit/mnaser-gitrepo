@@ -1,0 +1,28 @@
+All about CEH
+https://youtu.be/Xv4sTARQiYM
+
+CEH Material V12 -free download
+https://drive.google.com/drive/folders/1heEzDrj5M0CWLttk9g81MdagOVspFSkp
+
+Our WhatsApp channel link
+https://chat.whatsapp.com/LaPJdd1uVQj65dkIbuM5ZP
+
+Ceh V12 Lab manual
+https://drive.google.com/file/d/1i3t-WaQiwVuJdQLzRzDsXERMiwGBAI5A/view?usp=share_link
+
+Preparation Strategy for CEH
+https://www.linkedin.com/posts/sachin-hissaria_cehv11-activity-6852487326027792384-7RCW
+
+CEH Exam questions
+https://youtu.be/czCoHfMTL3M
+
+Ceh dumps - 
+https://drive.google.com/drive/folders/19XfwwpD4ItGMNwiaeyQbTEUzovBjV39b?usp=share_link
+
+https://drive.google.com/drive/folders/1ql6lrac4Sl2PCX0m4zeIhKHNjF0qKMsZ?usp=share_link 
+
+My advice:
+Step 1: Scan quickly through the CyberOps
+Step 2: Go through APNIC’s cyber sec slides and labs
+Step 3: Go with CEHv12 slides
+Step 4: Complete the PenTest+

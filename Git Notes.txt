@@ -80,6 +80,8 @@ git log
 === Switching between branches / To move HEAD ===
 # git checkout test-branch
 # git log test-branch
+# git log --pretty=oneline
+# git log --pretty=format:"%h - %an, %ar : %s"
 # git diff test-branch
 
 # git checkout ddydfvscstcdcscsy
@@ -87,5 +89,22 @@ git log
 === Where you have been recently ===
 # git reflog
 
-
 git push --set-upstream mnasergitgit-repo
+
+
+
+Personal Access Token
+
+.gitignore # A file in same folder to ignore specied files to upload to github
+venv
+S1*
+
+
+
+
+
+
+
+
+
+
