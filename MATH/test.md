@@ -1,4 +1,6 @@
 aaaaa
-ddddd
 
-aaaaa
+***ddddd***
+'a'
+
+**aaaaa**

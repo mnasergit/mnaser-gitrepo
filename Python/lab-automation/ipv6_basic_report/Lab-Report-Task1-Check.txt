@@ -4,5 +4,3 @@ Group1-Router1 couldn't connect...(!)
 Group2-Router1 couldn't connect...(!)
 
 Group3-Router1 couldn't connect...(!)
-
-Group4-Router1 couldn't connect...(!)

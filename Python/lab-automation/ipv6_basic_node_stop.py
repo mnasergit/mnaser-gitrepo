@@ -14,7 +14,11 @@ input_value = cursor.fetchone()[0]
 lab_name = "IPv6-Basic-Connectivity-Lab"
 lab_name_check = f"/{lab_name}.unl"
 num_group = int(input_value)
-num_group_eve_2 = num_group - num_group_eve_1
+if num_group > num_group_eve_1:
+    num_group_eve_2 = num_group - num_group_eve_1
+else:
+    num_group_eve_1 = num_group
+    num_group_eve_2 = 0
 num_ios = num_group
 num_slax = num_group
 num_ios_eve_1 = num_group_eve_1
@@ -55,88 +59,90 @@ def eve_ng_login():
 
 def stop_node(cookies1, cookies2):
     # 1. Check node status and stop node in EVE1 #
-    node_status_url_1 = f"http://{EVE_1}/api/labs/IPv6-Basic-Connectivity-Lab.unl/nodes"
-    node_status_api_1 = requests.get(url=node_status_url_1,cookies=cookies1,headers=headers)
+    if cookies1 is not None:
+        node_status_url_1 = f"http://{EVE_1}/api/labs/IPv6-Basic-Connectivity-Lab.unl/nodes"
+        node_status_api_1 = requests.get(url=node_status_url_1,cookies=cookies1,headers=headers)
 
-    node_status_api_response_1 = node_status_api_1.json()
-    #pprint (node_status_api_response)
+        node_status_api_response_1 = node_status_api_1.json()
+        #pprint (node_status_api_response)
 
-    node_status_dict_1 = node_status_api_response_1['data']
-    #num_nodes = len(node_status_dict_1)
+        node_status_dict_1 = node_status_api_response_1['data']
+        #num_nodes = len(node_status_dict_1)
 
-    # Stop nodes in EVE-NG-1
+        # Stop nodes in EVE-NG-1
 
-    if node_status_api_1:
-        try:
-            j = 0
-            for i in range (1, int(num_group_eve_1 * 2 + 1)):
-                device_status = node_status_dict_1[f"{i}"]["status"]
-                #print (device_status)
-                
-                if device_status == 0:
-                    j = j + 1
-                if device_status != 0 and device_status != 2:
-                    pass
-                elif device_status == 2:
-                    node_start_url_1 = f"http://{EVE_1}/api/labs/IPv6-Basic-Connectivity-Lab.unl/nodes/{i}/stop"
-                    node_start_api_1 = requests.get(url=node_start_url_1,cookies=cookies1,headers=headers)
-                    j = j + 1
-                    time.sleep(1)
+        if node_status_api_1:
+            try:
+                j = 0
+                for i in range (1, int(num_group_eve_1 * 2 + 1)):
+                    device_status = node_status_dict_1[f"{i}"]["status"]
+                    #print (device_status)
+                    
+                    if device_status == 0:
+                        j = j + 1
+                    if device_status != 0 and device_status != 2:
+                        pass
+                    elif device_status == 2:
+                        node_start_url_1 = f"http://{EVE_1}/api/labs/IPv6-Basic-Connectivity-Lab.unl/nodes/{i}/stop"
+                        node_start_api_1 = requests.get(url=node_start_url_1,cookies=cookies1,headers=headers)
+                        j = j + 1
+                        time.sleep(1)
 
+                    else:
+                        pass
+
+                if j == int(num_group_eve_1 * 2):
+                    print (f"All nodes are stopped in EVE-NG-1.")
+                elif j == 0:
+                    print (f"Nodes are still runningin EVE-NG-1.")
                 else:
                     pass
+                print ("")
 
-            if j == int(num_group_eve_1 * 2):
-                print (f"All nodes are stopped in EVE-NG-1.")
-            elif j == 0:
-                print (f"Nodes are still runningin EVE-NG-1.")
-            else:
-                pass
-            print ("")
-
-        except:
-            print("No node couldn't be stopped in EVE-NG-1.")
+            except:
+                print("No node couldn't be stopped in EVE-NG-1.")
 
     # 2. Check node status and stop node in EVE2 #
-    node_status_url_2 = f"http://{EVE_2}/api/labs/IPv6-Basic-Connectivity-Lab.unl/nodes"
-    node_status_api_2 = requests.get(url=node_status_url_2,cookies=cookies2,headers=headers)
+    if cookies2 is not None:
+        node_status_url_2 = f"http://{EVE_2}/api/labs/IPv6-Basic-Connectivity-Lab.unl/nodes"
+        node_status_api_2 = requests.get(url=node_status_url_2,cookies=cookies2,headers=headers)
 
-    node_status_api_response_2 = node_status_api_2.json()
-    #pprint (node_status_api_response)
+        node_status_api_response_2 = node_status_api_2.json()
+        #pprint (node_status_api_response)
 
-    node_status_dict_2 = node_status_api_response_2['data']
-    #num_nodes = len(node_status_dict_1)
+        node_status_dict_2 = node_status_api_response_2['data']
+        #num_nodes = len(node_status_dict_1)
 
-    # Stop nodes in EVE-NG-2
-    if node_status_api_2:
-        try:
-            j = 0
-            for i in range (1, int(num_group_eve_2 * 2 + 1)):
-                device_status = node_status_dict_2[f"{i}"]["status"]
-                #print (device_status)
-                
-                if device_status == 0:
-                    j = j + 1
-                if device_status != 0 and device_status != 2:
-                    pass
-                elif device_status == 2:
-                    node_start_url_2 = f"http://{EVE_2}/api/labs/IPv6-Basic-Connectivity-Lab.unl/nodes/{i}/stop"
-                    node_start_api_2 = requests.get(url=node_start_url_2,cookies=cookies2,headers=headers)
-                    j = j + 1
-                    time.sleep(1)
+        # Stop nodes in EVE-NG-2
+        if node_status_api_2:
+            try:
+                j = 0
+                for i in range (1, int(num_group_eve_2 * 2 + 1)):
+                    device_status = node_status_dict_2[f"{i}"]["status"]
+                    #print (device_status)
+                    
+                    if device_status == 0:
+                        j = j + 1
+                    if device_status != 0 and device_status != 2:
+                        pass
+                    elif device_status == 2:
+                        node_start_url_2 = f"http://{EVE_2}/api/labs/IPv6-Basic-Connectivity-Lab.unl/nodes/{i}/stop"
+                        node_start_api_2 = requests.get(url=node_start_url_2,cookies=cookies2,headers=headers)
+                        j = j + 1
+                        time.sleep(1)
 
+                    else:
+                        pass
+
+                if j == int(num_group_eve_2 * 2):
+                    print (f"All nodes are stopped in EVE-NG-2.")
+                elif j == 0:
+                    print (f"Nodes are still runningin EVE-NG-2.")
                 else:
                     pass
 
-            if j == int(num_group_eve_2 * 2):
-                print (f"All nodes are stopped in EVE-NG-2.")
-            elif j == 0:
-                print (f"Nodes are still runningin EVE-NG-2.")
-            else:
-                pass
-
-        except:
-            print("No node couldn't be stopped in EVE-NG-2.")
+            except:
+                print("No node couldn't be stopped in EVE-NG-2.")
 
 
 # Main Function #

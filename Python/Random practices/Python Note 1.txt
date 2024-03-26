@@ -2,26 +2,79 @@
 |              Python Practices                 |
 | ++++++ Author : Md Abdullah Al Naser +++++++  |
 | Bug fixing is welcome at mnaser.net@gmail.com |
-|        Last Updated on : 2024-01-04           |
+|        Last Updated on : 2024-03-25           |
 =================================================
 
-Variables
----------
+What is Python?
+---------------
+● Python is an object-oriented, high-level programming language with biult-in data structure and dynamic symentics
+
+History of Python
+-----------------
+● Created by Guido van Rossum
+● 1.0 was released in 1994
+● 3.0 was released in 2008
+
+Features of Python
+------------------
+● Easy to learn and code
+● Simple syntax
+● Open-source
+● Supports modules and packages which enables code reusability
+
+Reason of learning Python?
+--------------------------
+● Sofware and web development, Automation, Artificial Intelligence, Machine learning, Data science etc
+● Career opportunity
+    ○ Python Developer
+    ○ Web developer
+    ○ Game developer
+    ○ Automation engineer
+    ○ Data Analyst
+    ○ Data Scientist
+    ○ AI and ML Engineer ect
+● Large coomunity
+
+
+Python installation
+-------------------
+
+Integrated Development Environment (IDE)
+----------------------------------------
+● PyCharm
+● VSCode
+● Many more...
+
+First Python Script
+-------------------
+# A script file name with .py extention
+print("hello World!")
+
+# Running a script
+python script.py
+
+Variables and data types
+------------------------
+● Variables are used to temporarily store data
+● Not specific to Python
+
 int
 str
 float
 bool
+list
+tuple
+set
+dict
 
 Other Python Variables
 ----------------------
 long
 complex
 unicode
-list
-tuple
-set
-dict
 
+Examples
+--------
 >>> a=5 
 >>> b=2  
 >>> a+b  
@@ -34,9 +87,6 @@ dict
 2.5
 >>> a%b  
 1
-
-● Variables are used to temporarily store data
-● Not specific to Python
 
 In [1]: name="naser"
 In [2]: name
@@ -52,15 +102,14 @@ In [7]: name="ayan"
 In [8]: id(name)
 Out[8]: 140654657839936
 
-● New name is really a new name, not the previous one, variable with same name is overwritten.
-● Id is a place in memory where data of variables are stored.
+● New name is really a new name, not the previous one, variable with same name is overwritten
+● Id is a place in memory where data of variables are stored
 
 ● Variable can be written by using letters, underscore and digits
 ● Digits cannot be in leading position
 ● No special character can be used
 ● No spaces are allowed in variable
 ● Variables are case sensitive
-
 ● ROUTER and router are two separate variables
 
 In [9]: router="r1"
@@ -113,7 +162,7 @@ Data Types Example
 
 Working with Mutable Data Types
 -------------------------------
-● List should be in [   ]
+● List should be in []
 ● List is mutable
 ● List allows duplicate values
 
@@ -150,7 +199,7 @@ Out[11]: '150.10.20.0/30'
 In [12]: my_routes
 Out[12]: ['10.0.0.0/30', '192.168.10.0/30', '172.16.0.0/30', '150.10.20.0/30']
 
-● Set should be in {    }
+● Set should be in {}
 ● Set is mutable
 ● Set doesn’t allow duplicate values
 
@@ -169,7 +218,7 @@ In [5]: set_of_vlans.add("vlan 25")
 In [6]: set_of_vlans
 Out[6]: {'vlan 10', 'vlan 15', 'vlan 25'}
 
-● Dictionary should be in {    }
+● Dictionary should be in {}
 ● Dictionary is mutable
 ● It contains "key:value" pairs
 
@@ -222,7 +271,7 @@ Out[5]: 'CBT Nuggets.... it the best'
 In [6]: id(my_string)
 Out[6]: 140010593775248
 
-● Tuple should be in (    )
+● Tuple should be in ()
 ● Tuple is immutable and cannot be updated, need to recreate from scratch
 
 In [1]: my_tuple=("R1", "R2", "R3", "SW1")

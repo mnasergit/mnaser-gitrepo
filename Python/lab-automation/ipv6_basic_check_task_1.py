@@ -17,7 +17,11 @@ input_value = cursor.fetchone()[0]
 lab_name = "IPv6-Basic-Connectivity-Lab"
 lab_name_check = f"/{lab_name}.unl"
 num_group = int(input_value)
-num_group_eve_2 = num_group - num_group_eve_1
+if num_group > num_group_eve_1:
+    num_group_eve_2 = num_group - num_group_eve_1
+else:
+    num_group_eve_1 = num_group
+    num_group_eve_2 = 0
 num_ios = num_group
 num_slax = num_group
 num_ios_eve_1 = num_group_eve_1

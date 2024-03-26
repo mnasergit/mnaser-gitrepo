@@ -1,0 +1,26 @@
+Installing Ansible on Ubuntu
+----------------------------
+https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html#installing-ansible-on-ubuntu
+
+$ sudo apt install software-properties-common
+$ sudo add-apt-repository --yes --update ppa:ansible/ansible
+$ sudo apt update
+$ sudo apt install ansible
+
+Ansible Configuration File
+--------------------------
+$ sudo mv /etc/ansible/ansible.cfg /etc/ansible/ansible.cfg.bak
+
+Download updated cfg file from:
+https://github.com/ansible/ansible/blob/stable-2.9/examples/ansible.cfg
+
+$ nano /etc/ansible/ansible.cfg
+
+inventory      = /etc/ansible/hosts
+host_key_checking = False
+
+$ sudo vi /etc/ansible/hosts
+
+[routers]
+10.99.1.1
+10.99.2.1

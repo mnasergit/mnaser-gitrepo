@@ -5,6 +5,7 @@ from ipaddress import IPv6Interface
 from ipaddress import IPv4Interface
 import sys
 import re
+from lab_variable import num_group_eve_1
 
 def process_variable(input_value):
     match = re.search(r'\b\d+\b', input_value)
@@ -20,6 +21,12 @@ if __name__ == "__main__":
         input_value = sys.argv[1]
         num_group = process_variable(input_value)
         num_group = int(num_group)
+
+        if num_group > num_group_eve_1:
+            num_group_eve_2 = num_group - num_group_eve_1
+        else:
+            num_group_eve_1 = num_group
+            num_group_eve_2 = 0
 
         try:
             if num_group > 0 and  num_group <= 20:
@@ -197,7 +204,12 @@ if __name__ == "__main__":
 
                 wb.close()
                 print(f"All config files have been genrated in directory: < /ipv6_basic_config_files >.")
-                
+                print("")
+                print(f"Out of {num_group} group:")
+                print(f"{num_group_eve_1} group will be provisioned on EVE-NG-1")
+                print(f"{num_group_eve_2} group will be provisioned on EVE-NG-2")
+                print("** Edit 'lab_variable.py' file for required adjustment **")
+
             else:
                 print("Invalid input detected for < Group Number >")
         

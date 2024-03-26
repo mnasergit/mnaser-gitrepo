@@ -23,7 +23,11 @@ input_value = cursor.fetchone()[0]
 lab_name = "IPv6-Basic-Connectivity-Lab"
 lab_name_check = f"/{lab_name}.unl"
 num_group = int(input_value)
-num_group_eve_2 = num_group - num_group_eve_1
+if num_group > num_group_eve_1:
+    num_group_eve_2 = num_group - num_group_eve_1
+else:
+    num_group_eve_1 = num_group
+    num_group_eve_2 = 0
 num_ios = num_group
 num_slax = num_group
 num_ios_eve_1 = num_group_eve_1
@@ -122,73 +126,74 @@ def task1_restore2(hostname, IP):
 
 def push_startup_config(cookies1, cookies2):
     ### Push startup-configs in EVE1 ###
-    j = 1
-    for i in range (1, num_ios_eve_1 + 1):    
-        # Read the contents of the text file
-        json_data = {"id": "1", "data": ""}
+    if cookies1 is not None:
+        j = 1
+        for i in range (1, num_ios_eve_1 + 1):    
+            # Read the contents of the text file
+            json_data = {"id": "1", "data": ""}
 
-        with open(f"ipv6_basic_config_files/Group{i}-Router1-task1-config.txt", "r") as file:
-            #print (f"Reading {HOST}-startup-config.txt")
-            json_data["data"] = file.read()
+            with open(f"ipv6_basic_config_files/Group{i}-Router1-task1-config.txt", "r") as file:
+                #print (f"Reading {HOST}-startup-config.txt")
+                json_data["data"] = file.read()
 
-            # Convert the Python dictionary to a JSON string
-            json_string = json.dumps(json_data, indent=2)
+                # Convert the Python dictionary to a JSON string
+                json_string = json.dumps(json_data, indent=2)
 
-            # Save the JSON string to a new file
-            #with open('output.json', 'w') as json_file:
-            #    json_file.write(json_string)
+                # Save the JSON string to a new file
+                #with open('output.json', 'w') as json_file:
+                #    json_file.write(json_string)
 
-            ### Push Config ###
-            push_config_data = json_string
+                ### Push Config ###
+                push_config_data = json_string
 
-            #print ("Lab data: " + lab_data)
-            #lab_data = json.dumps(lab_data)
-                    
-            push_config_url = f"http://{EVE_1}/api/labs/{lab_name_check}/configs/{j}"
-            push_config_api = requests.put(url=push_config_url,data=push_config_data,cookies=cookies1,headers=headers)
-            
-            ### Set Config Bit in EVE1 ###
-            config_bit_data = {"id":1,"count":1,"postfix":0,"config":1}
-            config_bit_data = json.dumps(config_bit_data)
-                    
-            config_bit_url = f"http://{EVE_1}/api/labs/{lab_name_check}/nodes/{j}"
-            config_bit_api = requests.put(url=config_bit_url,data=config_bit_data,cookies=cookies1,headers=headers)
-    
-            j = j + 1
+                #print ("Lab data: " + lab_data)
+                #lab_data = json.dumps(lab_data)
+                        
+                push_config_url = f"http://{EVE_1}/api/labs/{lab_name_check}/configs/{j}"
+                push_config_api = requests.put(url=push_config_url,data=push_config_data,cookies=cookies1,headers=headers)
+                
+                ### Set Config Bit in EVE1 ###
+                config_bit_data = {"id":1,"count":1,"postfix":0,"config":1}
+                config_bit_data = json.dumps(config_bit_data)
+                        
+                config_bit_url = f"http://{EVE_1}/api/labs/{lab_name_check}/nodes/{j}"
+                config_bit_api = requests.put(url=config_bit_url,data=config_bit_data,cookies=cookies1,headers=headers)
+        
+                j = j + 1
 
     ### Push startup-configs in EVE2 ###
-    j = 1
-    for i in range (num_ios_eve_1 + 1, num_ios + 1):    
-        # Read the contents of the text file
-        json_data = {"id": "1", "data": ""}
+    if cookies2 is not None:
+        j = 1
+        for i in range (num_ios_eve_1 + 1, num_ios + 1):    
+            # Read the contents of the text file
+            json_data = {"id": "1", "data": ""}
 
-        with open(f"ipv6_basic_config_files/Group{i}-Router1-startup-config.txt", "r") as file:
-            #print (f"Reading {HOST}-startup-config.txt")
-            json_data["data"] = file.read()
+            with open(f"ipv6_basic_config_files/Group{i}-Router1-startup-config.txt", "r") as file:
+                #print (f"Reading {HOST}-startup-config.txt")
+                json_data["data"] = file.read()
 
-            # Convert the Python dictionary to a JSON string
-            json_string = json.dumps(json_data, indent=2)
+                # Convert the Python dictionary to a JSON string
+                json_string = json.dumps(json_data, indent=2)
 
-            # Save the JSON string to a new file
-            #with open('output.json', 'w') as json_file:
-            #    json_file.write(json_string)
+                # Save the JSON string to a new file
+                #with open('output.json', 'w') as json_file:
+                #    json_file.write(json_string)
 
-            ### Push Config ###
-            push_config_data = json_string
+                ### Push Config ###
+                push_config_data = json_string
 
-            #print ("Lab data: " + lab_data)
-            #lab_data = json.dumps(lab_data)
-                    
-            push_config_url = f"http://{EVE_2}/api/labs/{lab_name_check}/configs/{j}"
-            push_config_api = requests.put(url=push_config_url,data=push_config_data,cookies=cookies2,headers=headers)
-            ### Set Config Bit in EVE2 ###
-            config_bit_data = {"id":1,"count":1,"postfix":0,"config":1}
-            config_bit_data = json.dumps(config_bit_data)
-                    
-            config_bit_url = f"http://{EVE_2}/api/labs/{lab_name_check}/nodes/{j}"
-            config_bit_api = requests.put(url=config_bit_url,data=config_bit_data,cookies=cookies2,headers=headers)
-            j = j + 1
-
+                #print ("Lab data: " + lab_data)
+                #lab_data = json.dumps(lab_data)
+                        
+                push_config_url = f"http://{EVE_2}/api/labs/{lab_name_check}/configs/{j}"
+                push_config_api = requests.put(url=push_config_url,data=push_config_data,cookies=cookies2,headers=headers)
+                ### Set Config Bit in EVE2 ###
+                config_bit_data = {"id":1,"count":1,"postfix":0,"config":1}
+                config_bit_data = json.dumps(config_bit_data)
+                        
+                config_bit_url = f"http://{EVE_2}/api/labs/{lab_name_check}/nodes/{j}"
+                config_bit_api = requests.put(url=config_bit_url,data=config_bit_data,cookies=cookies2,headers=headers)
+                j = j + 1
 
 def main():
     cookies1, cookies2 = eve_ng_login()
